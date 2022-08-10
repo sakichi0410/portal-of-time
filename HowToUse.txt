@@ -1,2 +1,3 @@
 arai test
 hello yamashita!!
+koshimo sample
