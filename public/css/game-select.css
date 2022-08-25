@@ -1,0 +1,21 @@
+.select-wrapper {
+  border: 1px solid red;
+  margin: 20px auto;
+  text-align: center;
+}
+.select-wrapper .select {
+  border: 1px solid blue;
+}
+.select-wrapper .select ul {
+  padding-left: 0;
+}
+.select-wrapper .select ul li {
+  display: inline-block;
+  padding: 20px 40px;
+  margin: 0 10px;
+  border: 1px double #78FFFF;
+  background: rgba(0, 0, 0, 0.7);
+}
+.select-wrapper .select ul li:hover {
+  background: rgb(0, 0, 0);
+}

@@ -1,12 +1,20 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "colors";
+@import "fonts";
+
+
 body{
+    background-image: url(../image/top_image.jpeg);
+    background-size: cover;
     width: 100%;
     margin: 0;
     padding: 0;
     background-color: black;
     color: white;
-    font-family:fantasy;
+    font-family: 'DotGothic16', sans-serif;;
     img{
         width: 100%;
+
     }
 
     a{
@@ -18,143 +26,31 @@ body{
         list-style: none;
     }
 }
-
-header{
-    width: 100%;
-
-
-    h1{
-        display: inline-block;
-        margin: 0;
-    }
-
-    nav{
-        display: inline-block;
-    }
-
-
-    .header-right{
-        float: right;
-        display: flex;
-    .user-info{
-        border: 1px solid red;//補助線
-        display: flex;
-        width: 370px;
-
-        .user-image{
-            border:1px solid blue;//補助線
-            display: inline-block;
-
-            .busyo{
-                display: flex;
-                border: 1px solid grey;
-                width:100px;
-                height: 70px;
-
-                img{
-                    object-fit: contain;
-                }
-            }
-        }
-
-        .user-text{
-            border: 1px solid yellow;
-            width:100px;
-        }
-
-        .advantage{
-            border: 1px solid purple;
-            width: 150px;
-            text-align: right;
-
-            .number{
-                background:rgba(217,217,217,0.5);
-                margin-top: 5px;
-                padding: 3px;
-                border-radius: 10px;
-            }
-
-        }
-    }
-    }
-}
-
-
-/*----------Main-menu.html------------*/
 .title{
     text-align: center;
+    font-size: 100px;
+    padding: 20px;
 }
 
 .button-wrapper{
      text-align: center;
+     margin-top: 50px;
     .button{
         display: inline-block;
+        width: 100px;
         padding: 10px 20px;
         margin: 30px 20px;
         border: 1px double #1ADEE9;
+        background-color: rgba(0,0,0,0.7);
     }
 
     .button:hover{
         border: 1px double #DEFCFC;
+        background-color: rgba(0,0,0,1);
     }
 }
 
-
-
-
-/*-----------Game-main.html-------------*/
-main{
-    border: 1px solid red;
-    padding: 100px;
-    margin: 50px auto;
-
-    .play-menu{
-        display: flex;
-    
-    .hex{
-        margin: 10px;
-        width: 150px;
-        height: 130px; /* width*√3/2 */
-        clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        opacity: 0.8;
-        background: #74C5FF;
-        text-align: center;
-    }
-
-    .hex:hover{
-        opacity: 1;
-    }
-
-
-    a{
-        display: inline;
-        line-height: 130px;
-        text-decoration: none;
-        color: white;
-    }
-
-}
-}
-
-
-/*---------play-mode.html-----------*/
-.select-wrapper{
-    border: 1px solid red;//補助線
-    margin: 20px auto;
-    text-align: center;
-
-    .select{
-        border:1px solid blue;//補助線
-
-        ul{
-            padding-left: 0;
-            li{
-                display: inline-block;
-                padding: 20px 40px;
-                margin: 0 10px;
-                border: 1px double #78FFFF;
-            }
-        }
-    }
-    
+footer{
+    text-align: right;
+    margin-right: 10px;
 }

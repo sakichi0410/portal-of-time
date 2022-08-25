@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/game-select.css">
     <title>game-main</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
     <img src="" alt="">
 
     <header>
-        <h1><a href="Main-menu.html">Portal of Time</a></h1>
+        <h1><a href="main-menu.html">Portal of Time</a></h1>
 
         <nav>
             <p>search</p>
@@ -44,21 +44,30 @@
         </div>
 
     </header>
-
     <main>
-
         <div class="play-menu">
-            <div class="single hex"><a href="Play-mode.html">Training</a></div>
-            <div class="battle hex"><a href="">Battle</a></div>
-            <div class="create-rooom hex"><a href="">create-rooom</a></div>
+            <div class="wrapper-btn">
+                <div class="single hex">
+                    <a href="game-select.html">Training</a>
+                </div>
+                <!---表示させたい--->
+                <p class="text">一人でクイズの練習する</p>
+            </div>
+            <div class="wrapper-btn">
+                <div class="battle hex">    
+                    <a href="">Battle</a>
+                </div>
+                <p class="text">フレンドと一緒にプレイします。</p>
+            </div>
+            <div class="wrapper-btn">
+                <div class="create-rooom hex">
+                    <a href="">create-rooom</a>
+                </div>
+                <p class="text">オンラインでのクイズ部屋を作ります。</p>
+            </div>
         </div>
-        
-
     </main>
-
     <footer>
-
     </footer>
-    
 </body>
 </html>

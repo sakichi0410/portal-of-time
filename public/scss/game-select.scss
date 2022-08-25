@@ -1,0 +1,25 @@
+.select-wrapper{
+    border: 1px solid red;//補助線
+    margin: 20px auto;
+    text-align: center;
+
+    .select{
+        border:1px solid blue;//補助線
+
+        ul{
+            padding-left: 0;
+            li{
+                display: inline-block;
+                padding: 20px 40px;
+                margin: 0 10px;
+                border: 1px double #78FFFF;
+                background: rgba(0,0,0,0.7);
+            }
+
+            li:hover{
+                background: rgba(0,0,0,1);
+            }
+        }
+    }
+    
+}
