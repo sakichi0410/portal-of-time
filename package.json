@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "node": "nodemon -e ejs,js,json ./bin/www",
+    "nodemon": "nodemon -e ejs,js,json,css ./bin/www",
     "sass": "sass public/scss/:public/css/ --no-source-map --watch",
-    "start": "node ./bin/www & npm run sass"
+    "start": "npm run sass & npm run nodemon"
   },
   "dependencies": {
     "@rollup/plugin-node-resolve": "^13.3.0",

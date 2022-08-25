@@ -39,7 +39,6 @@ nav {
     }
   }
   .right{
-    width: 200px;
     padding: 0px;
     float: right;
     margin: 5px;
@@ -64,12 +63,27 @@ nav {
         }
       }
       #user-scores{
+        margin:auto 0px;
         margin-left: 10px;
         font-size: 15px;
         .user-score{
-          
+          width:100px;
+          height:25px;
+          background-color: rgba(255,255,255,0.2);;
+          text-align: right;
+          padding:2px 5px;
+          color: $white-10;
+          border-radius: 10px;
+        }
+        .exp{
+          margin-bottom: 10px;
         }
       }
+    }
+    #settings{
+      font-size: 20px;
+      margin:auto 10px;
+      color: $white-10;
     }
   }
 }
