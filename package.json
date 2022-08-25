@@ -5,7 +5,7 @@
   "scripts": {
     "nodemon": "nodemon -e ejs,js,json,css ./bin/www",
     "sass": "sass public/scss/:public/css/ --no-source-map --watch",
-    "start": "npm run sass & npm run nodemon"
+    "start": "node ./bin/www & npm run sass"
   },
   "dependencies": {
     "@rollup/plugin-node-resolve": "^13.3.0",
