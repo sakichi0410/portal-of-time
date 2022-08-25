@@ -1,0 +1,75 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "variable";
+@import "fonts";
+
+nav {
+  padding: 0px 10px;
+  margin: 0px;
+  height: 70px;
+  width: 100%;
+  background-color: $red-40;
+  border-bottom: solid 1px $red-60;
+  display: flex;
+  .left {
+    width: 150px;
+    padding: 0px;
+    float: left;
+    margin: 10px;
+    height: 50px;
+    display: flex;
+    #logo {
+      margin-right: 10px;
+      width: 50px;
+      height: 50px;
+    }
+    #title {
+      margin:0 auto;
+      width: 90px;
+      overflow-wrap: normal;
+      font-size: 20px;
+      color: $white-10;
+      #top{
+        height:20px;
+        text-align: center;
+      }
+      #bottom{
+        height:20px;
+        text-align: center;
+      }
+    }
+  }
+  .right{
+    width: 200px;
+    padding: 0px;
+    float: right;
+    margin: 5px;
+    height: 60px;
+    display: flex;
+    .user{
+      display: flex;
+      .user-avator{
+        height: 60px;
+      }
+      .user-info{
+        margin-left: 10px;
+        color: $white-10;
+        .user-name{
+          font-size: 15px;
+        }
+        .user-id{
+          font-size: 10px;
+        }
+        .user-rank{
+          font-size: 10px;
+        }
+      }
+      #user-scores{
+        margin-left: 10px;
+        font-size: 15px;
+        .user-score{
+          
+        }
+      }
+    }
+  }
+}

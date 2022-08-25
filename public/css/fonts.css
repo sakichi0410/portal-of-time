@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "dot-regular";
+  src: url("../fonts/JF-Dot-MPlus12.eot") format("oldIE"), url("../fonts/JF-Dot-MPlus12.woff") format("woff"), url("../fonts/JF-Dot-MPlus12.ttf") format("truetype");
+}
+.dot-regular {
+  font-family: "dot-regular";
+}
+
+@font-face {
+  font-family: "dot-bold";
+  src: url("../fonts/JF-Dot-MPlus12B.eot") format("oldIE"), url("../fonts/JF-Dot-MPlus12B.woff") format("woff"), url("../fonts/JF-Dot-MPlus12B.ttf") format("truetype");
+}
+.dot-bold {
+  font-family: "dot-bold";
+}
