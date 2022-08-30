@@ -36,44 +36,51 @@
     </div>
 
     <!--解答ボタン-->
-    <div class="switch-frame">
-      <div class="switch">
-        <a href="javascript:OnLinkClick();"></a>
+    <div id="switch">
+      <div class="switch-frame">
+        <div class="switch">
+          <a href="javascript:OnSwithClick();"></a>
+        </div>
       </div>
-      <div id="output"></div>
     </div>
 
     <!--選択肢-->
     <div class="choices">
-      <div class="text">
-        <input type="radio" id="a" />
-        <label id="a-text" for="a"></label>
-      </div>
-      <div class="text">
-        <input type="radio" id="b" />
-        <label id="b-text"  for="b"></label>
-      </div>
-      <div class="text">
-        <input type="radio" id="c" />
-        <label id="c-text"  for="c"></label>
-      </div>
-      <div class="text">
-        <input type="radio" id="d" />
-        <label id="d-text"  for="d"></label>    
+      <div style="display:none" id="answer-text">
+        
+        <div class="text">
+          <input class="radio" type="radio" id="a" />
+          <label id="a-text"  for="a"></label>
+        </div>
+
+        <div class="text">
+          <input class="radio" type="radio" id="b" />
+          <label id="b-text"  for="b"></label>
+        </div>
+
+        <div class="text">
+          <input class="radio" type="radio" id="c" />
+          <label id="c-text"  for="c"> </label>
+        </div>
+        
+        <div class="text">
+          <input class="radio" type="radio" id="d" />
+          <label id="d-text"  for="d"></label>    
+        </div>
       </div>
     </div>
-
   </div>
-
-  <div id="output"></div>
-
-
+  
 </body>
 <script language="javascript" type="text/javascript">
-  function OnLinkClick() {
-      target = document.getElementById("output");
-      target.innerHTML = "Penguin";
-      return false;
+  function OnSwithClick() {
+    //ボタンを消す
+    target = document.getElementById("switch");
+    target.style.display = "none";
+
+    //選択欄の表示
+    target = document.getElementById("answer-text");
+    target.style.display = "";    
   }
 </script>
 </html>

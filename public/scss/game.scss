@@ -2,7 +2,6 @@ body{
   color:white;
   background-color: black;
 
-  /*pageの上半分*/
   .problem{
     display: flex;
 
@@ -82,17 +81,15 @@ body{
         font-size: 28px;
         text-align: center;
 
-          .text{
+        .text{
             box-sizing: border-box;
             width: 20%;
             height: 20%;
 
             background-color: gray;
             border: 3px solid #74C5FF;
-            
           }
       }
-
 
     /*解答ボタン*/
       /* スイッチの台座にあたる部分 */
@@ -126,6 +123,5 @@ body{
           }
         }
       }
-  
 }
 

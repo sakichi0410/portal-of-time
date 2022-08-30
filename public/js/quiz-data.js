@@ -5,7 +5,7 @@ const quizDataJp = [
     b: '伊達政宗',
     c: '毛利元就',
     d: '石田三成',
-    correct: 'a'
+    correct: 'a',
   }
 ];
 
