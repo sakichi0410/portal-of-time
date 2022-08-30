@@ -21538,6 +21538,7 @@ textarea.form-control-lg {
 }
 
 body {
+  max-width: 1600px;
   width: 100%;
   background-image: url(../image/top_image.jpeg);
   background-size: cover;

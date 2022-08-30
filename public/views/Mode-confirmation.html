@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/mode-confirmation.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="../css/header.css">
     <title>Mode-confirmation</title>
 </head>
 <body>
+    <header id="header"></header>
     <div class="container">
-        <div class="header"></div>
         <div class="Selection-confirmation">
             <div class="solid">
                 <img src="../image/quiz-background.png">
@@ -26,5 +28,8 @@
             </div>
         </div>
     </div> 
+    <script type="text/javascript">
+        $("#header").load("header-logout.html");
+    </script>
 </body>
 </html>
