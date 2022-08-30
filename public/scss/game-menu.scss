@@ -2,13 +2,22 @@
 @import "colors";
 @import "fonts";
 
+*{
+    font-family: dot-regular;
+}
+
+body{
+    background-image: url(../image/game-menu.png);//サイトの囲気見るための画像　後ほど直します
+    background-size: cover;
+}
 main{
-    border: 1px solid red;
     padding: 100px;
     margin: 50px auto;
 
     .play-menu{
         display: flex;
+        justify-content: center;
+        padding-top: 50px;
     
     .hex{
         margin: 10px;
@@ -21,7 +30,7 @@ main{
 
     .hex:hover{
         transition: .3s;
-        background-color: #AC291D;
+        background-color: $turquoise;//#AC291D
         font-size: 20px;
         
     }

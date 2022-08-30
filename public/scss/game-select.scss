@@ -3,24 +3,48 @@
 @import "fonts";
 
 
+body{
+    background-image: url(../image/game-menu.png);//サイトの囲気見るための画像　後ほど直します
+    background-size: cover;
+}
+
 .select-wrapper{
-    border: 1px solid red;//補助線
-    color: black;
+    border: 1px double $blue;
+    opacity: 0.9;
+    color: $white-00;
+    background-color: $dark-gray;
     max-width: 1000px;
     width: 100%;
-    margin: 0 auto;
-     h1{
+    padding: 30px;
+    margin: 30px auto;
+     
+    h1{
         text-align: center;
      }
 
     .age-select{
-        border:1px solid blue;//補助線
-        padding: 20px;
+        padding: 30px;
+        p{
+            font-size: 20px;
+        }
         }
 
     .type-select{
-       
-        padding: 20px;
+        padding: 30px;
+        p{
+            font-size: 20px;
+        }
+    }
+    
+    .number-question{
+        padding: 30px;
+    }
+
+    .button-wrapper{
+        text-align: center;
+        .button{
+            margin: 30px;
+        }
     }
     }
     

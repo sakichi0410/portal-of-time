@@ -21533,13 +21533,23 @@ textarea.form-control-lg {
   font-family: "dot-bold";
 }
 
+* {
+  font-family: dot-regular;
+}
+
+body {
+  background-image: url(../image/game-menu.png);
+  background-size: cover;
+}
+
 main {
-  border: 1px solid red;
   padding: 100px;
   margin: 50px auto;
 }
 main .play-menu {
   display: flex;
+  justify-content: center;
+  padding-top: 50px;
 }
 main .play-menu .hex {
   margin: 10px;
@@ -21551,7 +21561,7 @@ main .play-menu .hex {
 }
 main .play-menu .hex:hover {
   transition: 0.3s;
-  background-color: #AC291D;
+  background-color: rgb(50, 210, 200);
   font-size: 20px;
 }
 main .play-menu a {

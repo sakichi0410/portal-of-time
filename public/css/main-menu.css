@@ -21533,6 +21533,10 @@ textarea.form-control-lg {
   font-family: "dot-bold";
 }
 
+* {
+  font-family: dot-regular;
+}
+
 body {
   width: 100%;
   background-image: url(../image/top_image.jpeg);

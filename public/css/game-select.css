@@ -21533,20 +21533,42 @@ textarea.form-control-lg {
   font-family: "dot-bold";
 }
 
+body {
+  background-image: url(../image/game-menu.png);
+  background-size: cover;
+}
+
 .select-wrapper {
-  border: 1px solid red;
-  color: black;
+  border: 1px double rgb(100, 200, 255);
+  opacity: 0.9;
+  color: rgb(255, 255, 255);
+  background-color: rgb(70, 70, 70);
   max-width: 1000px;
   width: 100%;
-  margin: 0 auto;
+  padding: 30px;
+  margin: 30px auto;
 }
 .select-wrapper h1, .select-wrapper .h1 {
   text-align: center;
 }
 .select-wrapper .age-select {
-  border: 1px solid blue;
-  padding: 20px;
+  padding: 30px;
+}
+.select-wrapper .age-select p {
+  font-size: 20px;
 }
 .select-wrapper .type-select {
-  padding: 20px;
+  padding: 30px;
+}
+.select-wrapper .type-select p {
+  font-size: 20px;
+}
+.select-wrapper .number-question {
+  padding: 30px;
+}
+.select-wrapper .button-wrapper {
+  text-align: center;
+}
+.select-wrapper .button-wrapper .button {
+  margin: 30px;
 }
