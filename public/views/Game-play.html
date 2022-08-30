@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/game.css">
+  <script type="module" src="../js/quiz.js" defer></script>
+  <title>Document</title>
+</head>
+<body>
+  <header>
+  </header>
+
+  <div class="problem">
+    <div class="document">
+      <div>[第1問]</div>
+      <div id="question">question text</div>
+    </div>
+
+    <div class="pause-frame">
+      <div class="pause-mark"><a href="#">||</a></div>
+      <div class="pause-text">pause</div>
+    </div>    
+  </div>
+
+
+  <div class="anawer">
+    <div class="status">
+      <div id="time-frame">
+        <div id="time-bar"></div>
+        <div id="time-mark"></div>
+      </div>
+
+      <div class="score" id="score">得点：　0pt</div>
+    </div>
+
+    <!--解答ボタン-->
+    <div class="switch-frame">
+      <div class="switch">
+        <a href="javascript:OnLinkClick();"></a>
+      </div>
+      <div id="output"></div>
+    </div>
+
+    <!--選択肢-->
+    <div class="choices">
+      <div class="text">
+        <input type="radio" id="a" />
+        <label id="a-text" for="a"></label>
+      </div>
+      <div class="text">
+        <input type="radio" id="b" />
+        <label id="b-text"  for="b"></label>
+      </div>
+      <div class="text">
+        <input type="radio" id="c" />
+        <label id="c-text"  for="c"></label>
+      </div>
+      <div class="text">
+        <input type="radio" id="d" />
+        <label id="d-text"  for="d"></label>    
+      </div>
+    </div>
+
+  </div>
+
+  <div id="output"></div>
+
+
+</body>
+<script language="javascript" type="text/javascript">
+  function OnLinkClick() {
+      target = document.getElementById("output");
+      target.innerHTML = "Penguin";
+      return false;
+  }
+</script>
+</html>
