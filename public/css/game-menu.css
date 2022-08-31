@@ -21540,6 +21540,7 @@ textarea.form-control-lg {
 body {
   background-image: url(../image/game-menu.png);
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 main {
