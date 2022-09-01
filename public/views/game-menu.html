@@ -14,8 +14,8 @@
     <main>
         <div class="play-menu">
             <div class="wrapper-btn">
-                <div class="single hex">
-                    <a href="game-select.html">Training</a>
+                <div id=btn1 class="single hex">
+                    <a href="#">Training</a>
                 </div>
                 <!---表示させたい--->
                 <p class="text">一人でクイズの練習する</p>
@@ -33,11 +33,60 @@
                 <p class="text">オンラインでのクイズ部屋を作ります。</p>
             </div>
         </div>
+
+        <!-- モーダル表記 -->
+        <div class="overlay"></div>
+        <div id="modal" class="select-wrapper hidden">
+            <h1>MODE-SELECT</h1>
+                <div class="age-select">
+                    <p>時代選択</p>
+                        <label>
+                            <input type="radio" name="age" value="鎌倉時代">鎌倉時代
+                            <input type="radio" name="age" value="戦国時代">戦国時代
+                            <input type="radio" name="age" value="江戸時代">江戸時代
+                            <input type="radio" name="age" value="明治時代">明治時代
+                        </label>
+                </div>
+                <div class="type-select">
+                    <p>難易度</p>
+                        <label>
+                            <input type="radio" name="type" value="易しい">易しい
+                            <input type="radio" name="type" value="普通">普通
+                            <input type="radio" name="type" value="難しい">難しい
+                        </label>
+                </div>
+                <div class="number-question">
+                    <p>問題数：１０問</p>
+                </div>
+                    <div class="button-wrapper">    
+                        <a href="#"><input type="button" value="戻る" class="close"></a>
+                        <a href="Mode-confirmation.html"><input type="button" name="" id="" value="決定" class="button"></a>
+                    </div>
+       </div>
+
+
+
     </main>
     <footer>
     </footer>
 <script type="text/javascript">
 $("#header").load("header-logout.html");
+
+// モーダル
+$(document).ready(function(){
+    //ボタンをクリックしたら
+    $("#btn1").click(function(){
+        // モーダルウィンドウのfade-in
+        $("#modal").fadeIn();
+        $(".overlay").fadeIn();
+    });
+    //フェードアウト　戻るボタンとオーバーレイ
+    $(".close, .overlay").click(function(){
+        $("#modal").fadeOut();
+        $(".overlay").fadeOut();
+    });
+    
+})
 </script>
 </body>
 </html>

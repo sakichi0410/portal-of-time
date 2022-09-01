@@ -2,9 +2,6 @@
 @import "colors";
 @import "fonts";
 
-*{
-    font-family: dot-regular;
-}
 
 body{
     background-image: url(../image/game-menu.png);//サイトの囲気見るための画像　後ほど直します
@@ -27,6 +24,7 @@ main{
         clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
         background: #181038;
         text-align: center;
+        font-family: 'dot-regular';
     }
 
     .hex:hover{
@@ -52,6 +50,63 @@ main{
 
 
     }
+}
+}
 
+/*オーバーレイ*/
+.overlay{
+position: fixed;
+top:0;
+left:0;
+width: 100%;//画面いっぱいに広げるため
+height: 100vh;
+background: rgba(0,0,0,0.3);
+display: none;
+z-index: 1;
+    
 }
-}
+.select-wrapper{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: none;
+    position: fixed;
+    top:10%;
+    left:10%;
+    right: 10%;
+    border: 1px double $blue;
+    color: $white-00;
+    background-color: $dark-gray;
+    max-width: 700px;
+    width: 100%;
+    padding: 30px;
+    margin: 30px auto;
+    z-index: 2;
+     
+    h1{
+        text-align: center;
+     }
+
+    .age-select{
+        padding: 20px;
+        p{
+            font-size: 20px;
+        }
+        }
+
+    .type-select{
+        padding: 20px;
+        p{
+            font-size: 20px;
+        }
+    }
+    
+    .number-question{
+        padding: 20px;
+    }
+
+    .button-wrapper{
+        text-align: center;
+        .button{
+            margin: 20px;
+        }
+    }
+    }

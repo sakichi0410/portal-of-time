@@ -21533,15 +21533,12 @@ textarea.form-control-lg {
   font-family: "dot-bold";
 }
 
-* {
-  font-family: dot-regular;
-}
-
 body {
   max-width: 1600px;
   width: 100%;
   background-image: url(../image/top_image.jpeg);
   background-size: cover;
+  background-repeat: no-repeat;
   margin: 0;
   padding: 0;
   color: rgb(255, 255, 255);
@@ -21554,24 +21551,70 @@ body li {
   list-style: none;
 }
 
+#typing-area {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 900;
+  background: #000000;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: dot-regular;
+}
+#typing-area #typing-message {
+  position: absolute;
+  top: 43%;
+  left: 30%;
+  /*========= タイピング ===============*/
+  /*文字列後ろの線の設定*/
+}
+#typing-area #typing-message p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.5em;
+  word-break: break-all;
+}
+#typing-area #typing-message .TextTyping {
+  text-align: center;
+}
+#typing-area #typing-message .TextTyping span {
+  display: none;
+}
+#typing-area #typing-message .TextTyping::after {
+  content: "|";
+  animation: typinganime 0.8s ease infinite;
+}
+@keyframes typinganime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*タイトルエリア*/
 .title {
   width: 100%;
   height: 10em;
   padding: 20px;
   color: rgb(255, 255, 255);
   position: relative;
+  text-align: center;
+  margin: 0 auto;
 }
 .title p {
-  width: 100%;
-  text-align: center;
+  width: 70%;
   position: absolute;
   font-size: 120px;
   top: 100%;
+  left: 15%;
 }
 
 .button-wrapper {
   text-align: center;
   margin-top: 300px;
+  font-family: dot-regular;
 }
 .button-wrapper .button {
   display: inline-block;
@@ -21587,9 +21630,13 @@ body li {
 }
 
 footer {
-  text-align: right;
-  margin-right: 10px;
+  width: 100%;
+  height: 100px;
+  position: relative;
 }
 footer p {
   color: rgb(255, 255, 255);
+  position: absolute;
+  right: 10px;
+  bottom: 0;
 }

@@ -20,13 +20,22 @@
     <title>Portal of Time</title>
   </head>
   <body>
+  <!-- タイピングメッセージ表示画面 -->
+    <div id="typing-area">
+      <div id="typing-message">
+        <p class="TextTyping">
+          This is a history learning site.
+      </p>
+      </div>
+    </div>
+<!----ローディング画面後現れるメインメニュー↓---->
     <header id="header"></header>
     <main>
       <div class="title">
         <p>Portal of Time</p>
       </div>
       <div class="button-wrapper">
-        <div class="button"><a href="game-menu.html">Game</a></div>
+        <div class="button"><a href="game-menu.html" onClick="sound()">Game</a></div>
         <div class="button"><a href="#">Search</a></div>
       </div>
     </main>
@@ -37,4 +46,5 @@
   <script type="text/javascript">
     $("#header").load("header-logout.html");
   </script>
+  <script src="../js/animetion.js"></script>
 </html>
