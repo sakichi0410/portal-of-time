@@ -6,81 +6,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/game.css">
   <script type="module" src="../js/quiz.js" defer></script>
-  <title>Document</title>
+  <title>Game-play</title>
 </head>
 <body>
-  <header>
-  </header>
-
   <div class="problem">
-    <div class="document">
+    <div class="question-text">
       <div>[第1問]</div>
-      <div id="question">question text</div>
+      <div id="question"></div>
+    </div>
+
+    <div id="results-container">
+      <div id="results-mark-maru"></div>
+      
+      <div id="results-mark-batsu"></div>
+
+      <div id="results-header">
+        <h2 id="results"></h2>
+        <button id="next-quiz">次の問題へ</button>
+      </div>
     </div>
 
     <div class="pause-frame">
-      <div class="pause-mark"><a href="#">||</a></div>
+      <a href="#">
+        <div class="pause-mark"></div>
+      </a>
       <div class="pause-text">pause</div>
-    </div>    
+    </div>
   </div>
 
-
-  <div class="anawer">
+  <div class="answer-frame">
     <div class="status">
-      <div id="time-frame">
-        <div id="time-bar"></div>
-        <div id="time-mark"></div>
-      </div>
-
+      <div id="time-frame"></div>
       <div class="score" id="score">得点：　0pt</div>
     </div>
 
-    <!--解答ボタン-->
-    <div id="switch">
-      <div class="switch-frame">
-        <div class="switch">
-          <a href="javascript:OnSwithClick();"></a>
-        </div>
+    <div id="switch-frame">
+      <div id="switch-bottom">
+        <a href="#" id="switch-push"></a>
+        <audio id="switch_audio">
+          <source src="../sounds/Quiz-CorretBuzzer-mp3/Quiz-Buzzer02-1.mp3" type="audio/mp3">
+        </audio>
       </div>
     </div>
 
-    <!--選択肢-->
-    <div class="choices">
-      <div style="display:none" id="answer-text">
-        
-        <div class="text">
-          <input class="radio" type="radio" id="a" />
-          <label id="a-text"  for="a"></label>
-        </div>
+    <div id="quiz-container" style="display: none;" >
+      <form id="quiz-form" name="quizForm">
+          <div class="choice-a">
+              <input type="radio" id="a" name="answer" value="a" />
+              <label id="a-text" for="a"></label>
+          </div>
+          <div class="choice-b">
+            <input type="radio" id="b" name="answer" value="b" />
+            <label id="b-text"  for="b"></label>
+          </div>
+          <div class="choice-c">
+            <input type="radio" id="c" name="answer" value="c" />
+            <label id="c-text"  for="c"></label>
+          </div>
+          <div class="choice-d">
+            <input type="radio" id="d" name="answer" value="d" />
+            <label id="d-text"  for="d"></label>
+          </div>
+      </form>
 
-        <div class="text">
-          <input class="radio" type="radio" id="b" />
-          <label id="b-text"  for="b"></label>
-        </div>
-
-        <div class="text">
-          <input class="radio" type="radio" id="c" />
-          <label id="c-text"  for="c"> </label>
-        </div>
-        
-        <div class="text">
-          <input class="radio" type="radio" id="d" />
-          <label id="d-text"  for="d"></label>    
-        </div>
-      </div>
+      <button id="submit">回答する</button>
     </div>
+
   </div>
-  
 </body>
-<script language="javascript" type="text/javascript">
-  function OnSwithClick() {
-    //ボタンを消す
-    target = document.getElementById("switch");
-    target.style.display = "none";
-
-    //選択欄の表示
-    target = document.getElementById("answer-text");
-    target.style.display = "";    
-  }
-</script>
 </html>

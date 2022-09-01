@@ -1,127 +1,343 @@
-body{
-  color:white;
-  background-color: black;
+html{
+  height: 100%;
+  width: 100%;
+  margin: 0%;
 
-  .problem{
-    display: flex;
+  body{
+    margin: 0%;
+    width: 100%;
+    height: 100%;
+    color: white;
+    
 
-      .document{
-        box-sizing: content-box;
-        position: relative;
-        width: 60%;
-        height: 40%;
-        left: 20%;
-        top: 10%;
-        background-color:rgb(20, 2, 73);
+    .problem{
+      margin: 0%;
+      width: 100%;
+      height: 50%;
+      
+      background-image: url(../image/quiz-play-background.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      .question-text{
+        margin: 0%;
+        width: 50%;
+        height: 30%;
+        background-color: rgb(20, 2, 73);
+        border-radius: 1%;          
         border: 5px solid #08af50;
-
+        top: 25%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%,-50%);
         text-align: center;
         font-size: 24px;
       }
 
-      .pause-frame{
-        box-sizing: border-box;
-        position: absolute;
-        height: 10%;
-        width: 5%;
-        left: 90%;
+      #results-container{
+        display: none;
 
-        background-color: black;
-        border-radius:3px;
+        margin: 0%;
+        width: 70%;
+        height: 40%;
+
+        left: 50%;
+        top: 25%;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        font-size: 24px;
+        color: red;
+
+        #results-mark-maru{
+          margin: 0%;
+          width: 350px;
+          height: 350px;
+
+          left: 50%;
+          top: 50%;
+          position: absolute;
+          transform: translate(-50%,-50%);
+
+          border-radius: 100%;
+          border: 50px solid red;
+        }
+
+        #results-mark-batsu{
+          display: block;
+          position: absolute;
+          width: 500px;
+          height: 500px;
+
+          left: 50%;
+          top: 50%;
+          position: relative;
+          transform: translate(-50%,-50%);
+
+          &:before, &:after { /* 共通設定 */
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px; /* 棒の幅（太さ） */
+            height: 500px; /* 棒の高さ */
+            background: blue;
+          }
+        
+          &:before {
+            transform: translate(-50%,-50%) rotate(45deg);
+          }
+        
+          &:after {
+            transform: translate(-50%,-50%) rotate(-45deg);
+          }
+        }
+
+        #results-header{
+          left: 50%;
+          top: 50%;
+          position: absolute;
+          transform: translate(-50%,-50%);
+          font-size: 38px;
+          text-align: center;
+        }
+
+      }
+
+      .pause-frame{
+        margin: 0%;
+        height: 110px;
+        width: 90px;
+        background-color: rgb(20, 2, 73);
         border: 1px solid white;
+        border-radius: 5%;          
+
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 15%;
+        left: 95%;
 
         text-align: center;
 
         .pause-mark{
-          box-sizing: border-box;
+          font-size: 100px;
           position: relative;
-          width: 76%;
-          height: 60%;
-          left: 50%;
-          top: 36%;
-          transform: translate(-50%,-50%);
-      
-          background: rgba(39, 26, 90, 0.53);
-          border-radius:100%;
-          font-size: 24px;      
-        }
+          width: 72px;
+          height: 72px;
+          border: 2px solid white;
+          border-radius: 100%;          
+          background-color: rgb(20, 2, 73);
 
+          position: relative;
+          transform: translate(-50%,-50%);
+          top: 40%;
+          left: 50%;
+
+          &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 72px;
+            height: 72px;
+            background:
+              linear-gradient(to bottom,white, white 100%) 21px 20px,
+              linear-gradient(to bottom, white 0%, white 100%) 41px 20px
+            ;
+            background-size: 8px 30px;
+            background-repeat: no-repeat;
+          }
+  
+        }
         .pause-text{
-          font-size: 15px;
+          margin: 0%;
+          height: 30px;
+          width: 100%;
+
+          position: relative;
+          transform: translate(-50%,-50%);
+          top: 20%;
+          left: 50%;
         }
       }
-  }
+    }
 
-    .status{
-      display: flex;
+    .answer-frame{
+      margin: 0%;
+      width: 100%;
+      height: 50%;
 
-        /*時間のゲージ*/
-        #time-frame {
-          width: 42%;
-          height: 0.1%;
-          top: 50%;
-          left: 2%;
-          position: absolute;
+      background-color: black;
 
+      .status{
+        margin: 0%;
+        width: 100%;
+        height: 15%;
+        display: flex;
+
+        #time-frame{
+          margin: 0%;
+          width: 40%;
+          height: 50%;
           background-color: #74C5FF;
           border: 5px solid white;
-          display: flex;
-          padding: 1% 1%;
+
+          top: 50%;
+          left: 22%;
+          position: relative;
+          transform: translate(-50%,-50%);
         }
 
         .score{
+          margin: 0;
+          width: 20%;
+          height: 100%;
+
+          font-size: 34px;
+          text-align: center;
+
           top: 50%;
-          left: 80%;
-          position: absolute;
-          font-size: 28px;
-        }
-      }
-
-      .choices{
-        font-size: 28px;
-        text-align: center;
-
-        .text{
-            box-sizing: border-box;
-            width: 20%;
-            height: 20%;
-
-            background-color: gray;
-            border: 3px solid #74C5FF;
-          }
-      }
-
-    /*解答ボタン*/
-      /* スイッチの台座にあたる部分 */
-      .switch-frame{
-        position: absolute;
-        top: 70%;
-        left: 45%;
-
-        .switch {
-          background-color: #D9D9D9;
-          border-radius: 100%;
-          height: 150px;
-          margin: 0 auto;
+          left: 43%;
           position: relative;
-          width: 200px;
-        
-        /* スイッチ本体 */
-          a{
-            background-color: #B3FACB;
-            display: block;
-            height: 150px;
-            margin: 0 auto;
-            position: relative;
-            top: -18px;
+          transform: translate(-50%,-50%);
+        }
+      }
+    
+      #switch-frame{
+            margin: 0%;
+            width: 40%;
+            height: 40%;
+
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 75%;
             
-            border-radius: 100%;
-            content: '';
-            display: block;
-            left: 0;
-            width: 180px;
+              
+              #switch-bottom{
+                background-color: #D9D9D9;
+                border-radius: 100%;
+                margin: 0%;
+                width: 300px;              
+                height: 250px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+
+                #switch-push{
+                  background-color: #B3FACB;
+                  border-radius: 100%;
+
+                  width: 280px;
+                  height: 250px;
+                  margin: 0 auto;
+
+                  position: absolute;
+                  top: 40%;
+                  left: 50%;
+                  transform: translate(-50%,-50%);                
+              }
+            }
+      }
+
+      #quiz-container{
+          margin: 0%;
+          width: 100%;
+          height: 100%;
+
+            .choice-a{
+              margin: 0%;
+              width: 20%;
+              height: 10%;
+              background-color: gray;
+
+              align-items: center;
+              font-size: 48px;
+            
+              left: 35%;
+              top: 65%;
+              position: absolute;
+              transform: translate(-50%,-50%);      
+            }
+
+            .choice-b{
+                margin: 0%;
+                width: 20%;
+                height: 10%;
+                background-color: gray;
+
+                align-items: center;
+                font-size: 48px;
+            
+                left: 65%;
+                top: 65%;
+                position: absolute;
+                transform: translate(-50%,-50%);      
+            }
+
+            .choice-c{
+                margin: 0%;
+                width: 20%;
+                height: 10%;
+                background-color: gray;
+
+                align-items: center;
+                font-size: 48px;
+            
+                left: 35%;
+                top: 85%;
+                position: absolute;
+                transform: translate(-50%,-50%);      
+            }
+
+            .choice-d{
+                margin: 0%;
+                width: 20%;
+                height: 10%;
+                background-color: gray;
+
+                align-items: center;
+                font-size: 48px;
+            
+                left: 65%;
+                top: 85%;
+                position: absolute;
+                transform: translate(-50%,-50%);      
+            }
+
+            button{
+                margin: 0%;
+                width: 10%;
+                height: 5%;
+
+                font-size: 24px;
+            
+                left: 50%;
+                top: 93%;
+                position: absolute;
+                transform: translate(-50%,-50%);      
+            }
+        
+
+      }
+
+      #results-container {
+        //display: none;
+        align-items: center;
+      
+        #results-header {
+          text-align: center;
+          justify-content: center;
+      
+          #results {
+            padding: 2rem 0;
           }
         }
       }
+
+    }
+  }
 }
 
