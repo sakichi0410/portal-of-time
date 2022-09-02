@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="../css/game.css">
   <script type="module" src="../js/quiz.js" defer></script>
   <title>Document</title>
+  <audio autoplay loop id="quiz_bgm">
+    <source src="../music/ryunomai.mp3" type="audio/mp3">
+    <p>音楽の再生に対応していません</p>
+  </audio>
+  <audio src="../music/Quiz-Correct_Answer02-1.mp3" id="push_btn"></audio>
 </head>
 <body>
   <header>
@@ -21,7 +26,11 @@
     <div class="pause-frame">
       <div class="pause-mark"><a href="#">||</a></div>
       <div class="pause-text">pause</div>
-    </div>    
+      <div class="audio_btn">
+        <a href="javascript:controls();">音楽</a>      
+      </div>
+    </div>
+    
   </div>
 
 
@@ -74,13 +83,51 @@
 </body>
 <script language="javascript" type="text/javascript">
   function OnSwithClick() {
+
+    const push_btn=document.getElementById('push_btn');
+    push_btn.play();
+
     //ボタンを消す
     target = document.getElementById("switch");
     target.style.display = "none";
+
+    
 
     //選択欄の表示
     target = document.getElementById("answer-text");
     target.style.display = "";    
   }
+  
+
+  function mediasVol_def() {
+  //範囲： 0〜1 の間　※初期値=1(100%の最大)
+
+  // //audioの数だけ全部音量0.5(=50%)
+  // const audios = document.getElementsByTagName('audio');
+  // const len1=audios.length;
+  // for(let n=0; n>len1; n++) audios[n].volume = 0.1;
+
+  // 特定のidのaudioの音量設定
+  const quiz_bgm=document.getElementById('quiz_bgm'); //('a1')の a1は例
+  quiz_bgm.volume = 0.01; // 0〜1 の間で
+  const push_btn = document.getElementById('push_btn');
+  push_btn.volume = 0.5;
+  //2コ以上あるときは下記のように記述していく
+  //const a2=document.getElementById('a2');
+  //a2.volume=0.7; //例  
+}
+//ページ読み込み時に処理
+window.addEventListener('DOMContentLoaded' , function(){
+      mediasVol_def();
+}, false); 
+
+function controls() {
+  const audio = document.getElementById("quiz_bgm");
+  if(audio.controls == true){
+    audio.controls = false;
+  } else {
+    audio.controls = true;
+  }
+}
 </script>
 </html>

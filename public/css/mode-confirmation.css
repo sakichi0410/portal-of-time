@@ -1,8 +1,3 @@
-a {
-  text-decoration: none;
-  color: #FFFFFF;
-}
-
 .container {
   box-sizing: border-box;
   width: 100%;
@@ -34,6 +29,10 @@ a {
   top: 2.67%;
   bottom: 3.56%;
   border: 1px solid #78ffff;
+}
+.solid a {
+  text-decoration: none;
+  color: #FFFFFF;
 }
 .solid img {
   float: left;

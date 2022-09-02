@@ -1,0 +1,132 @@
+@charset "UTF-8";
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: fantasy;
+}
+body img {
+  width: 100%;
+}
+body a {
+  text-decoration: none;
+  color: #ffffff;
+}
+body li {
+  list-style: none;
+}
+
+header {
+  width: 100%;
+}
+header h1 {
+  display: inline-block;
+  margin: 0;
+}
+header nav {
+  display: inline-block;
+}
+header .header-right {
+  float: right;
+  display: flex;
+}
+header .header-right .user-info {
+  border: 1px solid red;
+  display: flex;
+  width: 370px;
+}
+header .header-right .user-info .user-image {
+  border: 1px solid blue;
+  display: inline-block;
+}
+header .header-right .user-info .user-image .busyo {
+  display: flex;
+  border: 1px solid grey;
+  width: 100px;
+  height: 70px;
+}
+header .header-right .user-info .user-image .busyo img {
+  object-fit: contain;
+}
+header .header-right .user-info .user-text {
+  border: 1px solid yellow;
+  width: 100px;
+}
+header .header-right .user-info .advantage {
+  border: 1px solid purple;
+  width: 150px;
+  text-align: right;
+}
+header .header-right .user-info .advantage .number {
+  background: rgba(217, 217, 217, 0.5);
+  margin-top: 5px;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+/*----------Main-menu.html------------*/
+.title {
+  text-align: center;
+}
+
+.button-wrapper {
+  text-align: center;
+}
+.button-wrapper .button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 30px 20px;
+  border: 1px double #1ADEE9;
+}
+.button-wrapper .button:hover {
+  border: 1px double #DEFCFC;
+}
+
+/*-----------Game-main.html-------------*/
+main {
+  border: 1px solid red;
+  padding: 100px;
+  margin: 50px auto;
+}
+main .play-menu {
+  display: flex;
+}
+main .play-menu .hex {
+  margin: 10px;
+  width: 150px;
+  height: 130px; /* width*√3/2 */
+  clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  opacity: 0.8;
+  background: #74C5FF;
+  text-align: center;
+}
+main .play-menu .hex:hover {
+  opacity: 1;
+}
+main .play-menu a {
+  display: inline;
+  line-height: 130px;
+  text-decoration: none;
+  color: white;
+}
+
+/*---------play-mode.html-----------*/
+.select-wrapper {
+  border: 1px solid red;
+  margin: 20px auto;
+  text-align: center;
+}
+.select-wrapper .select {
+  border: 1px solid blue;
+}
+.select-wrapper .select ul {
+  padding-left: 0;
+}
+.select-wrapper .select ul li {
+  display: inline-block;
+  padding: 20px 40px;
+  margin: 0 10px;
+  border: 1px double #78FFFF;
+}
