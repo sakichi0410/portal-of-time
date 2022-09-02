@@ -20,7 +20,7 @@ html{
       background-size: cover;
       background-repeat: no-repeat;
 
-      .question-text{
+      .question-textarea{
         margin: 0%;
         width: 50%;
         height: 30%;
@@ -32,7 +32,30 @@ html{
         position: absolute;
         transform: translate(-50%,-50%);
         text-align: center;
-        font-size: 24px;
+
+        #question-number{
+          margin: 0%;
+          width: 80%;
+          height: 20%;  
+          top: 20%;
+          left: 50%;
+          position: absolute;
+          transform: translate(-50%,-50%);
+          text-align: center;
+          font-size: 24px;
+        }
+
+        #question{
+          margin: 0%;
+          width: 85%;
+          height: 50%;  
+          top: 60%;
+          left: 50%;
+          position: absolute;
+          transform: translate(-50%,-50%);
+          text-align: center;
+          font-size: 24px;  
+        }
       }
 
       #results-container{
@@ -161,6 +184,62 @@ html{
           left: 50%;
         }
       }
+
+        .modalArea {
+          display: none;
+          position: fixed;
+          z-index: 10;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .modalBg {
+          width: 100%;
+          height: 100%;
+          background-color: rgba(30,30,30,0.9);
+        }
+
+        .modalWrapper {
+          position: absolute;
+          text-align: center;
+          top: 50%;
+          left: 50%;
+          transform:translate(-50%,-50%);
+          width: 40%;
+          height: 40%;
+          padding: 10px 30px;
+          background-color:  rgb(20, 2, 73);
+          font-size: 28px;
+
+          .modal-text{
+            white-space: nowrap;
+            top: 40%;
+            left: 50%;
+            position: absolute;
+            transform:translate(-50%,-50%);
+
+          }
+
+          #closeModal{
+            color: white;
+            text-decoration: none;
+            top: 80%;
+            left: 35%;
+            position: absolute;
+            transform:translate(-50%,-50%);
+          }
+
+          #return-menu{
+            color: white;
+            text-decoration: none;
+            top: 80%;
+            left: 65%;
+            position: absolute;
+            transform:translate(-50%,-50%);
+          }
+        }
     }
 
     .answer-frame{
@@ -189,7 +268,7 @@ html{
           transform: translate(-50%,-50%);
         }
 
-        .score{
+        #score-frame{
           margin: 0;
           width: 20%;
           height: 100%;
@@ -201,6 +280,14 @@ html{
           left: 43%;
           position: relative;
           transform: translate(-50%,-50%);
+
+          #score{
+            white-space: nowrap;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%,-50%);  
+          }
         }
       }
     
@@ -259,7 +346,15 @@ html{
               left: 35%;
               top: 65%;
               position: absolute;
-              transform: translate(-50%,-50%);      
+              transform: translate(-50%,-50%);  
+              
+              #a-text{
+                white-space: nowrap;
+                left: 50%;
+                top: 50%;
+                position: absolute;
+                transform: translate(-50%,-50%);    
+              }
             }
 
             .choice-b{
@@ -274,7 +369,16 @@ html{
                 left: 65%;
                 top: 65%;
                 position: absolute;
-                transform: translate(-50%,-50%);      
+                transform: translate(-50%,-50%);  
+                
+                #b-text{
+                  white-space: nowrap;
+                  left: 50%;
+                  top: 50%;
+                  position: absolute;
+                  transform: translate(-50%,-50%);    
+                }
+  
             }
 
             .choice-c{
@@ -289,7 +393,16 @@ html{
                 left: 35%;
                 top: 85%;
                 position: absolute;
-                transform: translate(-50%,-50%);      
+                transform: translate(-50%,-50%);
+
+                #c-text{
+                  white-space: nowrap;
+                  left: 50%;
+                  top: 50%;
+                  position: absolute;
+                  transform: translate(-50%,-50%);    
+                }
+      
             }
 
             .choice-d{
@@ -304,7 +417,16 @@ html{
                 left: 65%;
                 top: 85%;
                 position: absolute;
-                transform: translate(-50%,-50%);      
+                transform: translate(-50%,-50%); 
+                
+                #d-text{
+                  white-space: nowrap;
+                  left: 50%;
+                  top: 50%;
+                  position: absolute;
+                  transform: translate(-50%,-50%);    
+                }
+  
             }
 
             button{

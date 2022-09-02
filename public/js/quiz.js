@@ -1,6 +1,12 @@
 // クイズデータを読み込む
 import { quizDataJp } from './quiz-data.js';
 
+let currentQuiz = 0;
+
+//問題番号
+const quiznumElm = document.getElementById('question-number');
+const scoreElm = document.getElementById('score');
+
 // 問題文
 const questionElm = document.getElementById('question');
 
@@ -15,7 +21,7 @@ const submitBtn = document.getElementById('submit');
 const switchBtn = document.getElementById('switch-push');
 
 // 現在の問題
-let currentQuiz = 0;
+
 
 // 現在のスコア
 let score = 0;
@@ -24,7 +30,7 @@ let score = 0;
 const nextQuizBtn = document.getElementById('next-quiz');
 
 // 結果表示用の要素
-const quizHeaderElm = document.getElementById('quiz-header');
+//const quizHeaderElm = document.getElementById('quiz-header');
 const resultsConElm = document.getElementById('results-container');
 const resultsElm = document.getElementById('results');
 
@@ -39,6 +45,10 @@ loadQuiz();
 
 // 問題を読み込む
 function loadQuiz() {
+  quiznumElm.innerText = "【第" + (currentQuiz + 1) + "問】";
+  scoreElm.innerText = "得点： " + score + "pt";
+
+
   // 問題を取得
   const currentQuizData = quizDataJp[currentQuiz];
 
@@ -50,7 +60,6 @@ function loadQuiz() {
   b_text.innerText = currentQuizData.b;
   c_text.innerText = currentQuizData.c;
   d_text.innerText = currentQuizData.d;
-  console.log("add text")
 }
 
 // 回答を取得
@@ -61,30 +70,35 @@ function getAnswered() {
 
 //スイッチを押した際の動作
 switchBtn.addEventListener('click', event => {
-    switchFraElm.style.display = 'none';
-    quizConElm.style.display = 'block';
-    document.getElementById('switch_audio').play();
-  }
-)
+  switchFraElm.style.display = 'none';
+  quizConElm.style.display = 'block';
+  document.getElementById('switch_audio').play();
+});
 
 // 結果表示
 function showResults(results) {
   submitBtn.style.display = 'none';
   resultsConElm.style.display = 'block';
+  resultsMarkbatsu.style.display = 'block';
+  resultsMarkmaru.style.display = 'block';
+
 
   if(results){
     resultsMarkbatsu.style.display = 'none';
     resultsElm.innerText = results;
   }else{
     resultsMarkmaru.style.display = 'none';
+    resultsElm.innerText = "";
   }
 }
 
 // 次の問題を表示
 function showQuiz() {
-  quizHeaderElm.style.display = 'block';
+  //quizHeaderElm.style.display = 'block';
   submitBtn.style.display = 'block';
   resultsConElm.style.display = 'none';
+  switchFraElm.style.display = 'block';
+  quizConElm.style.display = 'none';
 }
 
 submitBtn.addEventListener('click', event => {
@@ -96,7 +110,7 @@ submitBtn.addEventListener('click', event => {
 
     if (answer === quizDataJp[currentQuiz].correct) {
       showResults('10pt！');
-      score++;
+      score += 10;
     } else{
       showResults();
     }
@@ -115,9 +129,19 @@ nextQuizBtn.addEventListener('click', event => {
 
     loadQuiz();
     
-    showQuiz();
+    showQuiz(1);
   
   } else {
     window.location.href = '../views/Result-score.html';
   }
+});
+
+
+$(function () {
+  $('#openModal').click(function(){
+      $('#modalArea').fadeIn();
+  });
+  $('#closeModal , #modalBg').click(function(){
+    $('#modalArea').fadeOut();
+  });
 });

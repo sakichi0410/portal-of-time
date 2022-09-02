@@ -19,7 +19,7 @@ html body .problem {
   background-size: cover;
   background-repeat: no-repeat;
 }
-html body .problem .question-text {
+html body .problem .question-textarea {
   margin: 0%;
   width: 50%;
   height: 30%;
@@ -27,6 +27,27 @@ html body .problem .question-text {
   border-radius: 1%;
   border: 5px solid #08af50;
   top: 25%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+html body .problem .question-textarea #question-number {
+  margin: 0%;
+  width: 80%;
+  height: 20%;
+  top: 20%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 24px;
+}
+html body .problem .question-textarea #question {
+  margin: 0%;
+  width: 85%;
+  height: 50%;
+  top: 60%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -136,6 +157,55 @@ html body .problem .pause-frame .pause-text {
   top: 20%;
   left: 50%;
 }
+html body .problem .modalArea {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+html body .problem .modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.9);
+}
+html body .problem .modalWrapper {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 40%;
+  padding: 10px 30px;
+  background-color: rgb(20, 2, 73);
+  font-size: 28px;
+}
+html body .problem .modalWrapper .modal-text {
+  white-space: nowrap;
+  top: 40%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .problem .modalWrapper #closeModal {
+  color: white;
+  text-decoration: none;
+  top: 80%;
+  left: 35%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .problem .modalWrapper #return-menu {
+  color: white;
+  text-decoration: none;
+  top: 80%;
+  left: 65%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
 html body .answer-frame {
   margin: 0%;
   width: 100%;
@@ -159,7 +229,7 @@ html body .answer-frame .status #time-frame {
   position: relative;
   transform: translate(-50%, -50%);
 }
-html body .answer-frame .status .score {
+html body .answer-frame .status #score-frame {
   margin: 0;
   width: 20%;
   height: 100%;
@@ -168,6 +238,13 @@ html body .answer-frame .status .score {
   top: 50%;
   left: 43%;
   position: relative;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame .status #score-frame #score {
+  white-space: nowrap;
+  top: 50%;
+  left: 50%;
+  position: absolute;
   transform: translate(-50%, -50%);
 }
 html body .answer-frame #switch-frame {
@@ -218,6 +295,13 @@ html body .answer-frame #quiz-container .choice-a {
   position: absolute;
   transform: translate(-50%, -50%);
 }
+html body .answer-frame #quiz-container .choice-a #a-text {
+  white-space: nowrap;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
 html body .answer-frame #quiz-container .choice-b {
   margin: 0%;
   width: 20%;
@@ -227,6 +311,13 @@ html body .answer-frame #quiz-container .choice-b {
   font-size: 48px;
   left: 65%;
   top: 65%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #quiz-container .choice-b #b-text {
+  white-space: nowrap;
+  left: 50%;
+  top: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
 }
@@ -242,6 +333,13 @@ html body .answer-frame #quiz-container .choice-c {
   position: absolute;
   transform: translate(-50%, -50%);
 }
+html body .answer-frame #quiz-container .choice-c #c-text {
+  white-space: nowrap;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
 html body .answer-frame #quiz-container .choice-d {
   margin: 0%;
   width: 20%;
@@ -251,6 +349,13 @@ html body .answer-frame #quiz-container .choice-d {
   font-size: 48px;
   left: 65%;
   top: 85%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #quiz-container .choice-d #d-text {
+  white-space: nowrap;
+  left: 50%;
+  top: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
 }
