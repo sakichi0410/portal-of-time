@@ -26,12 +26,13 @@ const switchBtn = document.getElementById('switch-push');
 // 現在のスコア
 let score = 0;
 
+
+
 // 次の問題へ進むボタン
 const nextQuizBtn = document.getElementById('next-quiz');
 
 // 結果表示用の要素
-//const quizHeaderElm = document.getElementById('quiz-header');
-const resultsConElm = document.getElementById('results-container');
+const resultsConElm = document.getElementById('results-modalArea');
 const resultsElm = document.getElementById('results');
 
 const resultsMarkmaru = document.getElementById('results-mark-maru');
@@ -68,39 +69,51 @@ function getAnswered() {
   return document.quizForm.answer.value;
 }
 
-//スイッチを押した際の動作
+//　スイッチを押した際の動作
 switchBtn.addEventListener('click', event => {
   switchFraElm.style.display = 'none';
   quizConElm.style.display = 'block';
   document.getElementById('switch_audio').play();
+  update();
+  //setTimeout(alertTimer,3000);
+  func1();
 });
+
+//　時間経過のアラート
+function alertTimer(){
+  alert('Time up！');
+}
 
 // 結果表示
 function showResults(results) {
-  submitBtn.style.display = 'none';
-  resultsConElm.style.display = 'block';
-  resultsMarkbatsu.style.display = 'block';
-  resultsMarkmaru.style.display = 'block';
+  submitBtn.style.display = 'none'; //　送信ボタンを非表示
+  resultsConElm.style.display = 'block'; //　結果要素の表示
+
+  //　前問にて表示されたマークを非表示
+  resultsMarkbatsu.style.display = 'block'; 
+  resultsMarkmaru.style.display = 'block'; 
 
 
   if(results){
     resultsMarkbatsu.style.display = 'none';
-    resultsElm.innerText = results;
+    resultsElm.innerText = "正解! : " + results;
+    resultsElm.style.color = 'red'
   }else{
     resultsMarkmaru.style.display = 'none';
-    resultsElm.innerText = "";
+    resultsElm.innerText = "残念 : 正解は" + quizDataJp[currentQuiz].correct + "です";
+    resultsElm.style.color = 'blue'
   }
 }
 
 // 次の問題を表示
 function showQuiz() {
-  //quizHeaderElm.style.display = 'block';
   submitBtn.style.display = 'block';
   resultsConElm.style.display = 'none';
   switchFraElm.style.display = 'block';
   quizConElm.style.display = 'none';
 }
 
+//　送信ボタンを押した場合
 submitBtn.addEventListener('click', event => {
   event.preventDefault();
 
@@ -109,7 +122,7 @@ submitBtn.addEventListener('click', event => {
   if(answer) {
 
     if (answer === quizDataJp[currentQuiz].correct) {
-      showResults('10pt！');
+      showResults('10pt');
       score += 10;
     } else{
       showResults();
@@ -119,7 +132,7 @@ submitBtn.addEventListener('click', event => {
   }
 });
 
-
+//　次へボタンを押した場合
 nextQuizBtn.addEventListener('click', event => {
   event.preventDefault();
 
@@ -136,7 +149,7 @@ nextQuizBtn.addEventListener('click', event => {
   }
 });
 
-
+//modalの挙動
 $(function () {
   $('#openModal').click(function(){
       $('#modalArea').fadeIn();

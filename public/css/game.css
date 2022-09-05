@@ -54,63 +54,6 @@ html body .problem .question-textarea #question {
   text-align: center;
   font-size: 24px;
 }
-html body .problem #results-container {
-  display: none;
-  margin: 0%;
-  width: 70%;
-  height: 40%;
-  left: 50%;
-  top: 25%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 24px;
-  color: red;
-}
-html body .problem #results-container #results-mark-maru {
-  margin: 0%;
-  width: 350px;
-  height: 350px;
-  left: 50%;
-  top: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  border-radius: 100%;
-  border: 50px solid red;
-}
-html body .problem #results-container #results-mark-batsu {
-  display: block;
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  left: 50%;
-  top: 50%;
-  position: relative;
-  transform: translate(-50%, -50%);
-}
-html body .problem #results-container #results-mark-batsu:before, html body .problem #results-container #results-mark-batsu:after { /* 共通設定 */
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50px; /* 棒の幅（太さ） */
-  height: 500px; /* 棒の高さ */
-  background: blue;
-}
-html body .problem #results-container #results-mark-batsu:before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-html body .problem #results-container #results-mark-batsu:after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-html body .problem #results-container #results-header {
-  left: 50%;
-  top: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  font-size: 38px;
-  text-align: center;
-}
 html body .problem .pause-frame {
   margin: 0%;
   height: 110px;
@@ -166,12 +109,12 @@ html body .problem .modalArea {
   width: 100%;
   height: 100%;
 }
-html body .problem .modalBg {
+html body .problem .modalArea .modalBg {
   width: 100%;
   height: 100%;
   background-color: rgba(30, 30, 30, 0.9);
 }
-html body .problem .modalWrapper {
+html body .problem .modalArea .modalWrapper {
   position: absolute;
   text-align: center;
   top: 50%;
@@ -183,14 +126,14 @@ html body .problem .modalWrapper {
   background-color: rgb(20, 2, 73);
   font-size: 28px;
 }
-html body .problem .modalWrapper .modal-text {
+html body .problem .modalArea .modalWrapper .modal-text {
   white-space: nowrap;
   top: 40%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
 }
-html body .problem .modalWrapper #closeModal {
+html body .problem .modalArea .modalWrapper #closeModal {
   color: white;
   text-decoration: none;
   top: 80%;
@@ -198,13 +141,103 @@ html body .problem .modalWrapper #closeModal {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-html body .problem .modalWrapper #return-menu {
+html body .problem .modalArea .modalWrapper #return-menu {
   color: white;
   text-decoration: none;
   top: 80%;
   left: 65%;
   position: absolute;
   transform: translate(-50%, -50%);
+}
+html body .problem .results-modalArea {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+html body .problem .results-modalArea .results-modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.9);
+}
+html body .problem .results-modalArea #results-container {
+  margin: 0%;
+  width: 80%;
+  height: 80%;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 24px;
+}
+html body .problem .results-modalArea #results-container #results-mark-maru {
+  margin: 0%;
+  width: 350px;
+  height: 350px;
+  left: 50%;
+  top: 25%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  border: 50px solid red;
+}
+html body .problem .results-modalArea #results-container #results-mark-batsu {
+  display: block;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  top: 25%;
+  position: relative;
+  transform: translate(-50%, -50%);
+}
+html body .problem .results-modalArea #results-container #results-mark-batsu:before, html body .problem .results-modalArea #results-container #results-mark-batsu:after { /* 共通設定 */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px; /* 棒の幅（太さ） */
+  height: 500px; /* 棒の高さ */
+  background: blue;
+}
+html body .problem .results-modalArea #results-container #results-mark-batsu:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+html body .problem .results-modalArea #results-container #results-mark-batsu:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+html body .problem .results-modalArea #results-container #results-header {
+  margin: 0%;
+  width: 50%;
+  height: 30%;
+  left: 50%;
+  top: 75%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+html body .problem .results-modalArea #results-container #results-header #results {
+  font-size: 48px;
+  text-align: center;
+  left: 50%;
+  top: 10%;
+  width: 90%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .problem .results-modalArea #results-container #results-header #next-quiz {
+  left: 50%;
+  top: 75%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin: 0%;
+  width: 50%;
+  height: 30%;
+  font-size: 28px;
 }
 html body .answer-frame {
   margin: 0%;
@@ -218,12 +251,10 @@ html body .answer-frame .status {
   height: 15%;
   display: flex;
 }
-html body .answer-frame .status #time-frame {
+html body .answer-frame .status progress {
   margin: 0%;
   width: 40%;
-  height: 50%;
-  background-color: #74C5FF;
-  border: 5px solid white;
+  height: 100%;
   top: 50%;
   left: 22%;
   position: relative;

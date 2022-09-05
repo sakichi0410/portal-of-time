@@ -16,16 +16,7 @@
       <div id="question"></div>
     </div>
 
-    <div id="results-container">
-      <div id="results-mark-maru"></div>
-      <div id="results-mark-batsu"></div>
-
-      <div id="results-header">
-        <h2 id="results"></h2>
-        <button id="next-quiz">次の問題へ</button>
-      </div>
-    </div>
-
+    <!--pause-->
     <div class="pause-frame">
       <a href="#" id="openModal" >
         <div class="pause-mark"></div>
@@ -33,6 +24,7 @@
       <div class="pause-text">pause</div>
     </div>
 
+    <!--modalの中身-->
     <section id="modalArea" class="modalArea">
       <div id="modalBg" class="modalBg"></div>
       <div class="modalWrapper">
@@ -47,11 +39,24 @@
       </div>
     </section>
 
+    <!--解答結果-->
+    <section id="results-modalArea" class="results-modalArea">
+      <div id="results-modalBg" class="results-modalBg"></div>
+          <div id="results-container">
+            <div id="results-mark-maru"></div>
+            <div id="results-mark-batsu"></div>
+      
+            <div id="results-header">
+              <h2 id="results">test</h2>
+              <button id="next-quiz">次の問題へ</button>
+            </div>
+          </div>
+    </section>
   </div>
 
   <div class="answer-frame">
     <div class="status">
-      <div id="time-frame"></div>
+      <progress id="myProgress" value="100" max="100"></progress>
       <div id="score-frame">
         <div class="score" id="score"></div>
       </div>
@@ -59,10 +64,12 @@
 
     <div id="switch-frame">
       <div id="switch-bottom">
-        <a href="#" id="switch-push"></a>
+        <div id="myButton" onclick="func1()">
+          <a href="#" id="switch-push"></a>
         <audio id="switch_audio">
           <source src="../sounds/Quiz-CorretBuzzer-mp3/Quiz-Buzzer02-1.mp3" type="audio/mp3">
         </audio>
+      </div>
       </div>
     </div>
 
@@ -86,9 +93,39 @@
           </div>
       </form>
 
-    <button id="submit">回答する</button>
+      <button id="submit">回答する</button>
+    </div>
   </div>
 
-  </div>
+  <script language="javascript" type="text/javascript">
+    // プログレスバーの進捗値
+    var val;
+    // 一定間隔で処理を行うintervalのIDを保持
+    var intervalID;
+  
+    // ボタンを押した時に動く関数
+    function func1() {
+      val = 100;
+      // ボタンを無効にする(何回も押せないように)
+      document.getElementById("myButton").disabled = true;
+      // 50msおきにプログレスバーを更新する
+      intervalID = setInterval("updateProgress()", 50);
+    }
+  
+    // プログレスバーを更新する
+    function updateProgress() {
+      // プログレスバーの進捗値を更新し、プログレスバーに反映させる
+      val -= 1;
+      document.getElementById("myProgress").value = val;
+      document.getElementById("myProgress").innerText = val + "%";
+      console.log("progress:", val, "%");
+  
+      // 最大値まで達したら終了
+      if (val == 0) {
+        clearInterval(intervalID);
+        document.getElementById("myButton").disabled = false;
+      }
+    }
+    </script>
 </body>
 </html>
