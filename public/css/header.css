@@ -21562,6 +21562,10 @@ nav .left #title {
   font-size: 20px;
   color: rgb(250, 250, 255);
 }
+nav .left #title a {
+  text-decoration: none;
+  color: rgb(250, 250, 255);
+}
 nav .left #title #top {
   height: 20px;
   text-align: center;

@@ -28,6 +28,10 @@ nav {
       overflow-wrap: normal;
       font-size: 20px;
       color: $white-10;
+      a{
+        text-decoration: none;
+        color: $white-10;
+      }
       #top{
         height:20px;
         text-align: center;

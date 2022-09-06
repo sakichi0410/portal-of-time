@@ -21533,6 +21533,10 @@ textarea.form-control-lg {
   font-family: "dot-bold";
 }
 
+* {
+  font-family: "dot-regular";
+}
+
 body {
   max-width: 1600px;
   width: 100%;
@@ -21568,11 +21572,21 @@ body li {
   /*========= タイピング ===============*/
   /*文字列後ろの線の設定*/
 }
+@media screen and (max-width: 1200px) {
+  #typing-area #typing-message {
+    margin: 0 auto;
+  }
+}
 #typing-area #typing-message p {
   margin: 20px 0;
   font-size: 1.2rem;
   letter-spacing: 0.5em;
   word-break: break-all;
+}
+@media screen and (max-width: 1200px) {
+  #typing-area #typing-message p {
+    font-size: 0.5em;
+  }
 }
 #typing-area #typing-message .TextTyping {
   text-align: center;
@@ -21610,6 +21624,12 @@ body li {
   top: 100%;
   left: 15%;
 }
+@media screen and (max-width: 1200px) {
+  .title p {
+    font-size: 60px;
+    top: 120%;
+  }
+}
 
 .button-wrapper {
   text-align: center;
@@ -21623,6 +21643,12 @@ body li {
   margin: 30px 20px;
   border: 1px double #1ADEE9;
   background-color: rgba(0, 0, 0, 0.7);
+}
+@media screen and (max-width: 1200px) {
+  .button-wrapper .button {
+    display: block;
+    margin: 20px auto;
+  }
 }
 .button-wrapper .button:hover {
   border: 1px double #DEFCFC;
