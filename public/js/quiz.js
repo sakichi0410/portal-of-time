@@ -26,7 +26,11 @@ const switchBtn = document.getElementById('switch-push');
 // 現在のスコア
 let score = 0;
 
+// プログレスバーの進捗値
+var val =100;
 
+// 一定間隔で処理を行うintervalのIDを保持
+var intervalID;
 
 // 次の問題へ進むボタン
 const nextQuizBtn = document.getElementById('next-quiz');
@@ -40,7 +44,6 @@ const resultsMarkbatsu = document.getElementById('results-mark-batsu');
 
 const switchFraElm = document.getElementById('switch-frame');
 const quizConElm = document.getElementById('quiz-container');
-
 
 loadQuiz();
 
@@ -74,15 +77,9 @@ switchBtn.addEventListener('click', event => {
   switchFraElm.style.display = 'none';
   quizConElm.style.display = 'block';
   document.getElementById('switch_audio').play();
-  update();
-  //setTimeout(alertTimer,3000);
-  func1();
+  Timebar();
 });
 
-//　時間経過のアラート
-function alertTimer(){
-  alert('Time up！');
-}
 
 // 結果表示
 function showResults(results) {
@@ -111,11 +108,13 @@ function showQuiz() {
   resultsConElm.style.display = 'none';
   switchFraElm.style.display = 'block';
   quizConElm.style.display = 'none';
+  document.getElementById("myProgress").value = 100;
 }
 
 //　送信ボタンを押した場合
 submitBtn.addEventListener('click', event => {
   event.preventDefault();
+  clearInterval(intervalID);
 
   const answer = getAnswered();
 
@@ -158,3 +157,24 @@ $(function () {
     $('#modalArea').fadeOut();
   });
 });
+
+function Timebar() {
+  val = 100;
+  document.getElementById("myProgress").value = val;
+  intervalID = setInterval(updateProgress, 50);
+}
+
+
+
+function updateProgress() {
+  // プログレスバーの進捗値を更新し、プログレスバーに反映させる
+  val -= 1;
+  document.getElementById("myProgress").value = val;
+  console.log("progress:", val, "%");
+
+  // 最大値まで達したら終了
+  if (val == 0) {
+    clearInterval(intervalID);
+    showResults();
+  }
+}

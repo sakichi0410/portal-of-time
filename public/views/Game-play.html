@@ -64,7 +64,7 @@
 
     <div id="switch-frame">
       <div id="switch-bottom">
-        <div id="myButton" onclick="func1()">
+        <div id="myButton">
           <a href="#" id="switch-push"></a>
         <audio id="switch_audio">
           <source src="../sounds/Quiz-CorretBuzzer-mp3/Quiz-Buzzer02-1.mp3" type="audio/mp3">
@@ -96,36 +96,5 @@
       <button id="submit">回答する</button>
     </div>
   </div>
-
-  <script language="javascript" type="text/javascript">
-    // プログレスバーの進捗値
-    var val;
-    // 一定間隔で処理を行うintervalのIDを保持
-    var intervalID;
-  
-    // ボタンを押した時に動く関数
-    function func1() {
-      val = 100;
-      // ボタンを無効にする(何回も押せないように)
-      document.getElementById("myButton").disabled = true;
-      // 50msおきにプログレスバーを更新する
-      intervalID = setInterval("updateProgress()", 50);
-    }
-  
-    // プログレスバーを更新する
-    function updateProgress() {
-      // プログレスバーの進捗値を更新し、プログレスバーに反映させる
-      val -= 1;
-      document.getElementById("myProgress").value = val;
-      document.getElementById("myProgress").innerText = val + "%";
-      console.log("progress:", val, "%");
-  
-      // 最大値まで達したら終了
-      if (val == 0) {
-        clearInterval(intervalID);
-        document.getElementById("myButton").disabled = false;
-      }
-    }
-    </script>
 </body>
 </html>
