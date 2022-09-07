@@ -33,6 +33,12 @@ var correct;
 // 現在のスコア
 let score = 0;
 
+// プログレスバーの進捗値
+var val =100;
+
+// 一定間隔で処理を行うintervalのIDを保持
+var intervalID;
+
 // 次の問題へ進むボタン
 const nextQuizBtn = document.getElementById('next-quiz');
 
@@ -110,7 +116,7 @@ function getAnswered() {
   return options[index];
 }
 
-//スイッチを押した際の動作
+//　スイッチを押した際の動作
 switchBtn.addEventListener('click', event => {
   switchFraElm.style.display = 'none';
   quizConElm.style.display = 'block';
@@ -118,16 +124,20 @@ switchBtn.addEventListener('click', event => {
   switchAudio.volume = 0.1; 
   switchAudio.play();
   Timebar();
+  Timebar();
 });
+
 
 // 結果表示
 function showResults(results) {
-  submitBtn.style.display = 'none'; //　送信ボタンを非表示
+  submitBtn.style.display = 'none'; //　送信ボタンを非表示 //　送信ボタンを非表示
   resultsConElm.style.display = 'block'; //　結果要素の表示
 
+  //　前問にて表示されたマークを非表示 //　結果要素の表示
+
   //　前問にて表示されたマークを非表示
-  resultsMarkbatsu.style.display = 'block'; 
-  resultsMarkmaru.style.display = 'block'; 
+  resultsMarkbatsu.style.display = 'block';  
+  resultsMarkmaru.style.display = 'block';  
 
 
   if(results){
@@ -135,10 +145,19 @@ function showResults(results) {
     answerAudio.volume = 0.1; 
     answerAudio.play();
 
+    const answerAudio = document.getElementById('answer-audio');
+    answerAudio.volume = 0.1; 
+    answerAudio.play();
+
     resultsMarkbatsu.style.display = 'none';
-    resultsElm.innerText = "正解! : " + results;
+    resultsElm.innerText = "正解! : " + "正解! : " + results;
+    resultsElm.style.color = 'red'
     resultsElm.style.color = 'red'
   }else{
+    const wrongAudio = document.getElementById('wrong-audio');
+    wrongAudio.volume = 0.1; 
+    wrongAudio.play();
+
     const wrongAudio = document.getElementById('wrong-audio');
     wrongAudio.volume = 0.1; 
     wrongAudio.play();
@@ -155,11 +174,14 @@ function showQuiz() {
   resultsConElm.style.display = 'none';
   switchFraElm.style.display = 'block';
   quizConElm.style.display = 'none';
+  document.getElementById("myProgress").value = 100;
 }
 
 //　送信ボタンを押した場合
+//　送信ボタンを押した場合
 submitBtn.addEventListener('click', event => {
   event.preventDefault();
+  clearInterval(intervalID);
   clearInterval(intervalID);
 
   const answer = getAnswered();

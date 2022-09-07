@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../css/game-menu.css">
     <link rel="stylesheet" href="../css/header.css">
     <title>game-main</title>
+    <audio autoplay loop id="menu-bgm">
+        <source src="../sounds/Quiz-CorretBuzzer-mp3/bakumatsubukyoku_ikusa.mp3" type="audio/mp3">
+        <p>音楽の再生に対応していません</p>
+    </audio>    
 </head>
 <body>
     <header id="header"></header>
@@ -87,6 +91,18 @@ $(document).ready(function(){
     });
     
 })
+
+
+    function mediasVol_def() {
+      // 特定のidのaudioの音量設定
+      const menu_bgm=document.getElementById('menu-bgm');
+      menu_bgm.volume = 0.01; // 0〜1 の間で
+    }
+    //ページ読み込み時に処理
+    window.addEventListener('DOMContentLoaded' , function(){
+          mediasVol_def();
+         
+    }, false); 
 </script>
 </body>
 </html>
