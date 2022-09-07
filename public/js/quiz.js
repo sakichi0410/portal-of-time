@@ -145,19 +145,11 @@ function showResults(results) {
     answerAudio.volume = 0.1; 
     answerAudio.play();
 
-    const answerAudio = document.getElementById('answer-audio');
-    answerAudio.volume = 0.1; 
-    answerAudio.play();
-
     resultsMarkbatsu.style.display = 'none';
     resultsElm.innerText = "正解! : " + "正解! : " + results;
     resultsElm.style.color = 'red'
     resultsElm.style.color = 'red'
   }else{
-    const wrongAudio = document.getElementById('wrong-audio');
-    wrongAudio.volume = 0.1; 
-    wrongAudio.play();
-
     const wrongAudio = document.getElementById('wrong-audio');
     wrongAudio.volume = 0.1; 
     wrongAudio.play();
