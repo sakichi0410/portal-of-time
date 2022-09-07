@@ -54,11 +54,34 @@ body .home {
   font-weight: 400;
   font-size: 24px;
 }
+body .return-results {
+  position: absolute;
+  left: 25%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  font-size: 24px;
+}
 body .replay {
   position: absolute;
   left: 70%;
   top: 80%;
   transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+body .replay {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+body .explainbtn {
+  position: absolute;
+  left: 70%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
   font-size: 24px;
 }
 body .explain {

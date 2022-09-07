@@ -20,9 +20,6 @@ const d_text = document.getElementById('d-text');
 const submitBtn = document.getElementById('submit');
 const switchBtn = document.getElementById('switch-push');
 
-// 現在の問題
-
-
 // 現在のスコア
 let score = 0;
 
@@ -173,7 +170,6 @@ function Timebar() {
   document.getElementById("myProgress").value = val;
   intervalID = setInterval(updateProgress, 50);
 }
-
 
 
 function updateProgress() {
