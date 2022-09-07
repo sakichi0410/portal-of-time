@@ -10,6 +10,10 @@
   <script type="module" src="../js/quiz.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <title>Result-score</title>
+  <audio autoplay loop id="menu-bgm">
+    <source src="../sounds/Quiz-CorretBuzzer-mp3/kamigaminoyadorubasho.mp3" type="audio/mp3">
+    <p>音楽の再生に対応していません</p>
+  </audio>  
 </head>
 
 <body>
@@ -28,6 +32,16 @@
   
   <script type="text/javascript">
     $("#header").load("header-logout.html");
+
+    function mediasVol_def() {
+      // 特定のidのaudioの音量設定
+      const menu_bgm=document.getElementById('menu-bgm');
+      menu_bgm.volume = 0.05; // 0〜1 の間で
+    }
+    //ページ読み込み時に処理
+    window.addEventListener('DOMContentLoaded' , function(){
+          mediasVol_def();
+    }, false);
   </script>
 </body>
 </html>

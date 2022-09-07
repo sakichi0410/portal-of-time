@@ -76,7 +76,9 @@ function getAnswered() {
 switchBtn.addEventListener('click', event => {
   switchFraElm.style.display = 'none';
   quizConElm.style.display = 'block';
-  document.getElementById('switch_audio').play();
+  const switchAudio = document.getElementById('switch_audio');
+  switchAudio.volume = 0.1; 
+  switchAudio.play();
   Timebar();
 });
 
@@ -92,10 +94,18 @@ function showResults(results) {
 
 
   if(results){
+    const answerAudio = document.getElementById('answer-audio');
+    answerAudio.volume = 0.1; 
+    answerAudio.play();
+
     resultsMarkbatsu.style.display = 'none';
     resultsElm.innerText = "正解! : " + results;
     resultsElm.style.color = 'red'
   }else{
+    const wrongAudio = document.getElementById('wrong-audio');
+    wrongAudio.volume = 0.1; 
+    wrongAudio.play();
+
     resultsMarkmaru.style.display = 'none';
     resultsElm.innerText = "残念 : 正解は" + quizDataJp[currentQuiz].correct + "です";
     resultsElm.style.color = 'blue'

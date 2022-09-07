@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="../css/header.css">
 
     <title>Mode-confirmation</title>
+    <audio autoplay loop id="menu-bgm">
+        <source src="../sounds/Quiz-CorretBuzzer-mp3/yowanotsuki_karakasa.mp3" type="audio/mp3">
+        <p>音楽の再生に対応していません</p>
+    </audio> 
 </head>
 <body>
     <header id="header"></header>
@@ -32,6 +36,16 @@
     </div> 
     <script type="text/javascript">
         $("#header").load("header-logout.html");
+
+        function mediasVol_def() {
+        // 特定のidのaudioの音量設定
+        const menu_bgm=document.getElementById('menu-bgm');
+        menu_bgm.volume = 0.05; // 0〜1 の間で
+        }
+        //ページ読み込み時に処理
+        window.addEventListener('DOMContentLoaded' , function(){
+            mediasVol_def();
+        }, false);
     </script>
 </body>
 </html>
