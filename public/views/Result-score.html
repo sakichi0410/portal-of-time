@@ -7,7 +7,13 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/result.css">
+  <script type="module" src="../js/quiz.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <title>Result-score</title>
+  <audio autoplay loop id="menu-bgm">
+    <source src="../sounds/Quiz-CorretBuzzer-mp3/kamigaminoyadorubasho.mp3" type="audio/mp3">
+    <p>音楽の再生に対応していません</p>
+  </audio>  
 </head>
 
 <body>
@@ -16,16 +22,27 @@
     <div class="title">成績</div>
     <div class="score">
       <ul style="list-style: none;">
-        <li>経験値：50pt</li>
+        <li id="score">経験値：50pt</li>
         <li>報酬：100両</li>
       </ul>
     </div>
+    <div class="explainbtn"><a href="Result-explain.html">解説を見る→</a></div>
     <div class="home"><a href="game-menu.html">ホームへ戻る</a></div>
     <div class="replay"><a href="mode-confirmation.html">もう一度</a></div>
   </div>
   
   <script type="text/javascript">
     $("#header").load("header-logout.html");
+
+    function mediasVol_def() {
+      // 特定のidのaudioの音量設定
+      const menu_bgm=document.getElementById('menu-bgm');
+      menu_bgm.volume = 0.05; // 0〜1 の間で
+    }
+    //ページ読み込み時に処理
+    window.addEventListener('DOMContentLoaded' , function(){
+          mediasVol_def();
+    }, false);
   </script>
 </body>
 </html>

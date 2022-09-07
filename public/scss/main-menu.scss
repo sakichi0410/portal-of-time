@@ -1,7 +1,11 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "colors";
 @import "fonts";
+@import "responsive";
 
+*{
+    font-family: 'dot-regular';
+}
 body{
     max-width: 1600px;
     width: 100%;
@@ -37,12 +41,18 @@ body{
         position: absolute;
         top: 43%;
         left:30%;
+        @include short{
+            margin: 0 auto;
+        }
 
         p{
-                margin: 20px 0;
-                font-size: 1.2rem;
-                letter-spacing: .5em;
-                  word-break : break-all;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            letter-spacing: .5em;
+            word-break : break-all;        
+            @include short{
+                font-size: 0.5em;
+            }
         }
               
               .TextTyping {
@@ -85,6 +95,10 @@ body{
         font-size: 120px;
         top:100%;
         left: 15%;
+        @include short{
+            font-size: 60px;
+            top: 120%;
+        }
     }
 }
 
@@ -99,6 +113,10 @@ body{
         margin: 30px 20px;
         border: 1px double #1ADEE9;
         background-color: rgba(0,0,0,0.7);
+        @include short{
+            display: block;
+            margin: 20px auto;
+        }
     }
 
     .button:hover{

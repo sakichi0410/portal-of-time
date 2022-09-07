@@ -1,6 +1,5 @@
 require("dotenv").config();
 const env = process.env.environment;
-console.log(env);
 
 var createError = require("http-errors");
 var express = require("express");

@@ -1,63 +1,17 @@
-a {
-  text-decoration: none;
-  color: #FFFFFF;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 4 | @import "responsive";
+ *   |         ^^^^^^^^^^^^
+ *   '
+ *   public/scss/mode-confirmation.scss 4:9  root stylesheet */
 
-.container {
-  box-sizing: border-box;
-  width: 100%;
-  height: 755px;
-  color: #FFFFFF;
-  font-family: "RocknRoll One";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 35px;
-}
-
-.Selection-confirmation {
-  position: relative;
-  box-sizing: border-box;
-  width: 1261px;
-  height: 550px;
-  margin: 20px auto;
-  background-color: #181038;
-}
-
-.solid {
-  box-sizing: border-box;
-  width: 1218px;
-  height: 515.76px;
-  position: absolute;
-  left: 1.59%;
-  right: 1.82%;
-  top: 2.67%;
-  bottom: 3.56%;
-  border: 1px solid #78ffff;
-}
-.solid img {
-  float: left;
-  width: 551px;
-  height: 300.99px;
-  margin: 50px 70px;
-}
-.solid .detail {
-  float: left;
-  padding: 120px;
-  line-height: 35px;
-}
-.solid .selection {
-  position: absolute;
-  left: 28.15%;
-  right: 66.77%;
-  top: 75.98%;
-  bottom: 17.15%;
-  width: 1261px;
-  height: 150px;
-  line-height: 35px;
-}
-
-.return {
-  padding-right: 400px;
-  line-height: 35px;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 4 \2502  @import \"responsive\";\a   \2502          ^^^^^^^^^^^^\a   \2575 \a   public/scss/mode-confirmation.scss 4:9  root stylesheet";
 }

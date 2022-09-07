@@ -8,6 +8,8 @@
   <script type="module" src="../js/quiz.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <title>Game-play</title>
+  <audio id="answer-audio" src="../sounds/Quiz-CorretBuzzer-mp3/Quiz-Correct_Answer01-1.mp3" type="audio/mp3"></audio>
+  <audio id="wrong-audio" src="../sounds/Quiz-CorretBuzzer-mp3/Quiz-Wrong_Buzzer02-1.mp3" type="audio/mp3"></audio>
 </head>
 <body>
   <div class="problem">
@@ -16,16 +18,7 @@
       <div id="question"></div>
     </div>
 
-    <div id="results-container">
-      <div id="results-mark-maru"></div>
-      <div id="results-mark-batsu"></div>
-
-      <div id="results-header">
-        <h2 id="results"></h2>
-        <button id="next-quiz">次の問題へ</button>
-      </div>
-    </div>
-
+    <!--pause-->
     <div class="pause-frame">
       <a href="#" id="openModal" >
         <div class="pause-mark"></div>
@@ -33,6 +26,7 @@
       <div class="pause-text">pause</div>
     </div>
 
+    <!--modalの中身-->
     <section id="modalArea" class="modalArea">
       <div id="modalBg" class="modalBg"></div>
       <div class="modalWrapper">
@@ -43,15 +37,37 @@
           </div>      
           <a href="#" id="closeModal" class="closeModal">いいえ</a>
           <a href="game-menu.html" id="return-menu">はい</a>
+          <div class="audio-control">
+            <div class="audio_btn">
+              <a href="javascript:controls();" id="audio-btn">音楽</a>
+              <audio autoplay loop id="quiz_bgm">
+                <source src="../sounds/Quiz-CorretBuzzer-mp3/ryunomai.mp3" type="audio/mp3">
+                <p>音楽の再生に対応していません</p>
+              </audio>   
+            </div>
+          </div>  
         </div>
       </div>
     </section>
 
+    <!--解答結果-->
+    <section id="results-modalArea" class="results-modalArea">
+      <div id="results-modalBg" class="results-modalBg"></div>
+          <div id="results-container">
+            <div id="results-mark-maru"></div>
+            <div id="results-mark-batsu"></div>
+      
+            <div id="results-header">
+              <h2 id="results">test</h2>
+              <button id="next-quiz">次の問題へ</button>
+            </div>
+          </div>
+    </section>
   </div>
 
   <div class="answer-frame">
     <div class="status">
-      <div id="time-frame"></div>
+      <progress id="myProgress" value="100" max="100"></progress>
       <div id="score-frame">
         <div class="score" id="score"></div>
       </div>
@@ -59,10 +75,12 @@
 
     <div id="switch-frame">
       <div id="switch-bottom">
-        <a href="#" id="switch-push"></a>
+        <div id="myButton">
+          <a href="#" id="switch-push"></a>
         <audio id="switch_audio">
           <source src="../sounds/Quiz-CorretBuzzer-mp3/Quiz-Buzzer02-1.mp3" type="audio/mp3">
         </audio>
+      </div>
       </div>
     </div>
 
@@ -86,9 +104,20 @@
           </div>
       </form>
 
-    <button id="submit">回答する</button>
-  </div>
-
+      <button id="submit">回答する</button>
+    </div>
   </div>
 </body>
+<script language="javascript" type="text/javascript">
+
+  function mediasVol_def() {
+  // 特定のidのaudioの音量設定
+  const quiz_bgm=document.getElementById('quiz_bgm');
+  quiz_bgm.volume = 0.01; // 0〜1 の間で
+}
+//ページ読み込み時に処理
+window.addEventListener('DOMContentLoaded' , function(){
+      mediasVol_def();
+}, false);
+</script>
 </html>
