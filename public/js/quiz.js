@@ -4,9 +4,6 @@ import { httpGet } from './index.js';
 
 let currentQuiz = 0;
 
-// プログレスバーの進捗値
-var val =100;
-
 // 一定間隔で処理を行うintervalのIDを保持
 var intervalID;
 
@@ -224,7 +221,7 @@ $(function () {
 function Timebar() {
   val = 100;
   document.getElementById("myProgress").value = val;
-  intervalID = setInterval(updateProgress, 50);
+  intervalID = setInterval(updateProgress, 10);
 }
 
 function updateProgress() {
