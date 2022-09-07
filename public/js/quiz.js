@@ -2,8 +2,8 @@
 import { quizDataJp } from './quiz-data.js';
 import { httpGet } from './index.js';
 
+var answered = 0;
 let currentQuiz = 0;
-
 // 一定間隔で処理を行うintervalのIDを保持
 var intervalID;
 
@@ -72,6 +72,8 @@ var options = [];
 
 // 問題を読み込む
 async function loadQuiz() {
+  answered = 0;
+  
   quiznumElm.innerText = "【第" + (currentQuiz + 1) + "問】";
   scoreElm.innerText = "得点： " + score + "pt";
 
@@ -121,7 +123,6 @@ switchBtn.addEventListener('click', event => {
   switchAudio.volume = 0.1; 
   switchAudio.play();
   Timebar();
-  Timebar();
 });
 
 
@@ -131,12 +132,6 @@ function showResults(results) {
   resultsConElm.style.display = 'block'; //　結果要素の表示
 
   //　前問にて表示されたマークを非表示 //　結果要素の表示
-
-  //　前問にて表示されたマークを非表示
-  resultsMarkbatsu.style.display = 'block';  
-  resultsMarkmaru.style.display = 'block';  
-
-
   if(results){
     const answerAudio = document.getElementById('answer-audio');
     answerAudio.volume = 0.1; 
@@ -167,25 +162,20 @@ function showQuiz() {
 }
 
 //　送信ボタンを押した場合
-//　送信ボタンを押した場合
 submitBtn.addEventListener('click', event => {
   event.preventDefault();
-  clearInterval(intervalID);
+  
   clearInterval(intervalID);
 
   const answer = getAnswered();
-
   if(answer) {
-    console.log(answer);
-    console.log(correct);
-
+    answered=1;
     if (answer == correct) {
       showResults('10pt');
       score += 10;
     } else{
       showResults();
     }
-
     document.getElementById(answer).checked = false;
   }
 });
@@ -221,14 +211,16 @@ $(function () {
 function Timebar() {
   val = 100;
   document.getElementById("myProgress").value = val;
-  intervalID = setInterval(updateProgress, 10);
+  intervalID = setInterval(updateProgress, 100);
 }
 
 function updateProgress() {
   // プログレスバーの進捗値を更新し、プログレスバーに反映させる
-  val -= 1;
-  document.getElementById("myProgress").value = val;
-  console.log("progress:", val, "%");
+  if(answered==0){
+    val -= 1;
+    document.getElementById("myProgress").value = val;
+  }
+  //console.log("progress:", val, "%");
 
   // 最大値まで達したら終了
   if (val == 0) {
