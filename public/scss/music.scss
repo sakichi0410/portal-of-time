@@ -1,1 +1,36 @@
 // 音楽制御ファイル(music.html)のSCSSです
+body{
+    box-sizing: border-box;
+    width: 100%;
+    height: 500px;
+    color: white;
+    background: #292635;
+    position: relative;
+    p {
+        position: absolute;
+        top: 48%;
+        left: 35%;
+        border: 1px solid #74C5FF;
+        width: 30%;
+        height: 5%;
+        background: #181038;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+
+        position: absolute;
+        top: 60%;
+        left: 48.5%;
+        border: 1px solid #74C5FF;
+        background: #181038;
+        padding: 0 1%;
+    }
+
+    a:hover {
+        border: 1px double #DEFCFC;
+        background-color: rgba(0,0,0,1);
+    }
+}  
