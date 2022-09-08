@@ -1,31 +1,37 @@
-// 音楽制御ファイル(music.html)のSCSSです
+@import "responsive";
+
 body{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    max-width: 1690px;
     width: 100%;
     height: 500px;
     color: white;
-    background: #292635;
-    position: relative;
-    p {
-        position: absolute;
-        top: 48%;
-        left: 35%;
+    background: black;
+    
+    .attention-wrapper{
+        display: none;
+        width: 50%;
+        padding: 10px;
+        margin: 220px auto;
         border: 1px solid #74C5FF;
-        width: 30%;
+        text-align: center;
+        img{
+            color: #ffffff;
+        }
+    p {
+        width: 50%;
         height: 5%;
-        background: #181038;
+        margin: 10px auto;
         text-align: center;
     }
 
     a {
         text-decoration: none;
         color: white;
-
-        position: absolute;
         top: 60%;
         left: 48.5%;
-        border: 1px solid #74C5FF;
-        background: #181038;
         padding: 0 1%;
     }
 
@@ -33,4 +39,5 @@ body{
         border: 1px double #DEFCFC;
         background-color: rgba(0,0,0,1);
     }
+}
 }  
