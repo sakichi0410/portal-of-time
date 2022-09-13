@@ -1,16 +1,22 @@
-console.log('yaaaa');
 var app = require("../app");
 var debug = require("debug")("portal:server");
-var http = require("http");
+var https = require("https");
 
 var port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
-var server = http.createServer(app);
+var server = https.createServer(app);
+var io = require('socket.io')(server);
 
 server.listen(port);
 server.on("error", onError);
 server.on("listening", onListening);
+
+
+io.use(function(socket, next){
+  sessionMiddleware(socket.request, socket.request.res, next);
+});
+
 
 function normalizePort(val) {
   var port = parseInt(val, 10);
@@ -52,4 +58,3 @@ function onListening() {
   var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
 }
-console.log('hooooo');

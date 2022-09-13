@@ -193,7 +193,7 @@ nextQuizBtn.addEventListener('click', event => {
     showQuiz(1);
   
   } else {
-    window.location.href = '../views/Result-score.html';
+    window.location.href = '../views/result-score.html';
   }
 });
 
