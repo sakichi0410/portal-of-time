@@ -1,1 +1,38 @@
-
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 1690px;
+  width: 100%;
+  height: 500px;
+  color: white;
+  background: black;
+}
+body .attention-wrapper {
+  display: none;
+  width: 50%;
+  padding: 10px;
+  margin: 220px auto;
+  border: 1px solid #74C5FF;
+  text-align: center;
+}
+body .attention-wrapper img {
+  color: #ffffff;
+}
+body .attention-wrapper p {
+  width: 50%;
+  height: 5%;
+  margin: 10px auto;
+  text-align: center;
+}
+body .attention-wrapper a {
+  text-decoration: none;
+  color: white;
+  top: 60%;
+  left: 48.5%;
+  padding: 0 1%;
+}
+body .attention-wrapper a:hover {
+  border: 1px double #DEFCFC;
+  background-color: rgb(0, 0, 0);
+}
