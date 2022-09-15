@@ -14,7 +14,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
     />
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="../css/main-menu.css">
     <link rel="stylesheet" href="../css/header.css">
     <title>Portal of Time</title>
@@ -22,16 +21,18 @@
       <source src="../sounds/Quiz-CorretBuzzer-mp3/yowanotsukli_koujou.mp3" type="audio/mp3">
       <p>音楽の再生に対応していません</p>
     </audio>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="module" type=”text/javascript” src="../js/user.js"></script>
   </head>
   <body>
   <!-- タイピングメッセージ表示画面 -->
-    <div id="typing-area">
+    <!-- <div id="typing-area">
       <div id="typing-message">
         <p class="TextTyping">
           This is a history learning site.
       </p>
       </div>
-    </div>
+    </div> -->
 <!----ローディング画面後現れるメインメニュー↓---->
     <header id="header"></header>
     <main>
@@ -47,9 +48,8 @@
       <p>produce by dreamcareer</p>
     </footer>
   </body>
-  <script type="text/javascript">
-    $("#header").load("header-logout.html");
 
+  <script type="text/javascript">
     function mediasVol_def() {
       // 特定のidのaudioの音量設定
       const opening=document.getElementById('opening');
@@ -58,7 +58,7 @@
     //ページ読み込み時に処理
     window.addEventListener('DOMContentLoaded' , function(){
           mediasVol_def();
-    }, false); 
+    }, false);
   </script>
-  <script src="../js/animetion.js"></script>
+  <!-- <script src="../js/animetion.js"></script> -->
 </html>
