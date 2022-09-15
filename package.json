@@ -5,7 +5,11 @@
   "scripts": {
     "nodemon": "nodemon -e ejs,js,json,css ./bin/www",
     "node": "node ./bin/www",
+    "node2": "node ./bin/www2",
+    "node3": "node ./bin/www3",
     "sass": "sass public/scss/:public/css/ --no-source-map --watch",
+    "start3": "run-p node3 sass",
+    "start2": "run-p node2 sass",
     "start": "run-p node sass"
   },
   "dependencies": {

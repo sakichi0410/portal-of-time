@@ -21533,10 +21533,6 @@ textarea.form-control-lg {
   font-family: "dot-bold";
 }
 
-@font-face {
-  font-family: "novamono";
-  src: url("../fonts/NovaMono-Regular.ttf") format("truetype");
-}
 body {
   background-image: url(../image/game-menu.png);
   background-size: cover;

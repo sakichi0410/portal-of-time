@@ -39,14 +39,14 @@ app.use("/api", apiRouter);
 // app.use('/resultScore',modeScore);`
 // app.use('/',mainMenu);
 // app.use('/login',login);
-app.use(function(req, res, next){
-  console.log(req.session.username);
-  if(req.session.username){
-    next();
-  }else{
-    res.redirect('login');
-  }
-});
+// app.use(function(req, res, next){
+//   console.log(req.session.username);
+//   if(req.session.username){
+//     next();
+//   }else{
+//     res.redirect('login');
+//   }
+// });
 
 app.use(function (req, res, next) {
   next(createError(404));
