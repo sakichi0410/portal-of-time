@@ -1,0 +1,42 @@
+<form>
+  <div id="form-wrap">
+    <div id="user-form">
+      <div class="form-group">
+        <label for="create-user-name">ユーザ名</label>
+        <input type="text" class="form-control" id="name" name="user-name" />
+      </div>
+      <div class="form-group">
+        <label for="create-email">メールアドレス</label>
+        <input type="text" class="form-control" id="email" name="email" />
+      </div>
+      <div class="form-group">
+        <label for="create-password">パスワード</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+        />
+      </div>
+    </div>
+    <div id="buttons">
+      <button type="button" id="reset" class="btn btn-white">
+        リセット
+      </button>
+      <button type="button" id="cancel" class="cancel btn btn-white">
+        キャンセル
+      </button>
+      <button
+        type="button"
+        id="regist"
+        data-dismiss="modal"
+        class="btn btn-red"
+      >
+        登録
+      </button>
+    </div>
+    <div class="message" id="signup_err"></div>
+  </div>
+</form>
+
+<script type="module" type=”text/javascript” src="../js/signup.js"></script>
