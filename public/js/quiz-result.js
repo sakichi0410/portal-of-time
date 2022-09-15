@@ -25,14 +25,8 @@ function loadQuiz() {
 
   // 質問文を表示
   rquestionElm.innerText = currentQuizData.question;
-  
-  //resultページ用
-  /*
-  const findanswer = currentQuizData.find(function(element){
-    return element == currentQuizData.correct;
-  });
-  */
 
+  
   if(currentQuizData.correct == "a"){
     rcorrectElm.innerText = "【解答】" + currentQuizData.a;
   }else if(currentQuizData.correct == "b"){
@@ -46,8 +40,13 @@ function loadQuiz() {
   rcommentElm .innerText = currentQuizData.comment;
 }
 
+// selectの切り替え処理
+const selectElement = document.querySelector('.select');
 
-
+selectElement.addEventListener('change', event => {
+  currentQuiz = event.target.value - 1;
+  loadQuiz();
+});
 
 
 

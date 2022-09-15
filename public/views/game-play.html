@@ -10,6 +10,10 @@
   <title>game-play</title>
   <audio id="answer-audio" src="../sounds/Quiz-CorretBuzzer-mp3/Quiz-Correct_Answer01-1.mp3" type="audio/mp3"></audio>
   <audio id="wrong-audio" src="../sounds/Quiz-CorretBuzzer-mp3/Quiz-Wrong_Buzzer02-1.mp3" type="audio/mp3"></audio>
+  <audio autoplay loop id="quiz_bgm">
+    <source src="../sounds/Quiz-CorretBuzzer-mp3/ryunomai.mp3" type="audio/mp3">
+    <p>音楽の再生に対応していません</p>
+  </audio>  
 </head>
 <body>
   <div class="problem">
@@ -36,16 +40,7 @@
             <p>※プレイ中のデータは保存されません</p>
           </div>      
           <a href="#" id="closeModal" class="closeModal">いいえ</a>
-          <a href="game-menu.html" id="return-menu">はい</a>
-          <div class="audio-control">
-            <div class="audio_btn">
-              <a href="javascript:controls();" id="audio-btn">音楽</a>
-              <audio autoplay loop id="quiz_bgm">
-                <source src="../sounds/Quiz-CorretBuzzer-mp3/ryunomai.mp3" type="audio/mp3">
-                <p>音楽の再生に対応していません</p>
-              </audio>   
-            </div>
-          </div>  
+          <a href="game-menu.html" id="return-menu">はい</a>  
         </div>
       </div>
     </section>

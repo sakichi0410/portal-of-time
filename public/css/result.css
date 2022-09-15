@@ -34,6 +34,13 @@ body .result .title {
   transform: translate(-50%, -50%);
   font-size: 48px;
 }
+body .result .select {
+  position: absolute;
+  left: 15%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
 body .result .score {
   position: absolute;
   left: 50%;
