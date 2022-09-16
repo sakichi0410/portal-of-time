@@ -8,7 +8,6 @@ body {
   color: white;
   background: black;
 }
-
 body .attention-wrapper {
   display: none;
   width: 50%;
@@ -17,18 +16,15 @@ body .attention-wrapper {
   border: 1px solid #74C5FF;
   text-align: center;
 }
-
 body .attention-wrapper img {
   color: #ffffff;
 }
-
 body .attention-wrapper p {
   width: 50%;
   height: 5%;
   margin: 10px auto;
   text-align: center;
 }
-
 body .attention-wrapper a {
   text-decoration: none;
   color: white;
@@ -36,8 +32,7 @@ body .attention-wrapper a {
   left: 48.5%;
   padding: 0 1%;
 }
-
 body .attention-wrapper a:hover {
   border: 1px double #DEFCFC;
   background-color: rgb(0, 0, 0);
-} /*# sourceMappingURL=music.css.map */
+}/*# sourceMappingURL=music.css.map */

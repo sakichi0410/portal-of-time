@@ -28,7 +28,7 @@
     </div>
     <div class="home"><a href="game-menu.html">ホームへ戻る</a></div>
     <div class="replay"><a href="mode-confirmation.html">もう一度</a></div>
-    <div class="explainbtn"><a href="result-explain.html">解説を見る→</a></div>
+    <div class="explainbtn"><a href="javascript:explain();">解説を見る→</a></div>
   </div>
   
   <script type="text/javascript">
@@ -43,6 +43,38 @@
     window.addEventListener('DOMContentLoaded' , function(){
           mediasVol_def();
     }, false);
+
+    let score = 0;
+    let reward = 0;
+
+    window.onload = function() {
+            // URLを取得
+            const url = new URL(window.location.href);
+
+            // URLSearchParamsオブジェクトを取得
+            const params = url.searchParams;
+
+            // consoleに受け取ったパラメータを出力
+            console.log(params);
+
+            // パラメータから「username」を取得
+            score = params.get("score");
+            reward = params.get("reward");
+            setListnum = params.get("setListnum");
+
+            // IDを使ってspan要素を取得する
+            const spanScore = document.getElementById("resultScore");
+            const spanReward = document.getElementById("resultReward");
+            // 取得したspan要素に受け取ったパラメータを代入
+            spanScore.innerText = score;
+            spanReward.innerText = reward;
+            console.log(score)
+        }
+        
+
+    function explain(){
+      window.location.href = '../views/result-explain.html?score=' +  score + '&reward=' + reward + '&setListnum=' + setListnum;
+    }
   </script>
 </body>
 </html>

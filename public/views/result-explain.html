@@ -18,11 +18,11 @@
     <div class="title">解説</div>
 
     <select class="select">
-      <option value="1">問題1</option>
-      <option value="2">問題2</option>
-      <option value="3">問題3</option>
-      <option value="4">問題4</option>
-      <option value="5">問題5</option>
+      <option id="quiz1" value="1">問題1</option>
+      <option id="quiz2" value="2">問題2</option>
+      <option id="quiz3" value="3">問題3</option>
+      <option id="quiz4" value="4">問題4</option>
+      <option id="quiz5" value="5">問題5</option>
     </select>
     
     <div class="explain">
@@ -31,14 +31,17 @@
         <div id="correct-rpage"></div>
         <div id="explain-rpage"></div>
     </div>
-    <div class="return-results"><a href="Result-score.html">←成績に戻る</a></div>
+    <!--
+    <div class="return-results"><a href="javascript:backscore();">←成績に戻る</a></div>
+    -->
+    <div class="return-results"><a href="#" id="backbtn">←成績に戻る</a></div>
+
     <div class="home-results"><a href="game-menu.html">ホームへ戻る</a></div>
     <div class="replay-results"><a href="mode-confirmation.html">もう一度</a></div>
   </div>
   
   <script type="text/javascript">
-    $("#header").load("header-logout.html");
+    $("#header").load("header-logout.html");    
   </script>
-
 </body>
 </html>

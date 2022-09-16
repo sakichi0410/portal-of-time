@@ -241,10 +241,8 @@ function updateProgress() {
 import { quizDataJp } from './quiz-data.js';
 
 var answered = 0;
-let currentQuiz = 0;
+let currentQuiz = 0; //play中の問題が何番目の問題か
 
-// 一定間隔で処理を行うintervalのIDを保持
-var intervalID;
 
 //問題番号
 const quiznumElm = document.getElementById('question-number');
@@ -266,14 +264,16 @@ const switchBtn = document.getElementById('switch-push');
 // 現在の問題
 var correct;
 
-// 現在のスコア
+// 現在のスコア、報酬
 let score = 0;
+let reward = 0;
+
+// 一定間隔で処理を行うintervalのIDを保持
+var intervalID;
 
 // プログレスバーの進捗値
 var val =100;
 
-// 一定間隔で処理を行うintervalのIDを保持
-var intervalID;
 
 // 次の問題へ進むボタン
 const nextQuizBtn = document.getElementById('next-quiz');
@@ -293,15 +293,21 @@ const max = 10;
 const quizList = [];
 for( var i=1; quizList.push(i++) < max;);
 
-let setList = [];
+// クイズの問題を保持
+let rand;
+const setList = [];
+const setListnum = [];
+let options = [];
 
 loadQuiz();
 
 function shuffleAry(ary) {
   var i = ary.length;
+
   while(i){
     var j = Math.floor(Math.random()*i);
     var t = ary[--i];
+
     ary[i] = ary[j];
     ary[j] = t;
   }
@@ -310,41 +316,49 @@ function shuffleAry(ary) {
 
 // 問題を読み込む
 async function loadQuiz() {
+  // ?
   answered = 0;
   
   quiznumElm.innerText = "【第" + (currentQuiz + 1) + "問】";
   scoreElm.innerText = "得点： " + score + "pt";
 
   // クイズリストからランダムに一つクイズ番号を取り出す
-  var rand = Math.floor(Math.random() * quizList.length);
-  console.log(rand);
+  rand = Math.floor(Math.random() * quizList.length);
 
   // 問題番号が５以上(quiz-dataの問題数が5問のため)ならループ
-  if(rand >= 5){
-    console.log("やり直し");
+  if(rand >= 5 || setListnum.indexOf(rand) != -1){
+    console.log("rand=" + rand + "やり直し");
     loadQuiz();
   }else{
 
+    console.log("rand=" + rand + ",問題は配列の" + rand + "番目");
   // 問題を取得
   const currentQuizData = quizDataJp[rand];
-  setList[setList.length] = currentQuizData;
-  console.log(setList); 
+
+  //setList[setList.length] = currentQuizData;
+  setListnum[setListnum.length] = rand;
+  //console.log(setList); 
+  console.log(setListnum); 
+
   
   // 質問文を表示
   questionElm.innerText = currentQuizData.question;
 
-
-  // 質問文を表示
+  // この問題の解答を取得
   correct = currentQuizData.correct;
 
-  //選択肢をランダムに並び替え(loclaでは未実装)
-  const options = [
+
+  //選択肢をランダムに並び替え
+  options = [
     currentQuizData.a,
     currentQuizData.b,
     currentQuizData.c,
     currentQuizData.d];
 
-  //options = shuffleAry(options);
+  options = shuffleAry(options);
+
+  console.log(options);
+
 
   // 選択肢を表示
   a_text.innerText = options[0];
@@ -362,6 +376,10 @@ function getAnswered() {
 
 //　スイッチを押した際の動作
 switchBtn.addEventListener('click', event => {
+  event.preventDefault();
+
+  console.log(a_text.innerText);
+
   switchFraElm.style.display = 'none';
   quizConElm.style.display = 'block';
   const switchAudio = document.getElementById('switch_audio');
@@ -395,7 +413,7 @@ function showResults(results) {
     wrongAudio.play();
 
     resultsMarkmaru.style.display = 'none';
-    resultsElm.innerText = "残念 : 正解は" + quizDataJp[currentQuiz].correct + "です";
+    resultsElm.innerText = "残念 : 正解は" + quizDataJp[rand].correct + "です";
     resultsElm.style.color = 'blue'
   }
 }
@@ -409,6 +427,7 @@ function showQuiz() {
   document.getElementById("myProgress").value = 100;
 }
 
+
 //　送信ボタンを押した場合
 submitBtn.addEventListener('click', event => {
   event.preventDefault();
@@ -417,9 +436,10 @@ submitBtn.addEventListener('click', event => {
   const answer = getAnswered();
 
   if(answer) {
-    if (answer === quizDataJp[currentQuiz].correct) {
-      showResults('10pt');
+    reward +=50;
+    if (options[answer] === quizDataJp[rand].correct) {
       score += 10;
+      showResults('10pt');
     } else{
       showResults();
     }
@@ -437,10 +457,12 @@ nextQuizBtn.addEventListener('click', event => {
 
     loadQuiz();
     
-    showQuiz(1);
-  
+    showQuiz();
+
   } else {
-    window.location.href = '../views/Result-score.html';
+
+    location.href = '../views/result-score.html?score=' +  score + '&reward=' + reward + '&setListnum=' + setListnum;
+    //window.location.href = location.href;  
   }
 });
 
@@ -454,6 +476,7 @@ $(function () {
   });
 });
 
+// 時間経過の動作
 function Timebar() {
   val = 100;
   document.getElementById("myProgress").value = val;
@@ -473,3 +496,4 @@ function updateProgress() {
     showResults();
   }
 }
+
