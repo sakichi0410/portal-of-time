@@ -1,0 +1,412 @@
+@charset "UTF-8";
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0%;
+}
+html body {
+  margin: 0%;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+html body .problem {
+  margin: 0%;
+  width: 100%;
+  height: 50%;
+  background-image: url(../image/quiz-play-background.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+html body .problem .question-textarea {
+  margin: 0%;
+  width: 50%;
+  height: 30%;
+  background-color: rgb(20, 2, 73);
+  border-radius: 1%;
+  border: 5px solid #08af50;
+  top: 25%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+html body .problem .question-textarea #question-number {
+  margin: 0%;
+  width: 80%;
+  height: 20%;
+  top: 20%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 24px;
+}
+html body .problem .question-textarea #question {
+  margin: 0%;
+  width: 85%;
+  height: 50%;
+  top: 60%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 24px;
+}
+html body .problem .pause-frame {
+  margin: 0%;
+  height: 110px;
+  width: 90px;
+  background-color: rgb(20, 2, 73);
+  border: 1px solid white;
+  border-radius: 5%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 15%;
+  left: 95%;
+  text-align: center;
+}
+html body .problem .pause-frame .pause-mark {
+  font-size: 100px;
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border: 2px solid white;
+  border-radius: 100%;
+  background-color: rgb(20, 2, 73);
+  position: relative;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 50%;
+}
+html body .problem .pause-frame .pause-mark:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(to bottom, white, white 100%) 21px 20px, linear-gradient(to bottom, white 0%, white 100%) 41px 20px;
+  background-size: 8px 30px;
+  background-repeat: no-repeat;
+}
+html body .problem .pause-frame .pause-text {
+  margin: 0%;
+  height: 30px;
+  width: 100%;
+  position: relative;
+  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 50%;
+}
+html body .problem .modalArea {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+html body .problem .modalArea .modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.9);
+}
+html body .problem .modalArea .modalWrapper {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 40%;
+  padding: 10px 30px;
+  background-color: rgb(20, 2, 73);
+  font-size: 28px;
+}
+html body .problem .modalArea .modalWrapper .modal-text {
+  white-space: nowrap;
+  top: 40%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .problem .modalArea .modalWrapper #closeModal {
+  color: white;
+  text-decoration: none;
+  top: 80%;
+  left: 35%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .problem .modalArea .modalWrapper #return-menu {
+  color: white;
+  text-decoration: none;
+  top: 80%;
+  left: 65%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .problem .results-modalArea {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+html body .problem .results-modalArea .results-modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.9);
+}
+html body .problem .results-modalArea #results-container {
+  margin: 0%;
+  width: 80%;
+  height: 80%;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 24px;
+}
+html body .problem .results-modalArea #results-container #results-mark-maru {
+  margin: 0%;
+  width: 350px;
+  height: 350px;
+  left: 50%;
+  top: 25%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  border: 50px solid red;
+}
+html body .problem .results-modalArea #results-container #results-mark-batsu {
+  display: block;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  top: 25%;
+  position: relative;
+  transform: translate(-50%, -50%);
+}
+html body .problem .results-modalArea #results-container #results-mark-batsu:before, html body .problem .results-modalArea #results-container #results-mark-batsu:after { /* 共通設定 */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px; /* 棒の幅（太さ） */
+  height: 500px; /* 棒の高さ */
+  background: blue;
+}
+html body .problem .results-modalArea #results-container #results-mark-batsu:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+html body .problem .results-modalArea #results-container #results-mark-batsu:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+html body .problem .results-modalArea #results-container #results-header {
+  margin: 0%;
+  width: 50%;
+  height: 30%;
+  left: 50%;
+  top: 75%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+html body .problem .results-modalArea #results-container #results-header #results {
+  font-size: 48px;
+  text-align: center;
+  left: 50%;
+  top: 10%;
+  width: 90%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .problem .results-modalArea #results-container #results-header #next-quiz {
+  left: 50%;
+  top: 75%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin: 0%;
+  width: 50%;
+  height: 30%;
+  font-size: 28px;
+}
+html body .answer-frame {
+  margin: 0%;
+  width: 100%;
+  height: 50%;
+  background-color: black;
+}
+html body .answer-frame .status {
+  margin: 0%;
+  width: 100%;
+  height: 15%;
+  display: flex;
+}
+html body .answer-frame .status progress {
+  margin: 0%;
+  width: 40%;
+  height: 100%;
+  top: 50%;
+  left: 22%;
+  position: relative;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame .status #score-frame {
+  margin: 0;
+  width: 20%;
+  height: 100%;
+  font-size: 34px;
+  text-align: center;
+  top: 50%;
+  left: 43%;
+  position: relative;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame .status #score-frame #score {
+  white-space: nowrap;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #switch-frame {
+  margin: 0%;
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 75%;
+}
+html body .answer-frame #switch-frame #switch-bottom {
+  background-color: #D9D9D9;
+  border-radius: 100%;
+  margin: 0%;
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #switch-frame #switch-bottom #switch-push {
+  background-color: #B3FACB;
+  border-radius: 100%;
+  width: 280px;
+  height: 250px;
+  margin: 0 auto;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #quiz-container {
+  margin: 0%;
+  width: 100%;
+  height: 100%;
+}
+html body .answer-frame #quiz-container .choice-a {
+  margin: 0%;
+  width: 20%;
+  height: 10%;
+  background-color: gray;
+  align-items: center;
+  font-size: 48px;
+  left: 35%;
+  top: 65%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #quiz-container .choice-a #a-text {
+  white-space: nowrap;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #quiz-container .choice-b {
+  margin: 0%;
+  width: 20%;
+  height: 10%;
+  background-color: gray;
+  align-items: center;
+  font-size: 48px;
+  left: 65%;
+  top: 65%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #quiz-container .choice-b #b-text {
+  white-space: nowrap;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #quiz-container .choice-c {
+  margin: 0%;
+  width: 20%;
+  height: 10%;
+  background-color: gray;
+  align-items: center;
+  font-size: 48px;
+  left: 35%;
+  top: 85%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #quiz-container .choice-c #c-text {
+  white-space: nowrap;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #quiz-container .choice-d {
+  margin: 0%;
+  width: 20%;
+  height: 10%;
+  background-color: gray;
+  align-items: center;
+  font-size: 48px;
+  left: 65%;
+  top: 85%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #quiz-container .choice-d #d-text {
+  white-space: nowrap;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #quiz-container button {
+  margin: 0%;
+  width: 10%;
+  height: 5%;
+  font-size: 24px;
+  left: 50%;
+  top: 93%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+html body .answer-frame #results-container {
+  align-items: center;
+}
+html body .answer-frame #results-container #results-header {
+  text-align: center;
+  justify-content: center;
+}
+html body .answer-frame #results-container #results-header #results {
+  padding: 2rem 0;
+}

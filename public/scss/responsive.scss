@@ -1,0 +1,6 @@
+$ss:1200px;
+@mixin short {
+    @media screen and (max-width:$ss){
+        @content;
+    }
+}

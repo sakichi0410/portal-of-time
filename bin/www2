@@ -1,11 +1,16 @@
 var app = require("../app");
 var debug = require("debug")("portal:server");
 var https = require("https");
+var fs = require("fs");
 
 var port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
-var server = https.createServer(app);
+var options = {
+  key: fs.readFileSync("localhost-key.pem"),
+  cert: fs.readFileSync("localhost.pem"),
+};
+var server = https.createServer(options, app);
 var io = require('socket.io')(server);
 
 server.listen(port);

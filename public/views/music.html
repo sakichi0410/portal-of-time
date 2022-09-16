@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="../css/music.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="attention-wrapper">
+        <img src="../image/music-icon.png">
+        <p>このページは自動で音楽が再生されます</p>
+        <a href="main-menu.html" class="ok-btn">OK!</a>
+    </div>
+<script>
+    $(window).on('load',function(){
+        $('.attention-wrapper').fadeIn(800);
+    })
+</script>
+</body>
+</html>

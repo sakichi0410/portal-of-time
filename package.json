@@ -3,9 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "node": "nodemon -e ejs,js,json ./bin/www",
+    "nodemon": "nodemon -e ejs,js,json,css ./bin/www",
+    "node": "node ./bin/www",
+    "node2": "node ./bin/www2",
+    "node3": "node ./bin/www3",
     "sass": "sass public/scss/:public/css/ --no-source-map --watch",
-    "start": "node ./bin/www & npm run sass"
+    "start3": "run-p node3 sass",
+    "start2": "run-p node2 sass",
+    "start": "run-p node sass"
   },
   "dependencies": {
     "@rollup/plugin-node-resolve": "^13.3.0",
@@ -24,13 +29,17 @@
     "mysql": "latest",
     "mysql2": "^2.3.3",
     "node-fetch": "^3.2.3",
+    "path": "^0.12.7",
     "rollup": "^2.75.7",
     "sass": "^1.53.0"
   },
   "devDependencies": {
     "eslint": "^8.11.0",
+    "express-session": "^1.17.3",
     "nodemon": "^2.0.15",
-    "prettier": "^2.6.0"
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.6.0",
+    "socket.io": "^4.5.2"
   },
   "main": "app.js",
   "repository": {

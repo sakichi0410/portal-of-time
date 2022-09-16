@@ -7,14 +7,16 @@ body {
 }
 body a {
   color: white;
+  text-decoration: none;
 }
 body .result {
   box-sizing: border-box;
-  position: relative;
+  position: absolute;
   width: 76%;
   height: 78%;
-  left: 12%;
-  top: 18%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   background: rgba(24, 16, 56, 0.53);
   border: 5px solid #74C5FF;
   font-family: "Jaldi";
@@ -25,41 +27,25 @@ body .result {
   display: flex;
   align-items: center;
 }
-body .title {
+body .result .title {
   position: absolute;
   left: 50%;
   top: 10%;
   transform: translate(-50%, -50%);
   font-size: 48px;
 }
-body .score {
+body .result .select {
+  position: absolute;
+  left: 15%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+body .result .score {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-}
-body .next {
-  position: absolute;
-  left: 85%;
-  top: 80%;
-  transform: translate(-50%, -50%);
-  font-weight: 400;
-  font-size: 24px;
-}
-body .home {
-  position: absolute;
-  left: 30%;
-  top: 80%;
-  transform: translate(-50%, -50%);
-  font-weight: 400;
-  font-size: 24px;
-}
-body .replay {
-  position: absolute;
-  left: 70%;
-  top: 80%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
 }
 body .explain {
   position: absolute;
@@ -67,5 +53,52 @@ body .explain {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+body .home {
+  position: absolute;
+  left: 25%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  font-size: 24px;
+}
+body .replay {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+body .explainbtn {
+  position: absolute;
+  left: 75%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  font-size: 24px;
+}
+body .return-results {
+  position: absolute;
+  left: 25%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  font-size: 24px;
+}
+body .home-results {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  font-size: 24px;
+}
+body .replay-results {
+  position: absolute;
+  left: 75%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
   font-size: 24px;
 }
