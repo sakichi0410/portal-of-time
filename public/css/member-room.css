@@ -1,0 +1,24 @@
+.flex-box {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.left-wrapper {
+  width: 60%;
+  padding-left: 200px;
+}
+
+.member-wrapper {
+  display: inline-block;
+  width: 40%;
+}
+
+.button-wrapper {
+  width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+.button-wrapper input {
+  margin-right: 20px;
+}

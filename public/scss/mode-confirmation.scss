@@ -9,10 +9,15 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
 
-
 a {
     text-decoration: none;
     color: #FFFFFF;
+  }
+  ul{
+    padding-left: 0;
+    li{
+      list-style: none;
+    }
   }
 }
 
@@ -27,35 +32,20 @@ a {
   }
   
   .Selection-confirmation {
-    position: relative;
     box-sizing: border-box;
     max-width: 1258px;
     width: 100%;
     height: 550px;
+    padding: 10px;
     margin: 20px auto;
     background-color: rgba(24,16,56);
-  }
-  
-  .solid {
-    box-sizing: border-box;
-    max-width: 1218px;
-    width: 100%;
-    height: 515.76px;
-    position: absolute;
-    left: 1.59%;
-    right: 1.82%;
-    top: 2.67%;
-    bottom: 3.56%;
-    border: 1px solid #78ffff;
-    @include short{
-      width: 500px;
-      margin: 0 auto;
-    }
+    outline: 1px solid $blue;
+    outline-offset: -10px;
+
 
     h1{
       text-align: center;
-      padding: 10px;
-      margin-top: 10px;
+      padding: 20px;
     }
   
   img {
@@ -64,7 +54,7 @@ a {
     margin: 50px 70px;
     @include short{
       width: 310px;
-      margin: 20px 90px;
+      margin: 20px 180px;
     }
   }
   
@@ -73,24 +63,27 @@ a {
     max-width: 500px;
     width: 100%;
     padding: 80px;
+    margin-top: 20px;
     line-height: 35px;
     @include short{
       float: none;
       display: block;
       width: 180px;
-      margin: 10px auto;
-      padding: 0;
+      margin: 5px auto;
+      padding: 10px;
       font-size: 15px;
-      line-height: 10px;
+      line-height: 40px;
     }
-  }
-  
-}
-.section{
-  margin-top: 30px;
+    p{
+      display: inline;
+    }
+    .section{
+  margin-top: 50px;
   @include short{
-text-align: center;
-margin-top: 50px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid red;
+    margin-top: 0;
   }
 
 .return {
@@ -100,7 +93,11 @@ margin-top: 50px;
 .start{
   display: inline-block;
   @include short{
-  margin-right: 30px;
+  margin-right: 20px;
   }
 }
 }
+  }
+  
+
+  }

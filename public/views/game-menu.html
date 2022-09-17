@@ -17,89 +17,136 @@
     <header id="header"></header>
     <main>
         <div class="play-menu">
-            <div class="wrapper-btn">
+            <div class="menu-btn">
                 <div id=btn1 class="single hex">
-                    <a href="mode-confirmation.html">トレーニング</a>
+                    <p class="name">トレーニング</p>
                 </div>
                 <!---表示させたい--->
-                <p class="text">一人でクイズの練習する</p>
+                <div class="text">
+                <p>一人でクイズをプレイ</p>
+                </div>
             </div>
             <div class="wrapper-btn">
-                <div class="battle hex">    
-                    <a href="room-select.html">部屋に入る</a>
+                <div id=btn2 class="battle hex">    
+                    <p class="name">部屋に入る</p>
                 </div>
-                <p class="text">フレンドと一緒にプレイします。</p>
-            </div>
-            <div class="wrapper-btn">
-                <div class="create-rooom hex">
-                    <a href="create-room.html">部屋を作る</a>
+                <div class="text">
+                <p>フレンドと一緒にプレイ</p>
                 </div>
-                <p class="text">オンラインでのクイズ部屋を作ります。</p>
             </div>
         </div>
 
-        <!-- モーダル表記 -->
+        <!-- トレーニングボタン押下時にモーダル表示 -->
         <div class="overlay"></div>
-        <div id="modal" class="select-wrapper hidden">
+        <div id="select-modal" class="select-wrapper hidden">
             <h1>MODE-SELECT</h1>
                 <div class="age-select">
                     <p>時代選択</p>
-                        <label>
-                            <input type="radio" name="age" value="鎌倉時代">鎌倉時代
-                            <input type="radio" name="age" value="戦国時代">戦国時代
-                            <input type="radio" name="age" value="江戸時代">江戸時代
-                            <input type="radio" name="age" value="明治時代">明治時代
-                        </label>
+                        <form name="timeForm">
+                            <input type="radio" name="age" class="age" value="鎌倉時代">鎌倉時代
+                            <input type="radio" name="age" class="age" value="戦国時代">戦国時代
+                            <input type="radio" name="age" class="age" value="江戸時代">江戸時代
+                            <input type="radio" name="age" class="age" value="明治時代">明治時代
+                        </form>
                 </div>
                 <div class="type-select">
                     <p>難易度</p>
-                        <label>
-                            <input type="radio" name="type" value="易しい">易しい
-                            <input type="radio" name="type" value="普通">普通
-                            <input type="radio" name="type" value="難しい">難しい
-                        </label>
+                        <form>
+                            <input type="radio" name="type" class="type" value="易しい">易しい
+                            <input type="radio" name="type" class="type" value="普通">普通
+                            <input type="radio" name="type" class="type" value="難しい">難しい
+                        </form>
                 </div>
                 <div class="number-question">
                     <p>問題数：１０問</p>
                 </div>
                     <div class="button-wrapper">    
                         <a href="#"><input type="button" value="戻る" class="close"></a>
-                        <a href="mode-confirmation.html"><input type="button" name="" id="" value="決定" class="button"></a>
+                        <a href="mode-confirmation.html"><input type="button" name="" id="btn" value="決定" class="button"></a>
                     </div>
        </div>
+
+       <!-- 部屋選択画面　モーダル表記 -->
+       <div id="roomselect-wrapper">
+        <h1>部屋の選択</h1>
+        <div class="room-wrapper">
+          <div class="left">
+            <p>id:00001</p>
+            <p>作成者:yama</p>
+          </div>
+          <div class="right">
+            <button><a href="member-room.html">入室</a></button>
+          </div>
+        </div>
+        <div class="button-wrapper">
+            <div><a href="#"><input type="button" value="戻る" class="close"></a></div>
+            <div><a href="create-room.html"><input type="button" value="部屋の作成"></a></div>
+        </div>
+      </div>
+
     </main>
     <footer>
     </footer>
-<script type="text/javascript">
-$("#header").load("header-logout.html");
+    <script type="text/javascript">
+        $("#header").load("header-logout.html");
+        
+        function mediasVol_def() {
+            // 特定のidのaudioの音量設定
+            const menu_bgm=document.getElementById('menu-bgm');
+            menu_bgm.volume = 0.01; // 0〜1 の間で
+        }
+        //ページ読み込み時に処理
+        window.addEventListener('DOMContentLoaded' , function(){
+            mediasVol_def();
+            
+        }, false); 
 
-// モーダル
-$(document).ready(function(){
-    //ボタンをクリックしたら
-    $("#btn1").click(function(){
-        // モーダルウィンドウのfade-in
-        $("#modal").fadeIn();
-        $(".overlay").fadeIn();
-    });
-    //フェードアウト　戻るボタンとオーバーレイ
-    $(".close, .overlay").click(function(){
-        $("#modal").fadeOut();
-        $(".overlay").fadeOut();
-    });
-    
+        //hover時に説明文表示
+        $(function(){
+            $('.hex').hover(function(){
+                $(this).next('.text').show();
+            },
+            function(){
+                $(this).next('.text').hide();
+            });
+        });
+
+        // 1.トレーニングボタン　モーダル
+        $(document).ready(function(){
+            //ボタンをクリックしたら
+            $("#btn1").click(function(){
+                // モーダルウィンドウのfade-in
+                $("#select-modal").fadeIn();
+                $(".overlay").fadeIn();
+            });    
+            //フェードアウト　戻るボタンとオーバーレイ
+            $(".close, .overlay").click(function(){
+                $("#select-modal").fadeOut();
+                $(".overlay").fadeOut();
+            });
+            
+            //2.部屋に入るボタン
+            $("#btn2").click(function(){
+                $("#roomselect-wrapper").fadeIn();
+                $(".overlay").fadeIn();
+            });
+            $(".close, .overlay").click(function(){
+                $("#roomselect-wrapper").fadeOut();
+                $(".overlay").fadeOut();
+            });
+        });
+        
+$(function(){
+  $(".age").on("click", function(){
+    var v = $(this).val();
+    sessionStorage.setItem('age', v);
+  });
+  $(".type").on("click", function(){
+    var w = $(this).val();
+    sessionStorage.setItem('type', w);
+  });
 })
 
-
-    function mediasVol_def() {
-      // 特定のidのaudioの音量設定
-      const menu_bgm=document.getElementById('menu-bgm');
-      menu_bgm.volume = 0.01; // 0〜1 の間で
-    }
-    //ページ読み込み時に処理
-    window.addEventListener('DOMContentLoaded' , function(){
-          mediasVol_def();
-         
-    }, false); 
-</script>
+        </script>
 </body>
 </html>

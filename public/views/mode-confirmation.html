@@ -18,14 +18,14 @@
     <header id="header"></header>
     <div class="container">
         <div class="Selection-confirmation">
-            <div class="solid">
                 <h1>STAGE</h1>
                 <img src="../image/quiz-play-background.png">
                 <div class="detail">
-                    <p>出題範囲: 戦国時代</p>
-                    <p>難易度: 易しい</p>
-                    <p>出題数: 10問</p>
-                    <br>
+                    <ul>
+                    <li>出題範囲:<p id="age-result"></p></li>
+                    <li>難易度:<p id="type-result"></p></li>
+                    <li><p>出題数: 10問</p></li>
+                    </ul>
                     <div class="section">
                         <a href="game-menu.html" class="return">戻る</a>
                         <a href="game-play.html" class="start">始める</a>
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-    </div> 
+
     <script type="text/javascript">
         $("#header").load("header-logout.html");
 
@@ -46,6 +46,13 @@
         window.addEventListener('DOMContentLoaded' , function(){
             mediasVol_def();
         }, false);
+
+        $(function(){
+  var a = sessionStorage.getItem('age');
+  var b = sessionStorage.getItem('type');
+  $("#age-result").text(a);
+  $("#type-result").text(b);
+})
     </script>
 </body>
 </html>

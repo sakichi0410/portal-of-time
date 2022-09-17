@@ -5,10 +5,12 @@ body {
   color: white;
   background: linear-gradient(180deg, #000000 20.36%, #1ADEE9 100%);
 }
+
 body a {
   color: white;
   text-decoration: none;
 }
+
 body .result {
   box-sizing: border-box;
   position: absolute;
@@ -27,6 +29,7 @@ body .result {
   display: flex;
   align-items: center;
 }
+
 body .result .title {
   position: absolute;
   left: 50%;
@@ -34,6 +37,7 @@ body .result .title {
   transform: translate(-50%, -50%);
   font-size: 48px;
 }
+
 body .result .select {
   position: absolute;
   left: 15%;
@@ -41,12 +45,14 @@ body .result .select {
   transform: translate(-50%, -50%);
   font-size: 24px;
 }
+
 body .result .score {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
 body .explain {
   position: absolute;
   width: 80%;
@@ -55,6 +61,7 @@ body .explain {
   transform: translate(-50%, -50%);
   font-size: 24px;
 }
+
 body .home {
   position: absolute;
   left: 25%;
@@ -63,6 +70,7 @@ body .home {
   font-weight: 400;
   font-size: 24px;
 }
+
 body .replay {
   position: absolute;
   left: 50%;
@@ -70,6 +78,7 @@ body .replay {
   transform: translate(-50%, -50%);
   font-size: 24px;
 }
+
 body .explainbtn {
   position: absolute;
   left: 75%;
@@ -78,6 +87,7 @@ body .explainbtn {
   font-weight: 400;
   font-size: 24px;
 }
+
 body .return-results {
   position: absolute;
   left: 25%;
@@ -86,6 +96,7 @@ body .return-results {
   font-weight: 400;
   font-size: 24px;
 }
+
 body .home-results {
   position: absolute;
   left: 50%;
@@ -94,6 +105,7 @@ body .home-results {
   font-weight: 400;
   font-size: 24px;
 }
+
 body .replay-results {
   position: absolute;
   left: 75%;
@@ -101,4 +113,4 @@ body .replay-results {
   transform: translate(-50%, -50%);
   font-weight: 400;
   font-size: 24px;
-}
+} /*# sourceMappingURL=result.css.map */

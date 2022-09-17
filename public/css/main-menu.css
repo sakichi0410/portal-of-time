@@ -22453,17 +22453,19 @@ textarea.form-control-lg {
   font-family: "dot-bold";
 }
 
+@font-face {
+  font-family: "novamono";
+  src: url("../fonts/NovaMono-Regular.ttf") format("truetype");
+}
 * {
   font-family: "dot-regular";
 }
 
 body {
-  z-index: 1;
-  position: relative;
   max-width: 1600px;
   width: 100%;
-  background-image: url(../image/shrine_gateway.png);
-  background-size: 100% 100vh;
+  background-image: url(../image/top_image.jpeg);
+  background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
