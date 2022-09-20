@@ -18,7 +18,7 @@
     <main>
         <div class="play-menu">
             <div class="menu-btn">
-                <div id=btn1 class="single hex">
+                <div id="btn1" class="single hex">
                     <p class="name">トレーニング</p>
                 </div>
                 <!---表示させたい--->
@@ -37,34 +37,35 @@
         </div>
 
         <!-- トレーニングボタン押下時にモーダル表示 -->
-        <div class="overlay"></div>
-        <div id="select-modal" class="select-wrapper hidden">
-            <h1>MODE-SELECT</h1>
-                <div class="age-select">
-                    <p>時代選択</p>
-                        <form name="timeForm">
-                            <input type="radio" name="age" class="age" value="鎌倉時代">鎌倉時代
-                            <input type="radio" name="age" class="age" value="戦国時代">戦国時代
-                            <input type="radio" name="age" class="age" value="江戸時代">江戸時代
-                            <input type="radio" name="age" class="age" value="明治時代">明治時代
-                        </form>
-                </div>
-                <div class="type-select">
-                    <p>難易度</p>
-                        <form>
-                            <input type="radio" name="type" class="type" value="易しい">易しい
-                            <input type="radio" name="type" class="type" value="普通">普通
-                            <input type="radio" name="type" class="type" value="難しい">難しい
-                        </form>
-                </div>
-                <div class="number-question">
-                    <p>問題数：１０問</p>
-                </div>
-                    <div class="button-wrapper">    
-                        <a href="#"><input type="button" value="戻る" class="close"></a>
-                        <a href="mode-confirmation.html"><input type="button" name="" id="btn" value="決定" class="button"></a>
+        <div class="overlay">
+            <div id="select-modal" class="select-wrapper hidden">
+                <h1>MODE-SELECT</h1>
+                    <div class="age-select">
+                        <p>時代選択</p>
+                            <form name="timeForm">
+                                <input type="radio" name="age" class="age" value="鎌倉時代">鎌倉時代
+                                <input type="radio" name="age" class="age" value="戦国時代">戦国時代
+                                <input type="radio" name="age" class="age" value="江戸時代">江戸時代
+                                <input type="radio" name="age" class="age" value="明治時代">明治時代
+                            </form>
                     </div>
-       </div>
+                    <div class="type-select">
+                        <p>難易度</p>
+                            <form>
+                                <input type="radio" name="type" class="type" value="易しい">易しい
+                                <input type="radio" name="type" class="type" value="普通">普通
+                                <input type="radio" name="type" class="type" value="難しい">難しい
+                            </form>
+                    </div>
+                    <div class="number-question">
+                        <p>問題数：１０問</p>
+                    </div>
+                        <div class="button-wrapper">    
+                            <a href="#"><input type="button" value="戻る" class="close"></a>
+                            <a href="mode-confirmation.html"><input type="button" name="" id="btn" value="決定" class="button"></a>
+                        </div>
+            </div>
+        </div>
 
        <!-- 部屋選択画面　モーダル表記 -->
        <div id="roomselect-wrapper">
@@ -120,7 +121,8 @@
                 $(".overlay").fadeIn();
             });    
             //フェードアウト　戻るボタンとオーバーレイ
-            $(".close, .overlay").click(function(){
+            //$(".close, .overlay").click(function(){
+            $(".close").click(function(){
                 $("#select-modal").fadeOut();
                 $(".overlay").fadeOut();
             });
@@ -130,7 +132,8 @@
                 $("#roomselect-wrapper").fadeIn();
                 $(".overlay").fadeIn();
             });
-            $(".close, .overlay").click(function(){
+            //$(".close, .overlay").click(function(){
+            $(".close").click(function(){
                 $("#roomselect-wrapper").fadeOut();
                 $(".overlay").fadeOut();
             });

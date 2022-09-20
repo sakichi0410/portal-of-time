@@ -4,14 +4,12 @@ html {
   width: 100%;
   margin: 0%;
 }
-
 html body {
   margin: 0%;
   width: 100%;
   height: 100%;
   color: white;
 }
-
 html body .problem {
   margin: 0%;
   width: 100%;
@@ -21,7 +19,6 @@ html body .problem {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 html body .problem .question-textarea {
   margin: 0%;
   width: 50%;
@@ -35,7 +32,6 @@ html body .problem .question-textarea {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
 html body .problem .question-textarea #question-number {
   margin: 0%;
   width: 80%;
@@ -47,7 +43,6 @@ html body .problem .question-textarea #question-number {
   text-align: center;
   font-size: 24px;
 }
-
 html body .problem .question-textarea #question {
   margin: 0%;
   width: 85%;
@@ -59,7 +54,6 @@ html body .problem .question-textarea #question {
   text-align: center;
   font-size: 24px;
 }
-
 html body .problem .pause-frame {
   margin: 0%;
   height: 110px;
@@ -73,7 +67,6 @@ html body .problem .pause-frame {
   left: 95%;
   text-align: center;
 }
-
 html body .problem .pause-frame .pause-mark {
   font-size: 100px;
   position: relative;
@@ -87,7 +80,6 @@ html body .problem .pause-frame .pause-mark {
   top: 40%;
   left: 50%;
 }
-
 html body .problem .pause-frame .pause-mark:before {
   content: "";
   position: absolute;
@@ -99,7 +91,6 @@ html body .problem .pause-frame .pause-mark:before {
   background-size: 8px 30px;
   background-repeat: no-repeat;
 }
-
 html body .problem .pause-frame .pause-text {
   margin: 0%;
   height: 30px;
@@ -109,7 +100,6 @@ html body .problem .pause-frame .pause-text {
   top: 20%;
   left: 50%;
 }
-
 html body .problem .modalArea {
   display: none;
   position: fixed;
@@ -119,13 +109,11 @@ html body .problem .modalArea {
   width: 100%;
   height: 100%;
 }
-
 html body .problem .modalArea .modalBg {
   width: 100%;
   height: 100%;
   background-color: rgba(30, 30, 30, 0.9);
 }
-
 html body .problem .modalArea .modalWrapper {
   position: absolute;
   text-align: center;
@@ -138,7 +126,6 @@ html body .problem .modalArea .modalWrapper {
   background-color: rgb(20, 2, 73);
   font-size: 28px;
 }
-
 html body .problem .modalArea .modalWrapper .modal-text {
   white-space: nowrap;
   top: 40%;
@@ -146,7 +133,6 @@ html body .problem .modalArea .modalWrapper .modal-text {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
 html body .problem .modalArea .modalWrapper #closeModal {
   color: white;
   text-decoration: none;
@@ -155,7 +141,6 @@ html body .problem .modalArea .modalWrapper #closeModal {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
 html body .problem .modalArea .modalWrapper #return-menu {
   color: white;
   text-decoration: none;
@@ -164,7 +149,6 @@ html body .problem .modalArea .modalWrapper #return-menu {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
 html body .problem .results-modalArea {
   display: none;
   position: fixed;
@@ -174,25 +158,22 @@ html body .problem .results-modalArea {
   width: 100%;
   height: 100%;
 }
-
 html body .problem .results-modalArea .results-modalBg {
   width: 100%;
   height: 100%;
   background-color: rgba(30, 30, 30, 0.9);
 }
-
 html body .problem .results-modalArea #results-container {
   margin: 0%;
   width: 80%;
   height: 80%;
   left: 50%;
-  top: 50%;
+  top: 60%;
   position: absolute;
   transform: translate(-50%, -50%);
   text-align: center;
   font-size: 24px;
 }
-
 html body .problem .results-modalArea #results-container #results-mark-maru {
   margin: 0%;
   width: 350px;
@@ -204,7 +185,6 @@ html body .problem .results-modalArea #results-container #results-mark-maru {
   border-radius: 100%;
   border: 50px solid red;
 }
-
 html body .problem .results-modalArea #results-container #results-mark-batsu {
   display: block;
   position: absolute;
@@ -215,7 +195,6 @@ html body .problem .results-modalArea #results-container #results-mark-batsu {
   position: relative;
   transform: translate(-50%, -50%);
 }
-
 html body .problem .results-modalArea #results-container #results-mark-batsu:before, html body .problem .results-modalArea #results-container #results-mark-batsu:after { /* 共通設定 */
   content: "";
   position: absolute;
@@ -225,16 +204,14 @@ html body .problem .results-modalArea #results-container #results-mark-batsu:bef
   height: 500px; /* 棒の高さ */
   background: blue;
 }
-
 html body .problem .results-modalArea #results-container #results-mark-batsu:before {
   transform: translate(-50%, -50%) rotate(45deg);
 }
-
 html body .problem .results-modalArea #results-container #results-mark-batsu:after {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
-
 html body .problem .results-modalArea #results-container #results-header {
+  white-space: nowrap;
   margin: 0%;
   width: 50%;
   height: 30%;
@@ -244,7 +221,6 @@ html body .problem .results-modalArea #results-container #results-header {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
 html body .problem .results-modalArea #results-container #results-header #results {
   font-size: 48px;
   text-align: center;
@@ -254,7 +230,6 @@ html body .problem .results-modalArea #results-container #results-header #result
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
 html body .problem .results-modalArea #results-container #results-header #next-quiz {
   left: 50%;
   top: 75%;
@@ -265,21 +240,18 @@ html body .problem .results-modalArea #results-container #results-header #next-q
   height: 30%;
   font-size: 28px;
 }
-
 html body .answer-frame {
   margin: 0%;
   width: 100%;
   height: 50%;
   background-color: black;
 }
-
 html body .answer-frame .status {
   margin: 0%;
   width: 100%;
   height: 15%;
   display: flex;
 }
-
 html body .answer-frame .status progress {
   margin: 0%;
   width: 40%;
@@ -289,7 +261,6 @@ html body .answer-frame .status progress {
   position: relative;
   transform: translate(-50%, -50%);
 }
-
 html body .answer-frame .status #score-frame {
   margin: 0;
   width: 20%;
@@ -301,7 +272,6 @@ html body .answer-frame .status #score-frame {
   position: relative;
   transform: translate(-50%, -50%);
 }
-
 html body .answer-frame .status #score-frame #score {
   white-space: nowrap;
   top: 50%;
@@ -309,7 +279,6 @@ html body .answer-frame .status #score-frame #score {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
 html body .answer-frame #switch-frame {
   margin: 0%;
   width: 40%;
@@ -319,7 +288,6 @@ html body .answer-frame #switch-frame {
   left: 50%;
   top: 75%;
 }
-
 html body .answer-frame #switch-frame #switch-bottom {
   background-color: #D9D9D9;
   border-radius: 100%;
@@ -331,7 +299,6 @@ html body .answer-frame #switch-frame #switch-bottom {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 html body .answer-frame #switch-frame #switch-bottom #switch-push {
   background-color: #B3FACB;
   border-radius: 100%;
@@ -343,13 +310,11 @@ html body .answer-frame #switch-frame #switch-bottom #switch-push {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 html body .answer-frame #quiz-container {
   margin: 0%;
   width: 100%;
   height: 100%;
 }
-
 html body .answer-frame #quiz-container .choice-a {
   margin: 0%;
   width: 20%;
@@ -362,7 +327,11 @@ html body .answer-frame #quiz-container .choice-a {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
+html body .answer-frame #quiz-container .choice-a button {
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+}
 html body .answer-frame #quiz-container .choice-a #a-text {
   white-space: nowrap;
   left: 50%;
@@ -370,7 +339,6 @@ html body .answer-frame #quiz-container .choice-a #a-text {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
 html body .answer-frame #quiz-container .choice-b {
   margin: 0%;
   width: 20%;
@@ -383,7 +351,6 @@ html body .answer-frame #quiz-container .choice-b {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
 html body .answer-frame #quiz-container .choice-b #b-text {
   white-space: nowrap;
   left: 50%;
@@ -391,7 +358,6 @@ html body .answer-frame #quiz-container .choice-b #b-text {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
 html body .answer-frame #quiz-container .choice-c {
   margin: 0%;
   width: 20%;
@@ -404,7 +370,6 @@ html body .answer-frame #quiz-container .choice-c {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
 html body .answer-frame #quiz-container .choice-c #c-text {
   white-space: nowrap;
   left: 50%;
@@ -412,7 +377,6 @@ html body .answer-frame #quiz-container .choice-c #c-text {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
 html body .answer-frame #quiz-container .choice-d {
   margin: 0%;
   width: 20%;
@@ -425,7 +389,6 @@ html body .answer-frame #quiz-container .choice-d {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
 html body .answer-frame #quiz-container .choice-d #d-text {
   white-space: nowrap;
   left: 50%;
@@ -433,7 +396,6 @@ html body .answer-frame #quiz-container .choice-d #d-text {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
 html body .answer-frame #quiz-container button {
   margin: 0%;
   width: 10%;
@@ -444,16 +406,13 @@ html body .answer-frame #quiz-container button {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-
 html body .answer-frame #results-container {
   align-items: center;
 }
-
 html body .answer-frame #results-container #results-header {
   text-align: center;
   justify-content: center;
 }
-
 html body .answer-frame #results-container #results-header #results {
   padding: 2rem 0;
-} /*# sourceMappingURL=game.css.map */
+}

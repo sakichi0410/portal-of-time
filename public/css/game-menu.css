@@ -21533,23 +21533,69 @@ textarea.form-control-lg {
   font-family: "dot-bold";
 }
 
-body {
+html {
+  width: 100%;
+  height: 100%;
+}
+html body {
   background-image: url(../image/game-menu.png);
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
 }
-
-main {
-  padding: 100px;
-  margin: 50px auto;
+html body main {
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*オーバーレイ*/
 }
-main .play-menu {
+html body main .play-menu {
   display: flex;
   justify-content: center;
-  padding-top: 50px;
+  padding: 50px;
+  width: 100%;
+  height: 100%;
   justify-content: space-evenly;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-main .play-menu .hex {
+html body main .play-menu .menu-btn {
+  width: 40%;
+}
+html body main .play-menu .menu-btn #btn1 {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+html body main .play-menu .menu-btn .text {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+html body main .play-menu .wrapper-btn {
+  width: 40%;
+}
+html body main .play-menu .wrapper-btn #btn2 {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+html body main .play-menu .wrapper-btn .text {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+html body main .play-menu .hex {
   margin: 10px;
   width: 150px;
   height: 130px; /* width*√3/2 */
@@ -21559,17 +21605,17 @@ main .play-menu .hex {
   font-family: "dot-regular";
   cursor: pointer;
 }
-main .play-menu .hex:hover {
+html body main .play-menu .hex:hover {
   transition: 0.3s;
   background-color: rgb(50, 210, 200);
   font-size: 20px;
 }
-main .play-menu .name {
+html body main .play-menu .name {
   display: inline;
   line-height: 130px;
   color: white;
 }
-main .play-menu .text {
+html body main .play-menu .text {
   display: none;
   width: 100%;
   height: 50px;
@@ -21579,65 +21625,77 @@ main .play-menu .text {
   outline: 1px solid rgb(100, 200, 255);
   outline-offset: -5px;
 }
-main .play-menu .text p {
+html body main .play-menu .text p {
   line-height: 30px;
   color: rgb(255, 255, 255);
 }
-
-/*オーバーレイ*/
-.overlay {
+html body main .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: -50%;
+  left: -50%;
+  position: absolute;
+  width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.3);
   display: none;
   z-index: 1;
 }
-
-.select-wrapper {
+html body main .overlay .select-wrapper {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   display: none;
   position: fixed;
-  top: 10%;
-  left: 10%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   right: 10%;
   color: rgb(255, 255, 255);
   background-color: rgba(25, 25, 50, 0.9);
-  width: 50%;
-  padding: 30px;
-  margin: 30px auto;
+  width: 60%;
+  height: 70%;
   z-index: 2;
   outline: 1px solid rgb(100, 200, 255);
   outline-offset: -10px;
 }
-.select-wrapper h1, .select-wrapper .h1 {
+html body main .overlay .select-wrapper h1, html body main .overlay .select-wrapper .h1 {
   text-align: center;
+  font-size: 48px;
+  top: 5%;
+  position: relative;
 }
-.select-wrapper .age-select {
+html body main .overlay .select-wrapper .age-select {
   padding: 20px;
+  top: 5%;
+  left: 5%;
+  position: relative;
+  font-size: 28px;
 }
-.select-wrapper .age-select p {
-  font-size: 20px;
-}
-.select-wrapper .type-select {
+html body main .overlay .select-wrapper .type-select {
   padding: 20px;
+  top: 8%;
+  left: 5%;
+  position: relative;
+  font-size: 28px;
 }
-.select-wrapper .type-select p {
-  font-size: 20px;
-}
-.select-wrapper .number-question {
+html body main .overlay .select-wrapper .number-question {
   padding: 20px;
+  top: 13%;
+  left: 5%;
+  position: relative;
+  font-size: 28px;
 }
-.select-wrapper .button-wrapper {
+html body main .overlay .select-wrapper .button-wrapper {
   text-align: center;
+  font-size: 28px;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
 }
-.select-wrapper .button-wrapper .button {
+html body main .overlay .select-wrapper .button-wrapper .button {
   margin: 20px;
 }
-
-#roomselect-wrapper {
+html body main #roomselect-wrapper {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   display: none;
   position: fixed;
@@ -21655,38 +21713,38 @@ main .play-menu .text p {
   outline: 1px solid rgb(100, 200, 255);
   outline-offset: -10px;
 }
-#roomselect-wrapper h1, #roomselect-wrapper .h1 {
+html body main #roomselect-wrapper h1, html body main #roomselect-wrapper .h1 {
   text-align: center;
   padding: 10px;
 }
-#roomselect-wrapper .room-wrapper {
+html body main #roomselect-wrapper .room-wrapper {
   display: flex;
   background-color: rgb(180, 180, 180);
   width: 100%;
   padding: 10px;
 }
-#roomselect-wrapper .room-wrapper .left {
+html body main #roomselect-wrapper .room-wrapper .left {
   flex: 1 0 auto;
   width: 85%;
 }
-#roomselect-wrapper .room-wrapper .left p {
+html body main #roomselect-wrapper .room-wrapper .left p {
   display: inline-block;
 }
-#roomselect-wrapper .room-wrapper .right {
+html body main #roomselect-wrapper .room-wrapper .right {
   flex: 0 1 auto;
   width: 15%;
 }
-#roomselect-wrapper .room-wrapper .right button {
+html body main #roomselect-wrapper .room-wrapper .right button {
   margin: 5px;
 }
-#roomselect-wrapper .room-wrapper .right button a {
+html body main #roomselect-wrapper .room-wrapper .right button a {
   text-decoration: none;
   color: black;
 }
-#roomselect-wrapper .button-wrapper {
+html body main #roomselect-wrapper .button-wrapper {
   display: flex;
   margin-top: 180px;
 }
-#roomselect-wrapper .button-wrapper div {
+html body main #roomselect-wrapper .button-wrapper div {
   margin: 0 auto;
 }

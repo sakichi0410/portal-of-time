@@ -8,6 +8,8 @@ body{
   background-image: url(../image/game-menu.png);
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
 
 a {
     text-decoration: none;
@@ -19,85 +21,117 @@ a {
       list-style: none;
     }
   }
-}
+
 
   .container {
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
+    height: 80vh;
+    padding: 0%;
+
     color: #FFFFFF;
     font-family: "RocknRoll One";
     font-style: normal;
     font-weight: 400;
     line-height: 35px;
-  }
+  
   
   .Selection-confirmation {
     box-sizing: border-box;
-    max-width: 1258px;
+    //max-width: 1258px;
     width: 100%;
-    height: 550px;
-    padding: 10px;
-    margin: 20px auto;
+    height: 80%;
+    padding: 0%;
+    margin: 0%;
     background-color: rgba(24,16,56);
     outline: 1px solid $blue;
     outline-offset: -10px;
-
+    top: 50%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%,-50%);
+  
 
     h1{
       text-align: center;
       padding: 20px;
+      font-size: 58px;
     }
   
-  img {
-    max-width: 500px;
-    width: 100%;
-    margin: 50px 70px;
-    @include short{
-      width: 310px;
-      margin: 20px 180px;
+    img {
+      //max-width: 500px;
+      width: 50%;
+      margin: 50px 70px;
+      position: relative;
+      top: 25%;
+      left: 25%;
+      transform: translate(-50%,-50%);
+      
+      /*
+      @include short{
+        width: 310px;
+        margin: 20px 180px;
+      }
+      */
     }
-  }
   
-  .detail {
-    float: right;
-    max-width: 500px;
-    width: 100%;
-    padding: 80px;
-    margin-top: 20px;
-    line-height: 35px;
+    .detail {
+      float: right;
+      max-width: 500px;
+      width: 100%;
+      padding: 30px;
+      line-height: 35px;
+      font-size: 28px;
+      text-align: center;
+      position: relative;
+      top: 30%;
+      left: 15%;
+      transform: translate(-50%,-50%);
+
+      /*
+      @include short{
+        float: none;
+        display: block;
+        width: 180px;
+        margin: 5px auto;
+        padding: 10px;
+        font-size: 15px;
+        line-height: 40px;
+      }
+      */
+
+      p{
+        display: inline;
+      }
+
+      .section{
+          margin-top: 20%;
+          position: relative;
+          top: 90%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+
+    /*
     @include short{
-      float: none;
-      display: block;
-      width: 180px;
-      margin: 5px auto;
-      padding: 10px;
       font-size: 15px;
-      line-height: 40px;
-    }
-    p{
-      display: inline;
-    }
-    .section{
-  margin-top: 50px;
-  @include short{
-    font-size: 15px;
-    text-align: center;
-    border: 1px solid red;
-    margin-top: 0;
-  }
+      text-align: center;
+      border: 1px solid red;
+      margin-top: 0;
+    }*/
 
-.return {
-  display: inline-block;
-  padding-right: 50px;
-}
-.start{
-  display: inline-block;
-  @include short{
-  margin-right: 20px;
+          .return {
+            display: inline-block;
+            padding-right: 50px;
+          }
+          .start{
+            display: inline-block;
+            /*
+            @include short{
+            margin-right: 20px;
+            }*/
+          }
+      }
+    }
+  }
   }
 }
-}
-  }
-  
-
-  }

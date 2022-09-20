@@ -4,8 +4,6 @@ import { httpGet } from './index.js';
 
 var answered = 0;
 let currentQuiz = 0;
-// 一定間隔で処理を行うintervalのIDを保持
-var intervalID;
 
 //問題番号
 const quiznumElm = document.getElementById('question-number');
@@ -43,7 +41,6 @@ var intervalID;
 const nextQuizBtn = document.getElementById('next-quiz');
 
 // 結果表示用の要素
-//const quizHeaderElm = document.getElementById('quiz-header');
 const resultsConElm = document.getElementById('results-modalArea');
 const resultsElm = document.getElementById('results');
 
@@ -58,6 +55,12 @@ const max = 10;
 var quizList = [];
 for( var i=1; quizList.push(i++) < max;);
 
+// クイズの問題を保持
+let rand;
+const setList = [];
+const setListnum = [];
+let options = [];
+
 loadQuiz();
 
 function shuffleAry(ary) {
@@ -70,8 +73,6 @@ function shuffleAry(ary) {
   }
   return ary;
 }
-
-var options = [];
 
 // 問題を読み込む
 async function loadQuiz() {
@@ -243,7 +244,6 @@ import { quizDataJp } from './quiz-data.js';
 var answered = 0;
 let currentQuiz = 0; //play中の問題が何番目の問題か
 
-
 //問題番号
 const quiznumElm = document.getElementById('question-number');
 const scoreElm = document.getElementById('score');
@@ -258,22 +258,28 @@ const c_text = document.getElementById('c-text');
 const d_text = document.getElementById('d-text');
 
 // 回答送信ボタン、スイッチ
+//const submitBtn = document.getElementsById('submit');
 const submitBtn = document.getElementById('submit');
+//const submitaBtn = document.getElementsById('submit-a');
+//const submitbBtn = document.getElementsById('submit-b');
+
 const switchBtn = document.getElementById('switch-push');
 
 // 現在の問題
 var correct;
+//var answer;
 
-// 現在のスコア、報酬
+// 現在のスコア
 let score = 0;
-let reward = 0;
 
-// 一定間隔で処理を行うintervalのIDを保持
-var intervalID;
+// 報酬
+let reward = 0;
 
 // プログレスバーの進捗値
 var val =100;
 
+// 一定間隔で処理を行うintervalのIDを保持
+var intervalID;
 
 // 次の問題へ進むボタン
 const nextQuizBtn = document.getElementById('next-quiz');
@@ -295,7 +301,7 @@ for( var i=1; quizList.push(i++) < max;);
 
 // クイズの問題を保持
 let rand;
-const setList = [];
+//const setList = [];
 const setListnum = [];
 let options = [];
 
@@ -303,11 +309,9 @@ loadQuiz();
 
 function shuffleAry(ary) {
   var i = ary.length;
-
   while(i){
     var j = Math.floor(Math.random()*i);
     var t = ary[--i];
-
     ary[i] = ary[j];
     ary[j] = t;
   }
@@ -316,7 +320,6 @@ function shuffleAry(ary) {
 
 // 問題を読み込む
 async function loadQuiz() {
-  // ?
   answered = 0;
   
   quiznumElm.innerText = "【第" + (currentQuiz + 1) + "問】";
@@ -331,15 +334,11 @@ async function loadQuiz() {
     loadQuiz();
   }else{
 
-    console.log("rand=" + rand + ",問題は配列の" + rand + "番目");
   // 問題を取得
   const currentQuizData = quizDataJp[rand];
 
   //setList[setList.length] = currentQuizData;
   setListnum[setListnum.length] = rand;
-  //console.log(setList); 
-  console.log(setListnum); 
-
   
   // 質問文を表示
   questionElm.innerText = currentQuizData.question;
@@ -357,8 +356,6 @@ async function loadQuiz() {
 
   options = shuffleAry(options);
 
-  console.log(options);
-
 
   // 選択肢を表示
   a_text.innerText = options[0];
@@ -371,14 +368,24 @@ async function loadQuiz() {
 // 回答を取得
 function getAnswered() {
   // 選択したラジオボタンのvalueを返す
+  console.log("getanswered1");
   return document.quizForm.answer.value;
+  console.log("getanswered2");
 }
+/*
+switchBtn.addEventListener('click', event => {
+
+}
+);
+*/
+
 
 //　スイッチを押した際の動作
 switchBtn.addEventListener('click', event => {
+  //function OnClickSubmit(){
   event.preventDefault();
 
-  console.log(a_text.innerText);
+  //console.log(a_text.innerText);
 
   switchFraElm.style.display = 'none';
   quizConElm.style.display = 'block';
@@ -386,7 +393,8 @@ switchBtn.addEventListener('click', event => {
   switchAudio.volume = 0.1; 
   switchAudio.play();
   Timebar();
-});
+}
+);
 
 
 // 結果表示
@@ -438,12 +446,13 @@ submitBtn.addEventListener('click', event => {
   if(answer) {
     reward +=50;
     if (options[answer] === quizDataJp[rand].correct) {
+    //if (options[answer] === quizDataJp[rand].answer) {
       score += 10;
       showResults('10pt');
     } else{
       showResults();
     }
-    document.getElementById(answer).checked = false;
+    //document.getElementById(answer).checked = false;
   }
 });
 
@@ -496,4 +505,3 @@ function updateProgress() {
     showResults();
   }
 }
-

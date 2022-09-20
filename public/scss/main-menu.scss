@@ -6,12 +6,17 @@
 *{
     font-family: 'dot-regular';
 }
+html{
+    width: 100%;
+    height: 100%;
+
 
 body{
     z-index: 1;
     position: relative;
-    max-width: 1600px;
+    //max-width: 1600px;
     width: 100%;
+    height: 100%;
     background-image: url(../image/shrine_gateway.png);
     background-size: 100% 100vh;
     background-repeat: no-repeat;
@@ -27,7 +32,7 @@ body{
     li{
         list-style: none;
     }
-}
+
 
 // タイピングアニメーション用
 #typing-area{
@@ -131,7 +136,8 @@ body{
 footer{
     width: 100%;
     height: 100px;
-    position: relative;
+    position: absolute;
+    bottom: 0%;
  
     p{
     color: $white-00;
@@ -139,4 +145,6 @@ footer{
     right: 10px;
     bottom: 0;
     }
+}
+}
 }

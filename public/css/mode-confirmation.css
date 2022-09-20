@@ -21537,6 +21537,8 @@ body {
   background-image: url(../image/game-menu.png);
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
 }
 body a {
   text-decoration: none;
@@ -21548,53 +21550,64 @@ body ul {
 body ul li {
   list-style: none;
 }
-
-.container {
+body .container {
   box-sizing: border-box;
-  width: 100%;
+  width: 100vw;
+  height: 80vh;
+  padding: 0%;
   color: #FFFFFF;
   font-family: "RocknRoll One";
   font-style: normal;
   font-weight: 400;
   line-height: 35px;
 }
-
-.Selection-confirmation {
+body .container .Selection-confirmation {
   box-sizing: border-box;
-  max-width: 1258px;
   width: 100%;
-  height: 550px;
-  padding: 10px;
-  margin: 20px auto;
+  height: 80%;
+  padding: 0%;
+  margin: 0%;
   background-color: rgb(24, 16, 56);
   outline: 1px solid rgb(100, 200, 255);
   outline-offset: -10px;
+  top: 50%;
+  left: 50%;
+  position: relative;
+  transform: translate(-50%, -50%);
 }
-.Selection-confirmation h1, .Selection-confirmation .h1 {
+body .container .Selection-confirmation h1, body .container .Selection-confirmation .h1 {
   text-align: center;
   padding: 20px;
+  font-size: 58px;
 }
-.Selection-confirmation img {
-  max-width: 500px;
-  width: 100%;
+body .container .Selection-confirmation img {
+  width: 50%;
   margin: 50px 70px;
-}
-@media screen and (max-width: 1200px) {
-  .Selection-confirmation img {
+  position: relative;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  /*
+  @include short{
     width: 310px;
     margin: 20px 180px;
   }
+  */
 }
-.Selection-confirmation .detail {
+body .container .Selection-confirmation .detail {
   float: right;
   max-width: 500px;
   width: 100%;
-  padding: 80px;
-  margin-top: 20px;
+  padding: 30px;
   line-height: 35px;
-}
-@media screen and (max-width: 1200px) {
-  .Selection-confirmation .detail {
+  font-size: 28px;
+  text-align: center;
+  position: relative;
+  top: 30%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  /*
+  @include short{
     float: none;
     display: block;
     width: 180px;
@@ -21603,30 +21616,33 @@ body ul li {
     font-size: 15px;
     line-height: 40px;
   }
+  */
 }
-.Selection-confirmation .detail p {
+body .container .Selection-confirmation .detail p {
   display: inline;
 }
-.Selection-confirmation .detail .section {
-  margin-top: 50px;
-}
-@media screen and (max-width: 1200px) {
-  .Selection-confirmation .detail .section {
+body .container .Selection-confirmation .detail .section {
+  margin-top: 20%;
+  position: relative;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*
+  @include short{
     font-size: 15px;
     text-align: center;
     border: 1px solid red;
     margin-top: 0;
-  }
+  }*/
 }
-.Selection-confirmation .detail .section .return {
+body .container .Selection-confirmation .detail .section .return {
   display: inline-block;
   padding-right: 50px;
 }
-.Selection-confirmation .detail .section .start {
+body .container .Selection-confirmation .detail .section .start {
   display: inline-block;
-}
-@media screen and (max-width: 1200px) {
-  .Selection-confirmation .detail .section .start {
-    margin-right: 20px;
-  }
+  /*
+  @include short{
+  margin-right: 20px;
+  }*/
 }
