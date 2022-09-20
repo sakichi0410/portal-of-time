@@ -235,6 +235,7 @@ html body .problem .results-modalArea #results-container #results-header #next-q
   top: 75%;
   position: absolute;
   transform: translate(-50%, -50%);
+  background-color: rgb(137, 199, 243);
   margin: 0%;
   width: 50%;
   height: 30%;
@@ -245,6 +246,29 @@ html body .answer-frame {
   width: 100%;
   height: 50%;
   background-color: black;
+  /*
+        #results-container {
+          //display: none;
+          align-items: center;
+
+          #results-header {
+            text-align: center;
+            justify-content: center;
+
+            #results {
+              padding: 2rem 0;
+            }
+  <<<<<<< Updated upstream
+
+            #next-quiz {
+              background-color: #08af50;
+  =======
+            #next-quiz{
+              background-color: #07db8f;
+  >>>>>>> Stashed changes
+            }
+          }
+        }*/
 }
 html body .answer-frame .status {
   margin: 0%;
@@ -319,7 +343,10 @@ html body .answer-frame #quiz-container .choice-a {
   margin: 0%;
   width: 20%;
   height: 10%;
-  background-color: gray;
+  background-image: url(../image/選択ボックス.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   align-items: center;
   font-size: 48px;
   left: 35%;
@@ -343,7 +370,10 @@ html body .answer-frame #quiz-container .choice-b {
   margin: 0%;
   width: 20%;
   height: 10%;
-  background-color: gray;
+  background-image: url(../image/選択ボックス.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   align-items: center;
   font-size: 48px;
   left: 65%;
@@ -362,7 +392,10 @@ html body .answer-frame #quiz-container .choice-c {
   margin: 0%;
   width: 20%;
   height: 10%;
-  background-color: gray;
+  background-image: url(../image/選択ボックス.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   align-items: center;
   font-size: 48px;
   left: 35%;
@@ -381,7 +414,10 @@ html body .answer-frame #quiz-container .choice-d {
   margin: 0%;
   width: 20%;
   height: 10%;
-  background-color: gray;
+  background-image: url(../image/選択ボックス.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   align-items: center;
   font-size: 48px;
   left: 65%;
@@ -405,17 +441,4 @@ html body .answer-frame #quiz-container button {
   top: 93%;
   position: absolute;
   transform: translate(-50%, -50%);
-}
-html body .answer-frame #results-container {
-  align-items: center;
-}
-html body .answer-frame #results-container #results-header {
-  text-align: center;
-  justify-content: center;
-}
-html body .answer-frame #results-container #results-header #results {
-  padding: 2rem 0;
-}
-html body .answer-frame #results-container #results-header #next-quiz {
-  background-color: #08af50;
 }

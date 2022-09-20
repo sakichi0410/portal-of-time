@@ -21563,6 +21563,7 @@ html body li {
 }
 html body #typing-area {
   position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   z-index: 900;
@@ -21573,15 +21574,15 @@ html body #typing-area {
 }
 html body #typing-area #typing-message {
   position: absolute;
-  top: 43%;
-  left: 30%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*
+  @include short{
+      margin: 0 auto;
+  }*/
   /*========= タイピング ===============*/
   /*文字列後ろの線の設定*/
-}
-@media screen and (max-width: 1200px) {
-  html body #typing-area #typing-message {
-    margin: 0 auto;
-  }
 }
 html body #typing-area #typing-message p {
   margin: 20px 0;

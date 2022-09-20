@@ -28,7 +28,7 @@ const quizDataJp = [
     a:'長篠の戦い',
     b:'桶狭間の戦い',
     c:'川中島の戦い',
-    d:'三方ヶ原の戦い',
+    d:'関ヶ原の戦い',
     correct:'川中島の戦い',
     comment: 'test_answer2',
   },

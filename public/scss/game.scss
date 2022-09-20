@@ -269,6 +269,7 @@ html{
                 top: 75%;
                 position: absolute;
                 transform: translate(-50%,-50%);
+                background-color: rgba(137, 199, 243);
     
                 margin: 0%;
                 width: 50%;
@@ -373,7 +374,12 @@ html{
               margin: 0%;
               width: 20%;
               height: 10%;
-              background-color: gray;
+              //background-color: gray;
+              background-image: url(../image/選択ボックス.png);
+              background-position: center;
+              background-size: cover;
+              background-repeat: no-repeat;
+        
 
               align-items: center;
               font-size: 48px;
@@ -402,7 +408,12 @@ html{
                 margin: 0%;
                 width: 20%;
                 height: 10%;
-                background-color: gray;
+                //background-color: gray;
+                background-image: url(../image/選択ボックス.png);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+  
 
                 align-items: center;
                 font-size: 48px;
@@ -426,7 +437,12 @@ html{
                 margin: 0%;
                 width: 20%;
                 height: 10%;
-                background-color: gray;
+                //background-color: gray;
+                background-image: url(../image/選択ボックス.png);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+  
 
                 align-items: center;
                 font-size: 48px;
@@ -450,7 +466,12 @@ html{
                 margin: 0%;
                 width: 20%;
                 height: 10%;
-                background-color: gray;
+                //background-color: gray;
+                background-image: url(../image/選択ボックス.png);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+  
 
                 align-items: center;
                 font-size: 48px;
@@ -485,7 +506,7 @@ html{
         
 
       }
-
+/*
       #results-container {
         //display: none;
         align-items: center;
@@ -497,12 +518,17 @@ html{
           #results {
             padding: 2rem 0;
           }
+<<<<<<< Updated upstream
 
           #next-quiz {
             background-color: #08af50;
+=======
+          #next-quiz{
+            background-color: #07db8f;
+>>>>>>> Stashed changes
           }
         }
-      }
+      }*/
 
     }
   }
