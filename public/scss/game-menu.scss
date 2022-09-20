@@ -148,38 +148,38 @@ html{
                 
                 h1{
                     text-align: center;
-                    font-size: 48px;
+                    font-size: min(3vw, 48px);
                     top: 5%;
                     position: relative;
                 }
 
                 .age-select{
-                    padding: 20px;
+                    padding: 1%;
                     top: 5%;
                     left: 5%;
                     position: relative;
-                    font-size: 28px;
+                    font-size: min(1.5vw, 28px);
                 }
 
                 .type-select{
-                    padding: 20px;
+                    padding: 1%;
                     top: 8%;
                     left: 5%;
                     position: relative;
-                    font-size: 28px;
+                    font-size: min(1.5vw, 28px);
                 }
                 
                 .number-question{
-                    padding: 20px;
+                    padding: 1%;
                     top: 13%;
                     left: 5%;
                     position: relative;
-                    font-size: 28px;
+                    font-size: min(1.5vw, 28px);
                 }
 
                 .button-wrapper{
                     text-align: center;
-                    font-size: 28px;    
+                    font-size: min(1.5vw, 28px);;    
                     top: 20%;
                     left: 50%;
                     transform: translate(-50%,-50%);

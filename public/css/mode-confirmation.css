@@ -21578,9 +21578,10 @@ body .container .Selection-confirmation {
 body .container .Selection-confirmation h1, body .container .Selection-confirmation .h1 {
   text-align: center;
   padding: 20px;
-  font-size: 58px;
+  font-size: min(2.5vw, 58px);
 }
 body .container .Selection-confirmation img {
+  max-width: 550px;
   width: 50%;
   margin: 50px 70px;
   position: relative;
@@ -21599,8 +21600,8 @@ body .container .Selection-confirmation .detail {
   max-width: 500px;
   width: 100%;
   padding: 30px;
-  line-height: 35px;
-  font-size: 28px;
+  line-height: 3vw;
+  font-size: min(1.5vw, 28px);
   text-align: center;
   position: relative;
   top: 30%;

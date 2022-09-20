@@ -416,3 +416,6 @@ html body .answer-frame #results-container #results-header {
 html body .answer-frame #results-container #results-header #results {
   padding: 2rem 0;
 }
+html body .answer-frame #results-container #results-header #next-quiz {
+  background-color: #08af50;
+}
