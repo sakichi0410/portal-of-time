@@ -19,7 +19,6 @@ const c_text = document.getElementById('c-text');
 const d_text = document.getElementById('d-text');
 
 // 回答送信ボタン、スイッチ
-const submitBtn = document.getElementById('submit');
 const switchBtn = document.getElementById('switch-push');
 
 // 現在の問題
@@ -47,7 +46,7 @@ const resultsElm = document.getElementById('results');
 const resultsMarkmaru = document.getElementById('results-mark-maru');
 const resultsMarkbatsu = document.getElementById('results-mark-batsu');
 
-const switchFraElm = document.getElementById('switch-frame');
+const switchFraElm = document.getElementById('switch');
 const quizConElm = document.getElementById('quiz-container');
 
 //クイズリストを作成
@@ -115,8 +114,9 @@ async function loadQuiz() {
 // 回答を取得
 function getAnswered() {
   // 選択したラジオボタンのvalueを返す
-  var index = document.quizForm.answer.value;
-  return options[index];
+  //var index = document.quizForm.answer.value;
+  //return options[index];
+  return document.getElementById(clickvalue).getAttribute("data-value");
 }
 
 //　スイッチを押した際の動作
@@ -132,10 +132,13 @@ switchBtn.addEventListener('click', event => {
 
 // 結果表示
 function showResults(results) {
-  submitBtn.style.display = 'none'; //　送信ボタンを非表示 //　送信ボタンを非表示
   resultsConElm.style.display = 'block'; //　結果要素の表示
 
   //　前問にて表示されたマークを非表示 //　結果要素の表示
+  resultsMarkbatsu.style.display = 'block'; 
+  resultsMarkmaru.style.display = 'block'; 
+
+
   if(results){
     const answerAudio = document.getElementById('answer-audio');
     answerAudio.volume = 0.1; 
@@ -158,32 +161,53 @@ function showResults(results) {
 
 // 次の問題を表示
 function showQuiz() {
-  submitBtn.style.display = 'block';
   resultsConElm.style.display = 'none';
   switchFraElm.style.display = 'block';
   quizConElm.style.display = 'none';
   document.getElementById("myProgress").value = 100;
 }
 
-//　送信ボタンを押した場合
-submitBtn.addEventListener('click', event => {
-  event.preventDefault();
-  
+//　選択肢を押した場合
+$(function () {
+  $('#choice-a').click(function(){
+      OnClickSubmit("choice-a");
+  });
+});
+
+$(function () {
+  $('#choice-b').click(function(){
+      OnClickSubmit("choice-b");
+  });
+});
+
+$(function () {
+  $('#choice-c').click(function(){
+    OnClickSubmit("choice-c");
+  });
+});
+
+$(function () {
+  $('#choice-d').click(function(){
+    OnClickSubmit("choice-d");
+  });
+});
+
+
+function OnClickSubmit(sendvalue){
   clearInterval(intervalID);
 
-  const answer = getAnswered();
+  const answer = getAnswered(sendvalue);
+
   if(answer) {
-    answered=1;
     reward +=50;
-    if (answer == correct) {
-      showResults('10pt');
+    if (options[answer] === quizDataJp[rand].correct) {
       score += 10;
+      showResults('10pt');
     } else{
       showResults();
     }
-    document.getElementById(answer).checked = false;
   }
-});
+}
 
 //　次へボタンを押した場合
 nextQuizBtn.addEventListener('click', event => {
@@ -257,12 +281,7 @@ const b_text = document.getElementById('b-text');
 const c_text = document.getElementById('c-text');
 const d_text = document.getElementById('d-text');
 
-// 回答送信ボタン、スイッチ
-//const submitBtn = document.getElementsById('submit');
-const submitBtn = document.getElementById('submit');
-//const submitaBtn = document.getElementsById('submit-a');
-//const submitbBtn = document.getElementsById('submit-b');
-
+// 回答ボタン
 const switchBtn = document.getElementById('switch-push');
 
 // 現在の問題
@@ -291,7 +310,7 @@ const resultsElm = document.getElementById('results');
 const resultsMarkmaru = document.getElementById('results-mark-maru');
 const resultsMarkbatsu = document.getElementById('results-mark-batsu');
 
-const switchFraElm = document.getElementById('switch-frame');
+const switchFraElm = document.getElementById('switch');
 const quizConElm = document.getElementById('quiz-container');
 
 //クイズリストを作成
@@ -337,7 +356,6 @@ async function loadQuiz() {
   // 問題を取得
   const currentQuizData = quizDataJp[rand];
 
-  //setList[setList.length] = currentQuizData;
   setListnum[setListnum.length] = rand;
   
   // 質問文を表示
@@ -362,30 +380,20 @@ async function loadQuiz() {
   b_text.innerText = options[1];
   c_text.innerText = options[2];
   d_text.innerText = options[3];
-}}
+}
+}
 
 
 // 回答を取得
-function getAnswered() {
-  // 選択したラジオボタンのvalueを返す
-  console.log("getanswered1");
-  return document.quizForm.answer.value;
-  console.log("getanswered2");
+function getAnswered(clickvalue) {
+  // 選択したボタンのvalueを返す
+  return document.getElementById(clickvalue).getAttribute("data-value");
 }
-/*
-switchBtn.addEventListener('click', event => {
-
-}
-);
-*/
 
 
 //　スイッチを押した際の動作
 switchBtn.addEventListener('click', event => {
-  //function OnClickSubmit(){
   event.preventDefault();
-
-  //console.log(a_text.innerText);
 
   switchFraElm.style.display = 'none';
   quizConElm.style.display = 'block';
@@ -399,13 +407,11 @@ switchBtn.addEventListener('click', event => {
 
 // 結果表示
 function showResults(results) {
-  submitBtn.style.display = 'none'; //　送信ボタンを非表示
   resultsConElm.style.display = 'block'; //　結果要素の表示
 
   //　前問にて表示されたマークを非表示
   resultsMarkbatsu.style.display = 'block'; 
   resultsMarkmaru.style.display = 'block'; 
-
 
   if(results){
     const answerAudio = document.getElementById('answer-audio');
@@ -428,7 +434,6 @@ function showResults(results) {
 
 // 次の問題を表示
 function showQuiz() {
-  submitBtn.style.display = 'block';
   resultsConElm.style.display = 'none';
   switchFraElm.style.display = 'block';
   quizConElm.style.display = 'none';
@@ -436,25 +441,48 @@ function showQuiz() {
 }
 
 
-//　送信ボタンを押した場合
-submitBtn.addEventListener('click', event => {
-  event.preventDefault();
+//　選択肢を押した場合
+$(function () {
+  $('#choice-a').click(function(){
+      OnClickSubmit("choice-a");
+  });
+});
+
+$(function () {
+  $('#choice-b').click(function(){
+      OnClickSubmit("choice-b");
+  });
+});
+
+$(function () {
+  $('#choice-c').click(function(){
+    OnClickSubmit("choice-c");
+  });
+});
+
+$(function () {
+  $('#choice-d').click(function(){
+    OnClickSubmit("choice-d");
+  });
+});
+
+
+function OnClickSubmit(sendvalue){
   clearInterval(intervalID);
 
-  const answer = getAnswered();
+  const answer = getAnswered(sendvalue);
 
   if(answer) {
     reward +=50;
     if (options[answer] === quizDataJp[rand].correct) {
-    //if (options[answer] === quizDataJp[rand].answer) {
       score += 10;
       showResults('10pt');
     } else{
       showResults();
     }
-    //document.getElementById(answer).checked = false;
   }
-});
+}
+
 
 //　次へボタンを押した場合
 nextQuizBtn.addEventListener('click', event => {
@@ -484,6 +512,7 @@ $(function () {
     $('#modalArea').fadeOut();
   });
 });
+
 
 // 時間経過の動作
 function Timebar() {

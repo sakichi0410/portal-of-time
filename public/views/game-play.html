@@ -68,57 +68,31 @@
       </div>
     </div>
 
-    <div id="switch-frame">
-      <div id="switch-bottom">
-        <div id="myButton">
-          <a href="#" id="switch-push"></a>
+    <div id="switch">
+          <a href="#" id="switch-push">
+            <img src="../image/早押しボタン.png">
+          </a>
         <audio id="switch_audio">
           <source src="../sounds/Quiz-CorretBuzzer-mp3/Quiz-Buzzer02-1.mp3" type="audio/mp3">
         </audio>
-      </div>
-      </div>
     </div>
-    <div id="quiz-container" style="display: none;" >
-      <form id="quiz-form" name="quizForm">
-          <div class="choice-a">
-              <input type="radio" id="a" name="answer" value="0" />
-              <label id="a-text" for="a"></label>
-          </div>
-          <div class="choice-b">
-            <input type="radio" id="b" name="answer" value="1" />
-            <label id="b-text"  for="b"></label>
-          </div>
-          <div class="choice-c">
-            <input type="radio" id="c" name="answer" value="2" />
-            <label id="c-text"  for="c"></label>
-          </div>
-          <div class="choice-d">
-            <input type="radio" id="d" name="answer" value="3" />
-            <label id="d-text"  for="d"></label>
-          </div>
-      </form>
-
-      <button id="submit">回答する</button>
-    </div>
-  </div>
   
-  <!--
-  <div id="quiz-container" style="display: none;" >
-    <form id="quiz-form" name="quizForm">
-        <div class="choice-a">
-          <button id="submit-a" value="a">
+  <div id="quiz-container">
+        <a href="#" id="choice-a" data-value="0">
             <label id="a-text"  for="a"></label>
-          </button>
-        </div>
-        <div class="choice-b">
-          <button id="submit-b" value="b">
+        </a>
+        <a href="#" id="choice-b" data-value="1">
             <label id="b-text"  for="b"></label>
-          </button>
-        </div>
-    </form>
-    -->
-
+        </a>
+        <a href="#" id="choice-c" data-value="2">
+            <label id="c-text"  for="c"></label>
+        </a>
+        <a href="#" id="choice-d" data-value="3">
+            <label id="d-text"  for="d"></label>
+        </a>
   </div>
+
+
 </div>
 
 
