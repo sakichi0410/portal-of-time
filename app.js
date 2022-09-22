@@ -11,6 +11,16 @@ var logger = require("morgan");
 var baseRouter = require('./routes/base.js');
 var apiRouter = require("./routes/api/index.js");
 var mainMenu = require("./routes/base/mainMenu.js");
+var gameMenu = require("./routes/base/gameMenu.js");
+var s_modeDisp = require("./routes/singleplay/modeDisp.js");
+var s_gamePlay = require("./routes/singleplay/gamePlay.js");
+var s_resultScore = require("./routes/singleplay/resultScore.js");
+var s_resultDetail = require("./routes/singleplay/resultDetail.js");
+var m_modeDisp = require("./routes/multiplay/modeDisp.js");
+var m_gamePlay = require("./routes/multiplay/gamePlay.js");
+var m_createRoom = require("./routes/multiplay/createRoom.js");
+var m_resultScore = require("./routes/multiplay/resultScore.js");
+var m_resultDetail = require("./routes/multiplay/resultDetail.js");
 
 var app = express();
 
@@ -36,13 +46,17 @@ app.use(session({
 
 app.use("/", baseRouter);
 app.use("/api", apiRouter);
-app.use("/mainMenu", mainMenu);
-// app.use('/gameMenu',gameMenu);
-// app.use('/gamePlay',gamePlay);
-// app.use('/modeDisp',modeDisp);
-// app.use('/resultDisp',modeDisp);
-// app.use('/resultScore',modeScore);`
-// app.use('/',mainMenu);
+app.use("mainMenu", mainMenu);
+app.use("gameMenu", gameMenu);
+app.use('single/modeDisp', s_modeDisp);
+app.use('single/gamePlay', s_gamePlay);
+app.use('single/resultScore', s_resultScore);
+app.use('single/resultDetail', s_resultDetail);
+app.use('multi/modeDisp', m_modeDisp);
+app.use('multi/gamePlay', m_gamePlay);
+app.use('multi/createRoomPlay', m_createRoom);
+app.use('multi/resultScore', m_resultScore);
+app.use('multi/resultDetail', m_resultDetail);
 // app.use('/login',login);
 // app.use(function(req, res, next){
 //   console.log(req.session.username);

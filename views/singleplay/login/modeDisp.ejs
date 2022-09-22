@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mode-confirmation.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="../css/header.css">
+
+    <title>mode-confirmation</title>
+    <audio autoplay loop id="menu-bgm">
+        <source src="../sounds/Quiz-CorretBuzzer-mp3/yowanotsuki_karakasa.mp3" type="audio/mp3">
+        <p>音楽の再生に対応していません</p>
+    </audio> 
+</head>
+<body>
+    <header id="header"></header>
+    <div class="container">
+        <div class="Selection-confirmation">
+            <div class="solid">
+                <h1>STAGE</h1>
+                <img src="../image/quiz-play-background.png">
+                <div class="detail">
+                    <p>出題範囲: 戦国時代</p>
+                    <p>難易度: 易しい</p>
+                    <p>出題数: 10問</p>
+                    <br>
+                    <div class="section">
+                        <a href="game-menu.html" class="return">戻る</a>
+                        <a href="game-play.html" class="start">始める</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script type="text/javascript">
+        $("#header").load("header-logout.html");
+
+        function mediasVol_def() {
+        // 特定のidのaudioの音量設定
+        const menu_bgm=document.getElementById('menu-bgm');
+        menu_bgm.volume = 0.05; // 0〜1 の間で
+        }
+        //ページ読み込み時に処理
+        window.addEventListener('DOMContentLoaded' , function(){
+            mediasVol_def();
+        }, false);
+    </script>
+</body>
+</html>
