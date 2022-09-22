@@ -6,14 +6,30 @@
 html{
     width: 100%;
     height: 100%;
+    //position: fixed;
 
 
     body{
-        background-image: url(../image/game-menu.png);//サイトの囲気見るための画像　後ほど直します
-        background-size: cover;
-        background-repeat: no-repeat;
         width: 100%;
         height: 100%;
+        position: relative;
+
+        #video-area{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0%;
+            z-index: -1;
+            background-color: black;
+
+            video{
+                width: 100%;
+                height: cover;
+            }
+        }
+            
+
+
         main{
             //padding: 100px;
             //margin: 50px auto;

@@ -21534,11 +21534,21 @@ textarea.form-control-lg {
 }
 
 body {
-  background-image: url(../image/game-menu.png);
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
+  position: relative;
+}
+body #video-area {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  z-index: -1;
+  background-color: black;
+}
+body #video-area video {
+  width: 100%;
+  height: cover;
 }
 body a {
   text-decoration: none;
