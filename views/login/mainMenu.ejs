@@ -2,8 +2,9 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -22,10 +23,10 @@
       <p>音楽の再生に対応していません</p>
     </audio>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type="module" type=”text/javascript” src="../js/user.js"></script>
   </head>
   <body>
   <!-- タイピングメッセージ表示画面 -->
+    <input type="hidden" id="user-id" value="<%= uid %>" />
     <div id="typing-area">
       <div id="typing-message">
         <p class="TextTyping">
@@ -49,7 +50,12 @@
     </footer>
   </body>
 
+  <script src="../js/index.js"></script>
   <script type="text/javascript">
+    const uid = $("#user-id").val()
+    const response = await httpGet(
+      "//" + window.location.host + "/api/get/header/" + uid
+    );
     function mediasVol_def() {
       // 特定のidのaudioの音量設定
       const opening=document.getElementById('opening');

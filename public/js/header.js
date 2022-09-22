@@ -1,30 +1,31 @@
 var modal = 0;
 
-$('#signin').on('click', function() {
+$('#open-signin').on('click', function() {
   signin();
 });
-$('#signup').on('click', function() {
+$('#open-signup').on('click', function() {
   signup();
 });
 
 async function signin() {
   if (modal == 0) {
     modal = 1;
-    await $("#modal").attr("style", "display:block;");
-    await $("#modal").load("../views/signin.html");
+    await $("#signin").attr("style", "display:block;");
+    console.log("modal-on");
   }
 }
 async function signup() {
   if (modal == 0) {
     modal = 1;
-    $("#modal").attr("style", "display:block;");
-    $("#modal").load("../views/signup.html");
+    await $("#signup").attr("style", "display:block;");
+    console.log("modal-on");
   }
 }
 
 $(window).click(function (e) {
-  if ((!$(e.target).parents().hasClass("modals") && modal == 1 && !$(e.target).hasClass("modals")) || $(e.target).hasClass("cancel")) {
+  if (!($(e.target).parents().hasClass("modal") || $(e.target).hasClass("modal") || $(e.target).parents().hasClass("open-modal") || $(e.target).hasClass("open-modal")) || $(e.target).hasClass("cancel")) {
     modal = 0;
-    $("#modal").attr("style", "display:none;");
+    console.log("modal-off");
+    $(".modal").attr("style", "display:none;");
   }
 });

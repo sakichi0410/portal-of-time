@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <%- include("../partials/head") %>
+    <link rel="stylesheet" href="../css/mainMenu.css">
+  </head>
+  <body>
+  <!-- タイピングメッセージ表示画面 -->
+    <!-- <div id="typing-area">
+      <div id="typing-message">
+        <p class="TextTyping">
+          This is the history learning site.
+      </p>
+      </div>
+    </div> -->
+<!----ローディング画面後現れるメインメニュー↓---->
+<div id="background"></div>
+    <%- include("../partials/header-logout") %>
+    <main>
+      <div id="contents">
+        <div class="title">
+          <p>Portal of Time</p>
+        </div>
+        <div class="button-wrapper">
+          <div class="button"><a href="game-menu.html">ゲームをプレイ</a></div>
+          <div class="button"><a href="#">歴史を学ぶ</a></div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>produced by dreamcareer</p>
+    </footer>
+  </body>
+
+  <script src="../js/index.js"></script>
+  <script type="text/javascript">
+    const uid = $("#user-id").val()
+
+    // getHeader();
+
+    // async function getHeader() {
+    //   const response = await httpGet(
+    //     "//" + window.location.host + "/api/get/header/" + uid
+    //   );
+    //   console.log(response);
+    // }
+    function mediasVol_def() {
+      // 特定のidのaudioの音量設定
+      const opening=document.getElementById('opening');
+      opening.volume = 0.01; // 0〜1 の間で
+    }
+    //ページ読み込み時に処理
+    window.addEventListener('DOMContentLoaded' , function(){
+          mediasVol_def();
+    }, false);
+  </script>
+  <!-- <script src="../js/animetion.js"></script> -->
+</html>

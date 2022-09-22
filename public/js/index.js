@@ -27,5 +27,3 @@ const httpPost = async function (url, data) {
     //console.log(err);
   }
 };
-
-export { httpGet ,httpPost}

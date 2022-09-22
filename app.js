@@ -3,17 +3,20 @@ const env = process.env.environment;
 
 var createError = require("http-errors");
 var express = require("express");
+var session = require('express-session');
 var path = require("path");
 var cookieParser = require("cookie-parser");
-var session = require('express-session');
 var logger = require("morgan");
 
+var baseRouter = require('./routes/base.js');
 var apiRouter = require("./routes/api/index.js");
+var mainMenu = require("./routes/base/mainMenu.js");
 
 var app = express();
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
+app.set('view engine', 'ejs');
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -24,14 +27,16 @@ app.use(session({
   secret: 'secret',
   resave: false,
   saveUninitialized: false,
-  cookie:{
-  httpOnly: true,
-  secure: false,
-  maxage: 1000 * 60 * 30
-  }
+  // cookie:{
+  // httpOnly: true,
+  // secure: false,
+  // maxage: 1000 * 60 * 30
+  // }
 }));
 
+app.use("/", baseRouter);
 app.use("/api", apiRouter);
+app.use("/mainMenu", mainMenu);
 // app.use('/gameMenu',gameMenu);
 // app.use('/gamePlay',gamePlay);
 // app.use('/modeDisp',modeDisp);

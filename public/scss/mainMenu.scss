@@ -1,0 +1,154 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "colors";
+@import "fonts";
+@import "responsive";
+
+*{
+    font-family: 'dot-regular';
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    #background{
+        background: no-repeat center url(../image/shrine_gateway.png);
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    main{
+        width: 100%;
+        position: absolute;
+        top: 50%;                      /* 外側の線の位置を、内側の線から上に7pxずらす */
+        left: 0px;
+        z-index: 2;
+        transform: translate(0%, -50%);
+        #contents{
+            margin: auto 0px;
+            width: 100%;
+        }
+    }
+    footer{
+        width: 100%;
+        position: absolute;
+        z-index: 3;
+        right: 0px;
+        bottom: 2%;
+        vertical-align: middle;
+        p{
+            margin:0px;
+            padding-right: 5%;
+            text-align: right;
+            color: $white-00;
+        }
+    }
+}
+
+// タイピングアニメーション用
+#typing-area{
+    position: fixed; //全画面に固定
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+    background: #000000;
+    text-align: center;
+    color: $white-00;
+    font-family: dot-regular;
+
+    #typing-message{
+        position: absolute;
+        top: 43%;
+        left:30%;
+        @include short{
+            margin: 0 auto;
+        }
+
+        p{
+            margin: 20px 0;
+            font-size: 1.2rem;
+            letter-spacing: .5em;
+            word-break : break-all;        
+            @include short{
+                font-size: 0.5em;
+            }
+        }
+            
+            .TextTyping {
+            text-align: center;
+            }
+            
+            /*========= タイピング ===============*/
+            
+            .TextTyping span {
+            display: none;
+            }
+            
+            /*文字列後ろの線の設定*/
+            .TextTyping::after {
+            content: "|";
+            animation: typinganime .8s ease infinite;
+            }
+            
+            @keyframes typinganime{
+            from{opacity:0}
+            to{opacity:1}
+            }
+}
+
+}
+
+/*タイトルエリア*/
+.title{
+font-size: 120px;
+width: 100%;
+height: 1em;
+color: $white-00;
+text-align: center;
+margin: auto;
+p{  
+    margin: auto;
+    width: 70%;
+    font-family: "dot-bold";
+    
+    @include short{
+        font-size: 60px;
+        top: 120%;
+    }
+}
+}
+
+.button-wrapper{
+    text-align: center;
+    margin: 0px auto;
+    width: 600px;
+    display: flex;
+    .button{
+        font-family: "dot-bold";
+        display: inline-block;
+        width: 200px;
+        height: 50px;
+        padding: 10px 20px;
+        border: 1px double #1ADEE9;
+        border-radius: 5px;
+        background-color: rgba(0,0,0,0.7);
+        box-shadow: 0px 0px 5px #1ADEE9;
+        a{
+            text-decoration: none;
+            color: $white-00;
+        }
+        @include short{
+            display: block;
+            margin: 20px auto;
+        }
+    }
+
+    .button:hover{
+        border: 1px double #DEFCFC;
+        background-color: rgba(0,0,0,1);
+    }
+}
+
