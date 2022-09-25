@@ -3,6 +3,10 @@
   <head>
     <%- include("../../partials/head") %>
     <link rel="stylesheet" href="../css/mainMenu.css">
+    <audio autoplay loop id="opening">
+      <source src="../sounds/Quiz-CorretBuzzer-mp3/yowanotsukli_koujou.mp3" type="audio/mp3">
+      <p>音楽の再生に対応していません</p>
+    </audio>
   </head>
   <body>
   <!-- タイピングメッセージ表示画面 -->
@@ -14,7 +18,7 @@
       </div>
     </div> -->
 <!----ローディング画面後現れるメインメニュー↓---->
-<div id="background"></div>
+    <div id="background"></div>
     <%- include("../../partials/header-logout") %>
     <main>
       <div id="contents">
@@ -32,23 +36,12 @@
     </footer>
   </body>
 
-  <script src="../js/index.js"></script>
   <script type="text/javascript">
-    console.log("test2");
-    const uid = $("#user-id").val()
 
-    // getHeader();
-
-    // async function getHeader() {
-    //   const response = await httpGet(
-    //     "//" + window.location.host + "/api/get/header/" + uid
-    //   );
-    //   console.log(response);
-    // }
     function mediasVol_def() {
       // 特定のidのaudioの音量設定
       const opening=document.getElementById('opening');
-      opening.volume = 0.01; // 0〜1 の間で
+      opening.volume = 0.1; // 0〜1 の間で
     }
     //ページ読み込み時に処理
     window.addEventListener('DOMContentLoaded' , function(){

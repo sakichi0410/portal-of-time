@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', function (req, res, next) {
-    if (req.session.user_id) {
-        console.log("test 1");
-        res.render('base/login/mainMenu',{
-            uid: req.session.user_id
+    if (req.session.uid) {
+        console.log("login");
+        res.render('base/login/mainMenu.ejs',{
+            uid: req.session.uid
         });
     }else{
-        console.log("test 2");
-        res.render('base/logout/mainMenu');
+        console.log("logout");
+        res.render('base/logout/mainMenu.ejs');
     }
 });
 

@@ -1,41 +1,64 @@
-<form id="signup" class="modal">
+<form id="signup-modal" class="modal" action="/signup" method="post">
   <div>
-    <div class="form-group">
+    <div class="user-form">
       <div>
         <label for="create-user-name">ユーザ名</label>
-        <input type="text" class="form-control name" name="user-name" />
+        <input type="text" class="form-control name signup" name="name" />
       </div>
       <div>
         <label for="create-email">メールアドレス</label>
-        <input type="text" class="form-control email" name="email" />
+        <input type="text" class="form-control email signup" name="email" />
       </div>
       <div>
         <label for="create-password">パスワード</label>
         <input
           type="password"
-          class="form-control password"
+          class="form-control password signup"
           name="password"
         />
       </div>
     </div>
     <div class="buttons">
-      <button type="button" class="btn btn-white reset">
-        リセット
-      </button>
-      <button type="button" class="cancel btn btn-white cancel">
-        キャンセル
-      </button>
+      <button type="button" class="btn btn-secondary reset">リセット</button>
+      <button type="button" class="btn btn-secondary cancel">キャンセル</button>
       <button
-        type="button"
-        id="regist"
+        type="submit"
+        id="signup"
         data-dismiss="modal"
-        class="btn btn-red"
+        class="btn btn-primary"
       >
         登録
       </button>
     </div>
-    <div class="message signup_err"></div>
+    <div class="err_message signup"></div>
   </div>
 </form>
 
-<script type="module" type=”text/javascript” src="../js/signup.js"></script>
+<script>
+  var result = 0;
+  var empty = 1;
+
+  $(".email.signup").on("change", async function () {
+    const data = {
+      email: $(".email.signup").val(),
+    };
+
+    const response = await httpPost(
+      "//" + window.location.host + "/api/users/check/signup",
+      data
+    );
+    result = response.result;
+    if (result == 1) {
+      $(".err_message.signup").text("登録済みのメールアドレスです");
+    } else {
+      $(".err_message.signup").text("");
+    }
+  });
+
+  $(".reset.signup").on("click", async function () {
+    $(".name.signup").val("");
+    $(".email.signup").val("");
+    $(".password.signup").val("");
+    $(".err_message.signup").text("");
+  });
+</script>

@@ -9,7 +9,11 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 var baseRouter = require('./routes/base.js');
-var apiRouter = require("./routes/api/index.js");
+var usersRouter = require("./routes/api/users.js");
+var quizRouter = require("./routes/api/quiz.js");
+var signin = require("./routes/sign/signin.js");
+var signup = require("./routes/sign/signup.js");
+var signout = require("./routes/sign/signout.js");
 var mainMenu = require("./routes/base/mainMenu.js");
 var gameMenu = require("./routes/base/gameMenu.js");
 var s_modeDisp = require("./routes/singleplay/modeDisp.js");
@@ -45,18 +49,22 @@ app.use(session({
 }));
 
 app.use("/", baseRouter);
-app.use("/api", apiRouter);
-app.use("mainMenu", mainMenu);
-app.use("gameMenu", gameMenu);
-app.use('single/modeDisp', s_modeDisp);
-app.use('single/gamePlay', s_gamePlay);
-app.use('single/resultScore', s_resultScore);
-app.use('single/resultDetail', s_resultDetail);
-app.use('multi/modeDisp', m_modeDisp);
-app.use('multi/gamePlay', m_gamePlay);
-app.use('multi/createRoomPlay', m_createRoom);
-app.use('multi/resultScore', m_resultScore);
-app.use('multi/resultDetail', m_resultDetail);
+app.use("/api/users", usersRouter);
+app.use("/api/quiz", quizRouter);
+app.use("/signin", signin);
+app.use("/signup", signup);
+app.use("/signout", signout);
+app.use("/mainMenu", mainMenu);
+app.use("/gameMenu", gameMenu);
+app.use('/single/modeDisp', s_modeDisp);
+app.use('/single/gamePlay', s_gamePlay);
+app.use('/single/resultScore', s_resultScore);
+app.use('/single/resultDetail', s_resultDetail);
+app.use('/multi/modeDisp', m_modeDisp);
+app.use('/multi/gamePlay', m_gamePlay);
+app.use('/multi/createRoomPlay', m_createRoom);
+app.use('/multi/resultScore', m_resultScore);
+app.use('/multi/resultDetail', m_resultDetail);
 // app.use('/login',login);
 // app.use(function(req, res, next){
 //   console.log(req.session.username);
@@ -75,7 +83,7 @@ app.use(function (err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
   res.status(err.status || 500);
-  res.render("error");
+  res.render("error.jade");
 });
 
 module.exports = app;

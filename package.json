@@ -24,6 +24,7 @@
     "FileReader": "^0.10.2",
     "forever": "^4.0.3",
     "fs": "^0.0.1-security",
+    "handlebars": "^4.7.7",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",

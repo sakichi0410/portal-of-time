@@ -1,37 +1,71 @@
-<form id="signin" class="modal">
+<form id="signin-modal" class="modal" action="/signin" method="post">
   <div>
-    <div class="form-group">
+    <div class="user-form signin">
       <div>
         <label for="create-email">メールアドレス</label>
-        <input type="text" class="form-control email" name="email" />
+        <input type="text" class="form-control email signin" name="email" />
       </div>
       <div>
         <label for="create-password">パスワード</label>
         <input
           type="password"
-          class="form-control password"
+          class="form-control password signin"
           name="password"
         />
       </div>
     </div>
     <div class="buttons">
-      <button type="button" class="btn btn-white reset">
+      <button type="button" class="btn btn-white reset signin">
         リセット
       </button>
-      <button type="button" class="cancel btn btn-white cancel">
+      <button type="button" class="btn btn-white cancel signin">
         キャンセル
       </button>
       <button
-        type="button"
-        id="login"
+        type="submit"
+        id="signin"
         data-dismiss="modal"
         class="btn btn-red"
       >
         ログイン
       </button>
     </div>
-    <div class="message signin_err"></div>
+    <div class="err_message signin"></div>
   </div>
 </form>
 
-<script type="module" type=”text/javascript” src="../js/signin.js"></script>
+<script>
+  var result = 0;
+  var empty = 1;
+  $(".user-form.signin").on("change", async function () {
+    if ($(".email.signin").val() != "" && $(".password.signin").val() != "") {
+      empty = 0;
+    } else {
+      empty = 1;
+    }
+  });
+
+  $("#signin").on("click", async function () {
+    const data = {
+      email: $(".email.signin").val(),
+      password: $(".password.signin").val(),
+    };
+    if (empty != 0) {
+      $(".err_message.signin").text("未入力の項目があります");
+    } else {
+      const response = await httpPost(
+        "//" + window.location.host + "/api/users/check/signin",
+        data
+      );
+      if (response.user_id == 0) {
+        $(".err_message.signin").text("メールアドレスまたはパスワードが間違っています");
+      }
+    }
+  });
+
+  $(".reset.signin").on("click", async function () {
+    $(".email.signin").val("");
+    $(".password.signin").val("");
+    $(".err_message.signin").text("");
+  });
+</script>
