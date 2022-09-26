@@ -347,8 +347,8 @@ async function loadQuiz() {
   // クイズリストからランダムに一つクイズ番号を取り出す
   rand = Math.floor(Math.random() * quizList.length);
 
-  // 問題番号が５以上(quiz-dataの問題数が5問のため)ならループ
-  if(rand >= 5 || setListnum.indexOf(rand) != -1){
+  // 問題番号が５以上(quiz-dataの問題数が5問のため)ならループ　※１０以上に変更しました。
+  if(rand >= 10 || setListnum.indexOf(rand) != -1){
     console.log("rand=" + rand + "やり直し");
     loadQuiz();
   }else{

@@ -23,7 +23,12 @@ const quiz2Elm = document.getElementById('quiz2');
 const quiz3Elm = document.getElementById('quiz3');
 const quiz4Elm = document.getElementById('quiz4');
 const quiz5Elm = document.getElementById('quiz5');
-
+//５問追加
+const quiz6Elm = document.getElementById('quiz6');
+const quiz7Elm = document.getElementById('quiz7');
+const quiz8Elm = document.getElementById('quiz8');
+const quiz9Elm = document.getElementById('quiz9');
+const quiz10Elm = document.getElementById('quiz10');
 
 loadURL();
 
